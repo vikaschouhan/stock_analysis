@@ -22,9 +22,13 @@ ticker_trend        = 2          # 0 means no trend, 1 means upward trend, 2 mea
 ticker_trend_tostr  = {0 : "flat", 1 : "bullish", 2 : "bearish"}
 mova_days_dict      = {"10_days" : 10, "40_days" : 40, "60_days" : 60, "100_days" : 100}
 compr_tup           = (10, 60)   # tuple to compare moving averages between
-starttime           = datetime.datetime(2011, 01, 1)         # start time
+trade_min           = 500000     # minium trade volume to remove less liquid stocks
+compr_price_tup     = (10, 150)  # price range tuple
+#starttime           = datetime.datetime(2011, 01, 1)         # start time
+starttime           = datetime.datetime(2014, 01, 01)
 endtime             = datetime.datetime.now()                # end time is current time
 plot_yes            = 0
+verbose             = 0                                      # verbose mode
 
 
 ##############################################################
@@ -34,13 +38,30 @@ def main_loop(ticker_dict):
     assert(type(ticker_dict) == dict)
 
     for ticker in ticker_dict.keys():
+        ## get_data_yahoo throws IOError exception is the ticker synmbol is not correct.
+        ## catch it.
         try:
             stock_data       = pd.io.data.get_data_yahoo(ticker, starttime, endtime)
         except IOError:
-            print "yahoo doesn't identify the ticker symbol {}" . format(ticker)
+            if verbose:
+                print "yahoo doesn't identify the ticker symbol {}" . format(ticker)
             continue
 
-        stock_close_data = stock_data["Close"]
+        ## Calculate closing prices and volume data
+        stock_close_data     = stock_data["Close"]
+        stock_volume_data    = stock_data["Volume"]
+
+        ## Check for average trade volumes for previous 100 days
+        if pd.rolling_mean(stock_volume_data, 100)[-1] < trade_min:
+            if verbose:
+                print "100 day average trade volume for {} is below {}" . format(ticker, trade_min)
+            continue
+
+        ## Check for price range
+        if (stock_close_data[-1] < min(compr_price_tup)) or (stock_close_data[-1] > max(compr_price_tup)):
+            if verbose:
+                print "{} has latest closing price {}, hence is not in the defined price range" . format(ticker, stock_close_data[-1])
+            continue
 
         process_stock_graph_series(stock_close_data, ticker_dict[ticker])
 
