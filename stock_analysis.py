@@ -3,6 +3,7 @@
 import argparse
 import datetime
 import re
+import pickle
 
 import pandas as pd
 import pandas.io.data
@@ -17,8 +18,8 @@ import matplotlib as mpl
 ticker_trend        = 0          # 0 means no trend, 1 means upward trend, 2 means downward trend
 ticker_trend_tostr  = {0 : "flat", 1 : "bullish", 2 : "bearish"}
 
-mova_days_dict      = {"10_days" : 10, "40_days" : 40, "60_days" : 60, "100_days" : 100}
-compr_ravg_tup      = (40, 100)
+mova_days_dict      = {"20_days" : 20, "40_days" : 40, "60_days" : 60, "100_days" : 100}
+compr_ravg_tup      = (20, 100)
 
 pmin                = 10
 pmax                = 50
@@ -29,7 +30,23 @@ starttime           = datetime.datetime(2014, 01, 01)
 endtime             = datetime.datetime.now()                # end time is current time
 plot_yes            = 0
 verbose             = 0                                      # verbose mode
+glb_data_struct     = {}                                     # initialized to empty value
+pickle_file_passed  = 0
 
+#############################################################
+# stock frame api functions
+#############################################################
+def call_yahoo_ticker_fun(ticker, starttime, endtime):
+    glb_data_struct[ticker] = pd.io.data.get_data_yahoo(ticker, starttime, endtime)
+    return glb_data_struct[ticker]
+
+#
+def call_internal_ticker_fun(ticker, starttime, endtime):
+    """Waring !!! starttime and endtime are provided for api compatibility only. They\
+            are not used by the underlying function."""
+    return glb_data_struct[ticker]
+
+call_ticker_fun = call_yahoo_ticker_fun
 
 ##############################################################
 # Main loop. Iterate through each scripts and collect data
@@ -41,7 +58,7 @@ def main_loop(ticker_dict):
         ## get_data_yahoo throws IOError exception is the ticker synmbol is not correct.
         ## catch it.
         try:
-            stock_data       = pd.io.data.get_data_yahoo(ticker, starttime, endtime)
+            stock_data       = call_ticker_fun(ticker, starttime, endtime)
         except IOError:
             if verbose:
                 print "yahoo doesn't identify the ticker symbol {}" . format(ticker)
@@ -207,6 +224,7 @@ if __name__ == '__main__':
     parser.add_argument("--pmax",     help="maximum price limit",                       type=int)
     parser.add_argument("--tstart",   help="start time (day)",                          type=str)
     parser.add_argument("--tend",     help="end time (day)",                            type=str)
+    parser.add_argument("--pfile",    help="pickle file",                               type=str)
     parser.add_argument("--trend",    help="ticker trend (0=all, 1=up, 2=down)",        type=int)
     parser.add_argument("--plot",     help="plot graphs",                               action='store_true')
     parser.add_argument("--verbose",  help="verbose option",                            action='store_true')
@@ -226,6 +244,13 @@ if __name__ == '__main__':
         else:
             # This line is not recognised
             continue
+
+    # check if pickle file was provided & redirect function pointer for
+    # geting ticker values
+    if args.pfile:
+        glb_data_struct     = pickle.load(open(args.pfile, "rb"))
+        call_ticker_fun     = call_internal_ticker_fun
+        pickle_file_passed  = 1
 
     # Check price limits
     if args.pmin:
@@ -283,3 +308,7 @@ if __name__ == '__main__':
     print "\n"
 
     main_loop(ticker_dict_t)
+
+    # Dump global data structure to pickle file
+    if pickle_file_passed == 0:
+        pickle.dump(glb_data_struct, open(args.dfile + ".pkl", "wb"))
