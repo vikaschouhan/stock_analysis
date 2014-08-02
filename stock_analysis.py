@@ -84,7 +84,7 @@ def process_stock_graph_series(obj, label):
 
     # Populate all rolling means in a hash
     for dindex in mova_days_dict.keys():
-        rolling_mean = pd.rolling_mean(close_data, mova_days_dict[dindex])
+        rolling_mean = pd.rolling_mean(adj_close_data, mova_days_dict[dindex])
         mov_avg_h[mova_days_dict[dindex]] = rolling_mean
 
     # Calculate local trend based on global parameters specified
@@ -120,10 +120,10 @@ def process_stock_graph_series(obj, label):
 
     # Plot closing price trend along with moving averages
     #
-    ax_cp.plot(close_data.index.tolist(), close_data.tolist())
+    ax_cp.plot(adj_close_data.index.tolist(), adj_close_data.tolist())
         
     for dindex in mova_days_dict.keys():
-        rolling_mean = pd.rolling_mean(close_data, mova_days_dict[dindex])
+        rolling_mean = pd.rolling_mean(adj_close_data, mova_days_dict[dindex])
        
         x_list       = rolling_mean.index.tolist()
         y_list       = rolling_mean.tolist()
