@@ -1,0 +1,7 @@
+GMRINFRA.NS              "GMR Infra."
+RENUKA.NS                "Shree Renuka Sugars."
+ARVINDREM.NS             "Arvind Remedies"
+PENINLAND.NS             "Peninsula Land Ltd."
+NHPC.NS                  "NHPC Ltd."
+ELECTCAST.NS             "ElectroSteel Castings"
+TI.NS                    "Tilaknagar Industries"
