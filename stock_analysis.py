@@ -67,21 +67,28 @@ def main_loop(ticker_dict):
                 print "{} has latest closing price {}, hence is not in the defined price range" . format(ticker, stock_close_data[-1])
             continue
 
-        process_stock_graph_series(stock_close_data, ticker_dict[ticker])
+        ## Process the data
+        process_stock_graph_series(stock_data, ticker_dict[ticker])
 
-    plt.show()
+    # if plotting is enabled now is the time to display the graphs
+    if plot_yes:
+        plt.show()
 
 ##########################################################################
 # Process and plot the stock movement along with some moving averages
 ##########################################################################
 def process_stock_graph_series(obj, label):
-    assert(type(obj) == pd.core.series.Series)
-    mov_avg_h = {};
-    local_trend = 99;
+    assert(type(obj) == pd.core.frame.DataFrame)
+
+    mov_avg_h         = {};
+    local_trend       = 99;
+    close_data        = obj["Close"]
+    vol_data          = obj["Volume"]
+    adj_close_data    = obj["Adj Close"]
 
     # Populate all rolling means in a hash
     for dindex in mova_days_dict.keys():
-        rolling_mean = pd.rolling_mean(obj, mova_days_dict[dindex])
+        rolling_mean = pd.rolling_mean(close_data, mova_days_dict[dindex])
         mov_avg_h[mova_days_dict[dindex]] = rolling_mean
 
     # Calculate local trend based on global parameters specified
@@ -107,22 +114,68 @@ def process_stock_graph_series(obj, label):
     if not plot_yes:
         return;
 
-    title = " [with ";
-    plt.figure()
-    plt.plot(obj.index.tolist(), obj.tolist(), label=label)
+    title = "Closing Price trend [with ";
+
+    # Make subplots for showing various graphs in same fig
+    #fig, axarr = plt.subplots(2, sharex=True)
+    fig         = plt.figure(label)
+    ax_cp       = plt.subplot2grid((3, 1), (0, 0), rowspan=2)
+    ax_v        = plt.subplot2grid((3, 1), (2, 0), rowspan=1)
+
+    # Plot closing price trend along with moving averages
+    #
+    ax_cp.plot(close_data.index.tolist(), close_data.tolist())
         
     for dindex in mova_days_dict.keys():
-        rolling_mean = pd.rolling_mean(obj, mova_days_dict[dindex])
+        rolling_mean = pd.rolling_mean(close_data, mova_days_dict[dindex])
        
         x_list       = rolling_mean.index.tolist()
         y_list       = rolling_mean.tolist()
         title        = title + dindex + " "
 
-        plt.plot(x_list, y_list, label=dindex)
+        ax_cp.plot(x_list, y_list)
 
     title = title + " moving average]"
-    plt.grid()
-    plt.title(label + title)
+    ax_cp.grid()
+    ax_cp.set_title(title)
+
+    # Plot volume trend
+    ax_v.plot(vol_data.index.tolist(), vol_data.tolist())
+    ax_v.grid()
+    ax_v.set_title("Volume trend")
+
+    #fig.canvas.mpl_connect('button_press_event', on_click)
+
+###################################################
+# Not my code. Found somewhere on the internet
+##################################################
+def on_click(event):
+    """Enlarge or restore the selected axis."""
+    ax = event.inaxes
+    if ax is None:
+        # Occurs when a region not in an axis is clicked...
+        return
+    if event.button is 1:
+        # On left click, zoom the selected axes
+        ax._orig_position = ax.get_position()
+        ax.set_position([0.1, 0.1, 0.85, 0.85])
+        for axis in event.canvas.figure.axes:
+            # Hide all the other axes...
+            if axis is not ax:
+                axis.set_visible(False)
+    elif event.button is 3:
+        # On right click, restore the axes
+        try:
+            ax.set_position(ax._orig_position)
+            for axis in event.canvas.figure.axes:
+                axis.set_visible(True)
+        except AttributeError:
+            # If we haven't zoomed, ignore...
+            pass
+    else:
+        # No need to re-draw the canvas if it's not a left or right click
+        return
+    event.canvas.draw()
 
 
 ####################################################
