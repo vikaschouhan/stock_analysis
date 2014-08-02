@@ -18,7 +18,7 @@ ticker_trend        = 0          # 0 means no trend, 1 means upward trend, 2 mea
 ticker_trend_tostr  = {0 : "flat", 1 : "bullish", 2 : "bearish"}
 
 mova_days_dict      = {"10_days" : 10, "40_days" : 40, "60_days" : 60, "100_days" : 100}
-compr_ravg_tup      = (10, 60)
+compr_ravg_tup      = (40, 100)
 
 pmin                = 10
 pmax                = 50
@@ -52,9 +52,9 @@ def main_loop(ticker_dict):
         stock_volume_data    = stock_data["Volume"]
 
         ## Check for average trade volumes for previous 100 days
-        if volume_check and pd.rolling_mean(stock_volume_data, 100)[-1] < trade_min:
+        if volume_check and pd.rolling_median(stock_volume_data, 100)[-1] < trade_min:
             if verbose:
-                print "100 day average trade volume for {} is below {}" . format(ticker, trade_min)
+                print "100 day median trade volume for {} is below {}" . format(ticker, trade_min)
             continue
 
         ## Check for price range
@@ -237,7 +237,8 @@ if __name__ == '__main__':
 
     # check trade limit
     if args.vmin:
-        trade_min = args.vmin
+        trade_min    = args.vmin
+        volume_check = 1
 
     # check time
     if args.tstart:
