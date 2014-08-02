@@ -3,55 +3,35 @@
 use warnings;
 use strict;
 use Getopt::Long;
-use IO::File;
-use Data::Dumper;
 
-my $fin;
-my $finh = IO::File->new();
-
+my $r0  = 0;
+my $r1  = 0;
+my $D   = 0;
+my $eps = 0;
+my $t0  = 0;
+my $t1  = 0;
 my $help;
-my @columns;
-my @columns_n;
-my $data;
+my ($fv, $a0, $a1);
 
-usage() if (@ARGV < 1 or !GetOptions("file=s", \$fin, "help|?", \$help) or (defined $help));
-die "Couldn't open $fin\n" unless $finh->open("< $fin");
+usage() if (@ARGV < 6 or !GetOptions("eps=f", \$eps, "D=f", \$D, "r0=f", \$r0 , "r1=f", \$r1, "t0=i", \$t0, "t1=i", \$t1, "help|?", \$help) or (defined $help));
 
-while(<$finh>){
-    if(m/TICKER/){
-        @columns_n = split ' ';
-        print join("..", @columns_n), "\n";
-    }
-    #@columns = split ' ';
-    #next if $columns[0] =~ /#/;
-    #push @$data, $_;
-}
+printf "Data input : EPS=%f, D=%f%%, r0=%f%%, r1=%f%%, t0=%dyrs, t1=%dyrs \n", $eps, $D, $r0, $r1, $t0, $t1;
 
-#foreach my $entry (@$data){
-#    print "NAME=>", $entry->{"ticker"}, " ", "dcf_eps=>", dcf_eps($entry), "\n";
-#}
+$a0 = (1 + $r0/100)/(1 + $D/100);
+$a1 = (1 + $r1/100)/(1 + $D/100);
 
+$fv = $eps*((1 - $a0**$t0)/(1 - $a0) + ($a0**$t0)*(1 - $a1**$t1)/(1 - $a1));
 
-$finh->close();
-
-#print Data::Dumper->Dump($data);
-
-sub dcf_eps {
-    my $params = shift;
-    die "Invalid parameter in dcf_eps\n" if !defined($params);
-
-    my $a0  = (1 + $params->{"r0"}/100)/(1 + $params->{"d"}/100);
-    my $a1  = (1 + $params->{"r1"}/100)/(1 + $params->{"d"}/100);
-    my $t0  = $params->{"t0"};
-    my $t1  = $params->{"t1"};
-    my $eps = $params->{"eps"};
-
-    return $eps*((1 - $a0**$t0)/(1 - $a0) + ($a0**$t0)*(1 - $a1**$t1)/(1 - $a1));
-}
+printf "fair value = %f\n", $fv;
 
 sub usage{
     print "Help :\n";
-    print "--file = input file name\n";
+    print "--eps         = earning per share \n";
+    print "--D           = discount rate \n";
+    print "--r0          = rate0 \n";
+    print "--r1          = rate1 \n";
+    print "--t0          = t0 \n";
+    print "--t1          = t1 \n";
     print "--help = help\n";
     exit 0;
 }
