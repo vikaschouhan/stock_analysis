@@ -140,7 +140,7 @@ def process_stock_graph_series(obj, label):
     ax_cp.set_title(title)
 
     # Plot volume trend
-    ax_v.plot(vol_data.index.tolist(), vol_data.tolist())
+    ax_v.bar(vol_data.index.tolist(), vol_data.tolist())
     ax_v.grid()
     ax_v.set_title("Volume trend")
 
