@@ -16,7 +16,7 @@ import matplotlib as mpl
 # global variables
 ################################
 ticker_trend        = 0          # 0 means no trend, 1 means upward trend, 2 means downward trend
-ticker_trend_tostr  = {0 : "flat", 1 : "bullish", 2 : "bearish"}
+ticker_trend_tostr  = {0 : "flat", 1 : "bullish", 2 : "bearish", 99 : "nota"}
 
 mova_days_dict      = {"20_days" : 20, "40_days" : 40, "60_days" : 60, "100_days" : 100}
 compr_ravg_tup      = (20, 100)
@@ -60,8 +60,10 @@ def main_loop(ticker_dict):
         try:
             stock_data       = call_ticker_fun(ticker, starttime, endtime)
         except IOError:
-            if verbose:
-                print "yahoo doesn't identify the ticker symbol {}" . format(ticker)
+            print "yahoo doesn't identify the ticker symbol {}" . format(ticker)
+            continue
+        except KeyError:
+            print "KeyError received on ticker symbol {}" . format(ticker)
             continue
 
         ## Calculate closing prices and volume data
