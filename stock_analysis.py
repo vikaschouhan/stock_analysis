@@ -60,10 +60,12 @@ def main_loop(ticker_dict):
         try:
             stock_data       = call_ticker_fun(ticker, starttime, endtime)
         except IOError:
-            print "yahoo doesn't identify the ticker symbol {}" . format(ticker)
+            if verbose:
+                print "yahoo doesn't identify the ticker symbol {}" . format(ticker)
             continue
         except KeyError:
-            print "KeyError received on ticker symbol {}" . format(ticker)
+            if verbose:
+                print "KeyError received on ticker symbol {}" . format(ticker)
             continue
 
         ## Calculate closing prices and volume data
@@ -71,7 +73,7 @@ def main_loop(ticker_dict):
         stock_volume_data    = stock_data["Volume"]
 
         ## Check for average trade volumes for previous 100 days
-        if volume_check and pd.rolling_median(stock_volume_data, 100)[-1] < trade_min:
+        if volume_check and pd.rolling_mean(stock_volume_data, 100)[-1] < trade_min:
             if verbose:
                 print "100 day median trade volume for {} is below {}" . format(ticker, trade_min)
             continue
