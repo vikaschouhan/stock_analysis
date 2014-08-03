@@ -230,6 +230,7 @@ if __name__ == '__main__':
     parser.add_argument("--tend",     help="end time (day)",                            type=str)
     parser.add_argument("--pfile",    help="pickle file",                               type=str)
     parser.add_argument("--trend",    help="ticker trend (0=all, 1=up, 2=down)",        type=int)
+    parser.add_argument("--regex",    help="regex pattern for matching",                type=str)
     parser.add_argument("--plot",     help="plot graphs",                               action='store_true')
     parser.add_argument("--verbose",  help="verbose option",                            action='store_true')
 
@@ -299,6 +300,19 @@ if __name__ == '__main__':
             name_new = res.groups()[0] + ".BO"
         ticker_dict_t[name_new] = ticker_dict_n[index]
 
+    # Clear the original list
+    ticker_dict_n = {}
+
+    # Check for the any passed regex
+    if args.regex:
+        regex_c      = re.compile('{}' . format(args.regex))
+        for index in ticker_dict_t.keys():
+            if regex_c.match(index):
+                ticker_dict_n[index] = ticker_dict_t[index]
+    else:
+        ticker_dict_n = ticker_dict_t
+
+
     print "............... stock analysis parameters ...................."
     print "pandas version                                = {}" . format(pd.__version__)
     print "matplotlib version                            = {}" . format(mpl.__version__)
@@ -311,7 +325,7 @@ if __name__ == '__main__':
     print ".............................................................."
     print "\n"
 
-    main_loop(ticker_dict_t)
+    main_loop(ticker_dict_n)
 
     # Dump global data structure to pickle file
     if pickle_file_passed == 0:
