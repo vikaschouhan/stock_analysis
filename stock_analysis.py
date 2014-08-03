@@ -216,7 +216,7 @@ def convert_to_datetime_format(date_str):
 if __name__ == '__main__':
     ticker_dict_n    = {}
     ticker_dict_t    = {}
-    regex_m          = re.compile(r'([\w\.\-]+)[ \t\r\f\v]+"([ \w\.\t\r\f\v\-]+)"')       # match for valid line
+    regex_m          = re.compile(r'([\w\.\-]+)[ \t\r\f\v]+"([ \w\W\t\r\f\v\-]+)"')       # match for valid line
     regex_h          = re.compile(r'(\w+)-\w+.NS')          # match for date format on command line
     regex_c          = re.compile(r'^#')                    # Match format for comment
 
