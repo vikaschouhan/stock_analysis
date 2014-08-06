@@ -136,8 +136,9 @@ def process_stock_graph_series(obj, label):
     # Make subplots for showing various graphs in same fig
     #fig, axarr = plt.subplots(2, sharex=True)
     fig         = plt.figure(label)
-    ax_cp       = plt.subplot2grid((3, 1), (0, 0), rowspan=2)
-    ax_v        = plt.subplot2grid((3, 1), (2, 0), rowspan=1)
+    ax_cp       = plt.subplot2grid((4, 1), (0, 0), rowspan=2)
+    ax_v        = plt.subplot2grid((4, 1), (2, 0), rowspan=1)
+    ax_t        = plt.subplot2grid((4, 1), (3, 0), rowspan=1)
 
     # Plot closing price trend along with moving averages
     #
@@ -160,6 +161,12 @@ def process_stock_graph_series(obj, label):
     ax_v.bar(vol_data.index.tolist(), vol_data.tolist())
     ax_v.grid()
     ax_v.set_title("Volume trend")
+
+    # Plot trend oscillator
+    trend_data = detrended_price_oscillator(adj_close_data, 20)
+    ax_t.plot(trend_data.index.tolist(), trend_data.tolist())
+    ax_t.grid()
+    ax_t.set_title("trend oscillator")
 
     #fig.canvas.mpl_connect('button_press_event', on_click)
 
@@ -193,6 +200,19 @@ def on_click(event):
         # No need to re-draw the canvas if it's not a left or right click
         return
     event.canvas.draw()
+
+####################################################
+# detrended_price_oscillator
+####################################################
+def detrended_price_oscillator(obj, N):
+    assert(type(obj) == pandas.core.series.Series)
+    obj_copy_local    = obj.copy()
+    half_time         = int(N/2)
+
+    for i in range(0, obj.size):
+        obj_copy_local[i] = obj[i] - pd.rolling_mean(obj[0:i+1], half_time)[-1]
+
+    return obj_copy_local
 
 
 ####################################################
