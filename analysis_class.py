@@ -88,6 +88,9 @@ class plots_class:
         self.n_columns = 1
         self.plotted   = 0
 
+    def __inc_plotted(self):
+        self.plotted   = self.plotted + 1
+
     def plot(self, x_list, y_list, label=''):
         """Plot the actual data."""
         assert(self.plotted < self.n_plots)
@@ -96,17 +99,25 @@ class plots_class:
         obj_this.grid()
         obj_this.set_title(label)
         obj_this.plot(x_list, y_list)
-
-        self.plotted   = self.plotted + 1
+        self.__inc_plotted()
 
     def bar(self, x_list, y_list, label=''):
         """Plot the actual data as bars."""
-        assert(self.plotted >= self.n_plots)
+        assert(self.plotted < self.n_plots)
 
         obj_this       = self.plot_obj[self.plotted]
         obj_this.grid()
         obj_this.set_title(label)
-        obj_this.plot(x_list, y_list)
+        obj_this.bar(x_list, y_list)
+        self.__inc_plotted()
 
-        self.plotted   = self.plotted + 1
+    def plot_pandas_series(self, series, label=''):
+        """Plot pandas.core.series.Series type data."""
+        assert(type(series) == pandas.core.series.Series)
+        self.plot(series.index.tolist(), series.tolist(), label)
+
+    def bar_pandas_series(self, series, label=''):
+        """Plot pandas.core.series.Series type data as bars."""
+        assert(type(series) == pandas.core.series.Series)
+        self.bar(series.index.tolist(), series.tolist(), label)
 
