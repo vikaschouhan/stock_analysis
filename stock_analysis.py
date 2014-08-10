@@ -48,6 +48,7 @@ def call_internal_ticker_fun(ticker, starttime, endtime):
 
 call_ticker_fun = call_yahoo_ticker_fun
 
+
 ##############################################################
 # Main loop. Iterate through each scripts and collect data
 ##############################################################
@@ -213,6 +214,27 @@ def detrended_price_oscillator(obj, N):
         obj_copy_local[i] = obj[i] - pd.rolling_mean(obj[0:i+1], half_time)[-1]
 
     return obj_copy_local
+
+##############################################################
+# std deviation (volatility index)
+##############################################################
+# Single pass volatility index calculator
+def volatility_index_0(obj, N):
+    assert(type(obj) == pandas.core.series.Series)
+    step_1_list = pandas.rolling_std(obj, N).dropna()
+    return pandas.rolling_std(step_1_list, step_1_list.size)[-1]
+
+# Multipass volatility index calculator
+def volatility_index_1(obj, N):
+    assert(type(obj) == pandas.core.series.Series)
+    n = N
+    step_prev_list = obj
+    while True:
+        step_next_list = pandas.rolling_std(step_prev_list, n).dropna()
+        #n = n * 2
+        if step_next_list.size < n:
+            return step_next_list[-1]
+        step_prev_list = step_next_list
 
 
 ####################################################
