@@ -146,10 +146,10 @@ class plots_class:
         self.data[frame].append(data)
 
     def __plot(self, obj, x_list, y_list, label):
-        obj.plot(x_list, y_list, label)
+        obj.plot(x_list, y_list, label=label)
 
     def __bar(self, obj, x_list, y_list, label):
-        obj.bar(x_list, y_list, label)
+        obj.bar(x_list, y_list, label=label)
 
     def __draw(self, frame, x_list, y_list, label, plot_type):
         """Internal plot."""
@@ -159,7 +159,7 @@ class plots_class:
         if plot_type == self.PLOT_TYPE_PLOT:
             self.__plot(obj_this, x_list, y_list, label)
         elif plot_type == self.PLOT_TYPE_BAR:
-            self.__plot(obj_this, x_list, y_list, label)
+            self.__bar(obj_this, x_list, y_list, label)
         self.fig.tight_layout()
         self.__inc_plotted()
 
@@ -176,7 +176,7 @@ class plots_class:
         frame_new      = self.__check_valid_frame(ratio, frame)
         self.__draw(frame_new, x_list, y_list, label, self.PLOT_TYPE_BAR)
         self.__append_data(frame_new,\
-                  {"x_list" : x_list, "y_list" : y_list, "label" : label, "plot_type" : self.PLOT_TYPE_PLOT})
+                  {"x_list" : x_list, "y_list" : y_list, "label" : label, "plot_type" : self.PLOT_TYPE_BAR})
 
     def plot_pandas_series(self, series, label='', ratio=1, frame=None):
         """Plot pandas.core.series.Series type data."""
