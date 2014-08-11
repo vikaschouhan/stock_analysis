@@ -11,9 +11,38 @@ import matplotlib
 import matplotlib.pyplot
 
 #################################################################
-# analysis class
+# parameters class
 #################################################################
-class analysis_class:
+class parameters:
+    """Parameters class."""
+    ticker_trend_tostr  = {0 : "flat", 1 : "bullish", 2 : "bearish", 99 : "nota"}
+
+    def __init__():
+        self.ticker_trend        = 0          # 0 means no trend, 1 means upward trend, 2 means downward trend
+        self.mova_days_dict      = {"20_days" : 20, "40_days" : 40, "60_days" : 60, "100_days" : 100}
+        self.compr_ravg_tup      = (20, 100)
+        
+        self.pmin                = 10
+        self.pmax                = 50
+        self.trade_min           = 500000     # minium trade volume to remove less liquid stocks
+        self.volume_check        = 0
+        self.price_check         = 0
+        self.date_start          = datetime.datetime(2014, 01, 01)
+        self.date_end            = datetime.datetime.now()                # end time is current time
+        self.plot_yes            = 0
+        self.verbose             = 0                                      # verbose mode
+        self.pickle_file_passed  = 0
+        self.pickle_file         = 'default'
+
+    def add_mova_days(self, days, days_label):
+        assert(type(days) == int and type(days_label) == str)
+        self.mova_days_dict.update({days_label : days})
+
+
+#################################################################
+# stock analysis class
+#################################################################
+class stock_analysis_class:
     """Analysis algorithms for stock indicators."""
     pickle_dict              = {}
 
@@ -78,6 +107,7 @@ class analysis_class:
     def print_info(self):
         """Print information about this class attributes."""
         print "name = {}, date_start = {}, date_end = {}" . format(self.name, self.date_start, self.date_end)
+
 
 ###############################################################################
 # new plotting class library
@@ -181,6 +211,18 @@ class plots_class:
         """Plot pandas.core.series.Series type data as bars."""
         assert(type(series) == pandas.core.series.Series)
         self.bar(series.index.tolist(), series.tolist(), label, ratio, frame)
+
+
+############################################################################
+# analysis class
+############################################################################
+class analysis_class:
+    def __init(self, params):
+        assert(type(params) == parameters)
+        self.params       = params
+
+    def init_stock_data(self, scripid, name='default'):
+        self.stock_data   = stock_analysis_class(scripid, self.params.date_start, self.params.date_end, name) 
 
 
 ############################################################################
