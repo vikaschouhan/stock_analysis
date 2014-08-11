@@ -1,6 +1,8 @@
 #!/usr/bin/python
 
 import datetime
+import pickle
+
 import pandas
 import pandas.io.data
 from   pandas import Series, DataFrame
@@ -13,36 +15,49 @@ import matplotlib.pyplot
 #################################################################
 class analysis_class:
     """Analysis algorithms for stock indicators."""
+    pickle_dict              = {}
 
     def __init__(self, scripid, date_start, date_end=datetime.datetime.now(), name=''):
         self.scripid         = scripid
         self.name            = ''
         self.date_start      = date_start
         self.date_end        = date_end
-        self.stock_info      = pandas.io.data.get_data_yahoo(self.scripid, self.date_start, self.date_end)
-
         if self.name == '':
-            self.name = self.scripid
+            self.name        = self.scripid
+
+    @classmethod
+    def load_database_from_pickle(cls, filename):
+        cls.pickle_dict      = pickle.load(open(filename, "rb"))
+
+    @classmethod
+    def store_database_to_pickle(cls, filename):
+        pickle.dump(cls.pickle_dict, open(filename, "wb"))
+
+    def load_from_yahoo(self):
+        self.stock_data      = pandas.io.data.get_data_yahoo(self.scripid, self.date_start, self.date_end)
+
+    def load_from_internal_database(self):
+        self.stock_data      = pickle_dict[self.scripid]
 
     def moving_average(self, N):
         """Moving average for closing prices"""
-        return pandas.rolling_mean(self.stock_info["Adj Close"], N)
+        return pandas.rolling_mean(self.stock_data["Adj Close"], N)
 
     def accumulation_distribution(self):
         """Accumulation Distribution Data"""
-        obj = self.stock_info.copy()
+        obj = self.stock_data.copy()
         return (obj["Close"] - obj["Open"])/(obj["High"] - obj["Low"]) * obj["Volume"]
 
     def volatility_index_single_pass(self, N):
         """This Volatility indicator is 1 pass and uses closing prices."""
-        step_prev_list = self.stock_info["Adj Close"].copy()
+        step_prev_list = self.stock_data["Adj Close"].copy()
         step_next_list = pandas.rolling_std(step_prev_list, N).dropna()
         return pandas.rolling_std(step_next_list, step_next_list.size)[-1]
 
     def volatility_index_multi_pass(self, N):
         """This volatility indicator is multipass and uses closing prices."""
         n = N
-        step_prev_list = self.stock_info["Adj Close"].copy()
+        step_prev_list = self.stock_data["Adj Close"].copy()
         while True:
             step_next_list = pandas.rolling_std(step_prev_list, n).dropna()
             if step_next_list.size < n:
@@ -52,7 +67,7 @@ class analysis_class:
     def volatility_index_multi_pass_expanding(self, N):
         """This volatility indicator is multipass and uses closing prices."""
         n = N
-        step_prev_list = self.stock_info["Adj Close"].copy()
+        step_prev_list = self.stock_data["Adj Close"].copy()
         while True:
             step_next_list = pandas.rolling_std(step_prev_list, n).dropna()
             n = n * 2
