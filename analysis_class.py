@@ -7,8 +7,11 @@ from   pandas import Series, DataFrame
 
 import matplotlib
 
+#################################################################
+# analysis class
+#################################################################
 class analysis_class:
-    'Analysis algorithms for stock indicators'
+    """Analysis algorithms for stock indicators."""
 
     def __init__(self, scripid, date_start, date_end=datetime.datetime.now(), name=''):
         self.scripid         = scripid
@@ -60,64 +63,115 @@ class analysis_class:
         """Print information about this class attributes."""
         print "name = {}, date_start = {}, date_end = {}" . format(self.name, self.date_start, self.date_end)
 
-
-
-
+###############################################################################
+# new plotting class library
+###############################################################################
 class plots_class:
-    'Customized plotting class'
-    def __init__(self, n_plots, height_ratios, label=''):
-        """Initialize a figure object. n_plots is the total number plots on this figure. \
+    """Customized plotting class"""
+    # Plot type constants
+    PLOT_TYPE_BAR      = 0
+    PLOT_TYPE_PLOT     = 1
+
+    def __init__(self, label=''):
+        """Initialize a new figure object."""
+        self.fig       = matplotlib.pyplot.figure(label)
+        self.datalist  = []
+        self.plotted   = 0
+        self.n_columns = 1
+        self.n_plots   = 0
+        self.n_rows    = 0
+        self.h_ratios  = []
+        self.plot_type = []
+
+    def new(self, n_plots, height_ratios=None, label=''):
+        """Initialize the figure object. n_plots is the total number plots on this figure. \
                 height_ratios is a tuple/list of the corresponding height ratios.The ratios should be integers only"""
+        if height_ratios == None:
+            height_ratios = [1] * n_plots
+
         assert(type(height_ratios) == tuple or type(height_ratios) == list)
         assert(len(height_ratios) == n_plots)
+        # Clear figure
+        self.fig.clf()
 
-        height_ratios = map(int, height_ratios)
-        fig           = matplotlib.pyplot.figure(label)
-        n_rows        = sum(height_ratios)
-        plot_obj_l    = []
-        x             = 0
-
-        for i in range(0, n_plots):
-            plot_obj_l.append(matplotlib.pyplot.subplot2grid((n_rows, 1), (x, 0), rowspan=height_ratios[i]))
-            x = x + height_ratios[i]
-
-        self.plot_obj  = plot_obj_l
-        self.fig       = fig
+        self.h_ratios  = map(int, height_ratios)
+        self.n_rows    = sum(self.h_ratios)
         self.n_plots   = n_plots
-        self.n_rows    = n_rows
         self.n_columns = 1
         self.plotted   = 0
+        self.__layout_subplots()
+
+    def __layout_subplots(self):
+        """Create layouts."""
+        plot_obj_l     = []
+        x              = 0
+        for i in range(0, self.n_plots):
+            plot_obj_l.append(matplotlib.pyplot.subplot2grid((self.n_rows, 1), (x, 0), rowspan=self.h_ratios[i]))
+            x = x + self.h_ratios[i]
+        self.plot_obj  = plot_obj_l
 
     def __inc_plotted(self):
         self.plotted   = self.plotted + 1
 
-    def plot(self, x_list, y_list, label=''):
-        """Plot the actual data."""
-        assert(self.plotted < self.n_plots)
+    def __append_new(self, ratio=1):
+        """Make preparations for appending a new plot."""
+        self.fig.clf()                           # Clear figure
+        self.n_plots   = self.n_plots + 1        # Calculate new number of subplots
+        self.h_ratios.append(ratio)              # Calculate new hratios
+        self.n_rows    = sum(self.h_ratios)      # Calculate fresh number of rows
+        self.__layout_subplots()                 # refresh previous layouts with new configuration
+        self.plotted   = 0                       # reset plotted parameter
 
+        # Draw previous plots again
+        for i in range(0, (self.n_plots - 1)):
+            if self.plot_type[i] == self.PLOT_TYPE_PLOT:
+                self.plot(self.datalist[i][0], self.datalist[i][1], self.datalist[i][2])
+            elif self.plot_type[i] == self.PLOT_TYPE_BAR:
+                self.bar(self.datalist[i][0], self.datalist[i][1], self.datalist[i][2])
+
+    def plot(self, x_list, y_list, label='', ratio=1):
+        """Plot the actual data."""
+        # If the maximum limit exceeded, resize the number of plots
+        if self.plotted >= self.n_plots:
+            self.__append_new(ratio)
+
+        # Plot
         obj_this       = self.plot_obj[self.plotted]
         obj_this.grid()
         obj_this.set_title(label)
         obj_this.plot(x_list, y_list)
+        self.fig.tight_layout()
+       
+        # Update internal data structure 
+        self.datalist.append([x_list, y_list, label])
+        self.plot_type.append(self.PLOT_TYPE_PLOT)
         self.__inc_plotted()
 
-    def bar(self, x_list, y_list, label=''):
+    def bar(self, x_list, y_list, label='', ratio=1):
         """Plot the actual data as bars."""
-        assert(self.plotted < self.n_plots)
+        # If the maximum limit exceeded, resize the number of plots
+        if self.plotted >= self.n_plots:
+            self.__append_new(ratio)
 
+        # Plot
         obj_this       = self.plot_obj[self.plotted]
         obj_this.grid()
         obj_this.set_title(label)
         obj_this.bar(x_list, y_list)
+        self.fig.tight_layout()
+
+        # Update internal data structures
+        self.datalist.append([x_list, y_list, label])
+        self.plot_type.append(self.PLOT_TYPE_BAR)
         self.__inc_plotted()
 
-    def plot_pandas_series(self, series, label=''):
+    def plot_pandas_series(self, series, label='', ratio=1):
         """Plot pandas.core.series.Series type data."""
         assert(type(series) == pandas.core.series.Series)
-        self.plot(series.index.tolist(), series.tolist(), label)
+        self.plot(series.index.tolist(), series.tolist(), label, ratio)
 
-    def bar_pandas_series(self, series, label=''):
+    def bar_pandas_series(self, series, label='', ratio=1):
         """Plot pandas.core.series.Series type data as bars."""
         assert(type(series) == pandas.core.series.Series)
-        self.bar(series.index.tolist(), series.tolist(), label)
+        self.bar(series.index.tolist(), series.tolist(), label, ratio)
 
