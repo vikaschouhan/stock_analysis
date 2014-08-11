@@ -4,13 +4,14 @@ import argparse
 import datetime
 import re
 import pickle
+import sys
 
 import pandas as pd
 import pandas.io.data
 from   pandas import Series, DataFrame
 
-import matplotlib.pyplot as plt
-import matplotlib as mpl
+sys.path.append(".")
+import analysis
 
 #################################
 # global variables
@@ -90,7 +91,7 @@ def main_loop(ticker_dict):
 
     # if plotting is enabled now is the time to display the graphs
     if plot_yes:
-        plt.show()
+        analysis.show()
 
 ##########################################################################
 # Process and plot the stock movement along with some moving averages
@@ -134,40 +135,17 @@ def process_stock_graph_series(obj, label):
 
     title = "Closing Price trend [with ";
 
-    # Make subplots for showing various graphs in same fig
-    #fig, axarr = plt.subplots(2, sharex=True)
-    fig         = plt.figure(label)
-    ax_cp       = plt.subplot2grid((4, 1), (0, 0), rowspan=2)
-    ax_v        = plt.subplot2grid((4, 1), (2, 0), rowspan=1)
-    ax_t        = plt.subplot2grid((4, 1), (3, 0), rowspan=1)
+    plot_obj = analysis.plots_class(label=label)
 
     # Plot closing price trend along with moving averages
     #
-    ax_cp.plot(adj_close_data.index.tolist(), adj_close_data.tolist())
-        
+    plot_obj.plot_pandas_series(adj_close_data, ratio=2)
+    # Plot rolling means        
     for dindex in mova_days_dict.keys():
         rolling_mean = pd.rolling_mean(adj_close_data, mova_days_dict[dindex])
-       
-        x_list       = rolling_mean.index.tolist()
-        y_list       = rolling_mean.tolist()
-        title        = title + dindex + " "
-
-        ax_cp.plot(x_list, y_list)
-
-    title = title + " moving average]"
-    ax_cp.grid()
-    ax_cp.set_title(title)
-
+        plot_obj.plot_pandas_series(rolling_mean, frame=0)
     # Plot volume trend
-    ax_v.bar(vol_data.index.tolist(), vol_data.tolist())
-    ax_v.grid()
-    ax_v.set_title("Volume trend")
-
-    # Plot trend oscillator
-    trend_data = detrended_price_oscillator(adj_close_data, 20)
-    ax_t.plot(trend_data.index.tolist(), trend_data.tolist())
-    ax_t.grid()
-    ax_t.set_title("trend oscillator")
+    plot_obj.bar_pandas_series(vol_data, label="volume trend", ratio=1)
 
 
 ####################################################
@@ -325,7 +303,6 @@ if __name__ == '__main__':
 
     print "............... stock analysis parameters ...................."
     print "pandas version                                = {}" . format(pd.__version__)
-    print "matplotlib version                            = {}" . format(mpl.__version__)
     print "configured ticker trend                       = {}" . format(ticker_trend_tostr[ticker_trend])
     print "configured moving averages                    = {}" . format(mova_days_dict.keys())
     print "configured moving averages for trend analysis = {}" . format(str((pmin, pmax)))

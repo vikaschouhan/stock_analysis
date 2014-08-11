@@ -6,6 +6,7 @@ import pandas.io.data
 from   pandas import Series, DataFrame
 
 import matplotlib
+import matplotlib.pyplot
 
 #################################################################
 # analysis class
@@ -76,29 +77,10 @@ class plots_class:
         """Initialize a new figure object."""
         self.fig       = matplotlib.pyplot.figure(label)
         self.data      = {}
-        self.plotted   = 0
-        self.n_columns = 1
         self.n_plots   = 0
+        self.n_columns = 1
         self.n_rows    = 0
         self.h_ratios  = []
-
-    def new(self, n_plots, height_ratios=None, label=''):
-        """Initialize the figure object. n_plots is the total number plots on this figure. \
-                height_ratios is a tuple/list of the corresponding height ratios.The ratios should be integers only"""
-        if height_ratios == None:
-            height_ratios = [1] * n_plots
-
-        assert(type(height_ratios) == tuple or type(height_ratios) == list)
-        assert(len(height_ratios) == n_plots)
-        # Clear figure
-        self.fig.clf()
-
-        self.h_ratios  = map(int, height_ratios)
-        self.n_rows    = sum(self.h_ratios)
-        self.n_plots   = n_plots
-        self.n_columns = 1
-        self.plotted   = 0
-        self.__layout_subplots()
 
     def __layout_subplots(self):
         """Create layouts."""
@@ -109,19 +91,18 @@ class plots_class:
             x = x + self.h_ratios[i]
         self.plot_obj  = plot_obj_l
 
-    def __inc_plotted(self):
-        self.plotted   = self.plotted + 1
+    def __inc_plots(self):
+        self.n_plots   = self.n_plots + 1
 
     def __append_new(self, ratio=1):
         """Make preparations for appending a new plot."""
         self.fig.clf()                           # Clear figure
-        self.n_plots   = self.n_plots + 1        # Calculate new number of subplots
+        self.__inc_plots()                       # Increment number of n_plots
         self.h_ratios.append(ratio)              # Calculate new hratios
         self.n_rows    = sum(self.h_ratios)      # Calculate fresh number of rows
         self.__layout_subplots()                 # refresh previous layouts with new configuration
-        self.plotted   = 0                       # reset plotted parameter
 
-        # Draw previous plots again
+        # Draw previous n_plots again
         for i in range(0, (self.n_plots - 1)):
             for dict_this in self.data[i]:
                 if dict_this["plot_type"] == self.PLOT_TYPE_PLOT:
@@ -132,9 +113,8 @@ class plots_class:
     def __check_valid_frame(self, ratio, frame):
         """Check if the frame is valid.If not, allocate a new frame."""
         if frame == None:
-            if self.plotted >= self.n_plots:
-                self.__append_new(ratio)
-            return self.plotted
+            self.__append_new(ratio)
+            return self.n_plots - 1
         else:
             assert(frame < self.n_plots)
             return frame
@@ -161,7 +141,6 @@ class plots_class:
         elif plot_type == self.PLOT_TYPE_BAR:
             self.__bar(obj_this, x_list, y_list, label)
         self.fig.tight_layout()
-        self.__inc_plotted()
 
     def plot(self, x_list, y_list, label='', ratio=1, frame=None):
         """Plot the actual data."""
@@ -188,3 +167,8 @@ class plots_class:
         assert(type(series) == pandas.core.series.Series)
         self.bar(series.index.tolist(), series.tolist(), label, ratio, frame)
 
+
+############################################################################
+# wrapper over matplotlib's show()
+def show():
+    matplotlib.pyplot.show()
