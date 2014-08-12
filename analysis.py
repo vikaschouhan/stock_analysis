@@ -15,7 +15,17 @@ import matplotlib.pyplot
 #################################################################
 class parameters:
     """Parameters class."""
-    ticker_trend_tostr  = {0 : "flat", 1 : "bullish", 2 : "bearish", 99 : "nota"}
+    TICKER_TREND_TYPE_FLAT       = 0
+    TICKER_TREND_TYPE_BULLISH    = 1
+    TICKER_TREND_TYPE_BEARISH    = 2
+    TICKER_TREND_TYPE_NOTA       = 99
+
+    ticker_trend_tostr  = {
+                                 TICKER_TREND_TYPE_FLAT     : "flat",
+                                 TICKER_TREND_TYPE_BULLISH  : "bullish",
+                                 TICKER_TREND_TYPE_BEARISH  : "bearish",
+                                 TICKER_TREND_TYPE_NOTA     : "nota"
+                          }
 
     def __init__():
         self.ticker_trend        = 0          # 0 means no trend, 1 means upward trend, 2 means downward trend
@@ -33,10 +43,24 @@ class parameters:
         self.verbose             = 0                                      # verbose mode
         self.pickle_file_passed  = 0
         self.pickle_file         = 'default'
+        self.db_file             = 'default.pkl'
+        self.db_file             = 'default.txt'
 
     def add_mova_days(self, days, days_label):
         assert(type(days) == int and type(days_label) == str)
         self.mova_days_dict.update({days_label : days})
+
+    def set_input_pickle_file(self, filename):
+        self.pickle_file_passed = 1
+        self.pickle_file        = filename
+
+    def set_input_database_file(self, filename):
+        self.db_file            = filename
+
+    def set_ticker_trend(self, trend):
+        assert(trend in ticker_trend_tostr)
+        self.ticker_trend       = trend
+
 
 
 #################################################################
@@ -217,12 +241,15 @@ class plots_class:
 # analysis class
 ############################################################################
 class analysis_class:
-    def __init(self, params):
+    def __init__(self, params):
         assert(type(params) == parameters)
         self.params       = params
+        if self.params.pickle_file_passed:
+            stock_analysis_class.load_database_from_pickle(self.params.pickle_file)
+            assert(type(stock_analysis_class.pickle_dict) == dict)
 
     def init_stock_data(self, scripid, name='default'):
-        self.stock_data   = stock_analysis_class(scripid, self.params.date_start, self.params.date_end, name) 
+        self.stock_data   = stock_analysis_class(scripid, self.params.date_start, self.params.date_end, name)
 
 
 ############################################################################
