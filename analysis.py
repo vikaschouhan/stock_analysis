@@ -54,6 +54,9 @@ class parameters:
         self.pickle_file_passed = 1
         self.pickle_file        = filename
 
+    def set_output_pickle_file(self, filename):
+        self.pickle_file        = filename
+
     def set_input_database_file(self, filename):
         self.db_file            = filename
 
