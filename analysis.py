@@ -10,6 +10,21 @@ from   pandas import Series, DataFrame
 import matplotlib
 import matplotlib.pyplot
 
+####################################################
+# convert to datetime format
+####################################################
+def convert_to_datetime_format(date_str):
+    regex_date_format1 = re.compile(r'(\d+):(\d+):(\d+)')
+    regex_date_format2 = re.compile(r'(\d+)-(\d+)-(\d+)')
+
+    if regex_date_format1.match(date_str):
+        res = regex_date_format1.match(date_str)
+    elif regex_date_format2.match(date_str):
+        res = regex_date_format2.match(date_str)
+    else:
+        raise Exception("date format wrong.")
+    return datetime.datetime(int(res.groups()[0]), int(res.groups()[1]), int(res.groups()[2]))
+
 #################################################################
 # parameters class
 #################################################################
@@ -28,20 +43,20 @@ class parameters:
                           }
 
     def __init__():
-        self.ticker_trend        = 0          # 0 means no trend, 1 means upward trend, 2 means downward trend
+        self.ticker_trend        = TICKER_TREND_TYPE_FLAT
         self.mova_days_dict      = {"20_days" : 20, "40_days" : 40, "60_days" : 60, "100_days" : 100}
         self.compr_ravg_tup      = (20, 100)
         
         self.pmin                = 10
         self.pmax                = 50
         self.trade_min           = 500000     # minium trade volume to remove less liquid stocks
-        self.volume_check        = 0
-        self.price_check         = 0
+        self.volume_check        = False 
+        self.price_check         = False 
         self.date_start          = datetime.datetime(2014, 01, 01)
         self.date_end            = datetime.datetime.now()                # end time is current time
-        self.plot_yes            = 0
-        self.verbose             = 0                                      # verbose mode
-        self.pickle_file_passed  = 0
+        self.plot_yes            = False
+        self.verbose             = False                                  # verbose mode
+        self.pickle_file_passed  = False
         self.pickle_file         = 'default'
         self.db_file             = 'default.pkl'
         self.db_file             = 'default.txt'
@@ -51,7 +66,7 @@ class parameters:
         self.mova_days_dict.update({days_label : days})
 
     def set_input_pickle_file(self, filename):
-        self.pickle_file_passed = 1
+        self.pickle_file_passed = True
         self.pickle_file        = filename
 
     def set_output_pickle_file(self, filename):
@@ -63,6 +78,24 @@ class parameters:
     def set_ticker_trend(self, trend):
         assert(trend in ticker_trend_tostr)
         self.ticker_trend       = trend
+
+    def set_price_min(self, price_min):
+        self.pmin               = pmin
+        self.price_check        = True
+
+    def set_price_max(self, price_max):
+        self.pmax               = pmax
+        self.price_check        = True
+
+    def set_volume_min(self, volume_min):
+        self.trade_min          = volume_min
+        self.volume_check       = True
+
+    def set_date_start(self, tstart):
+        self.date_start         = convert_to_datetime_format(tstart)
+
+    def set_date_end(self, tend):
+        self.date_end           = convert_to_datetime_format(tend)
 
 
 
@@ -103,6 +136,13 @@ class stock_analysis_class:
         """Accumulation Distribution Data"""
         obj = self.stock_data.copy()
         return (obj["Close"] - obj["Open"])/(obj["High"] - obj["Low"]) * obj["Volume"]
+
+    def detrended_price_oscillator(self, N):
+        obj_copy_local    = self.stock_data["Adj Close"].copy()
+        half_time         = int(N/2)
+        for i in range(0, obj.size):
+            obj_copy_local[i] = obj[i] - pd.rolling_mean(obj[0:i+1], half_time)[-1]
+        return obj_copy_local
 
     def volatility_index_single_pass(self, N):
         """This Volatility indicator is 1 pass and uses closing prices."""
