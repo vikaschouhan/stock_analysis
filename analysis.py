@@ -91,13 +91,41 @@ class stock_analysis_class:
 
     def load_from_yahoo(self):
         self.stock_data      = pandas.io.data.get_data_yahoo(self.scripid, self.date_start, self.date_end)
+        self.adj_close_s     = self.stock_data["Adj Close"]
+        self.close_s         = self.stock_data["Close"]
+        self.open_s          = self.stock_data["Open"]
+        self.volume_s        = self.stock_data["Volume"]
 
     def load_from_internal_database(self):
         self.stock_data      = pickle_dict[self.scripid]
 
     def moving_average(self, N):
         """Moving average for closing prices"""
-        return pandas.rolling_mean(self.stock_data["Adj Close"], N)
+        return pandas.rolling_mean(self.adj_close_s.copy(), N)
+
+    def exponential_moving_average(self, N):
+        """Exponential moving average for closing prices."""
+        return pandas.ewma(self.adj_close_s.copy(), N)
+
+    def wilders_moving_average(self):
+        """Wilder's moving average."""
+        return self.exponential_moving_average(27)
+
+    # Uses adjusted closing price
+    def on_balance_volume(self):
+        """On balance volume."""
+        adj_close_l          = self.adj_close_s.copy()
+        obv_l                = self.volume_s.copy()
+        obv_prev             = obv_l[0]
+        close_prev           = adj_close_l[0]
+        for i in range(1, obv_l.size):
+            if adj_close_l[i] > close_prev:
+                obv_l[i]     = obv_prev + obv_l[i]
+            elif adj_close_l[i] < close_prev:
+                obv_l[i]     = obv_prev - obv_l[i]
+            close_prev       = adj_close_l[i]
+            obv_prev         = obv_l[i]
+        return obv_l
 
     def accumulation_distribution(self):
         """Accumulation Distribution Data"""
