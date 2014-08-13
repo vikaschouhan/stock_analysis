@@ -300,6 +300,39 @@ class stock_analysis_class:
         self.frame_price     = self.__plot(wma, ratio=hratio, frame=self.frame_price)
         return wma
 
+    def multiple_moving_averages(self, hratio=1):
+        """
+        Multiple moving averages.
+        Right now uses 3, 5, 7, 10, 12, 15 for short term MA and
+        30, 35, 40, 45, 50 and 60 as long term MA.
+        """
+        close_copy_this      = self.adj_close_s.copy()
+        short_term_mva       = {}
+        long_term_mva        = {}
+        frame_this           = None
+
+        short_term_mva[3]    = pandas.rolling_mean(close_copy_this,    3)
+        short_term_mva[5]    = pandas.rolling_mean(close_copy_this,    5)
+        short_term_mva[7]    = pandas.rolling_mean(close_copy_this,    7)
+        short_term_mva[10]   = pandas.rolling_mean(close_copy_this,   10)
+        short_term_mva[12]   = pandas.rolling_mean(close_copy_this,   12)
+        short_term_mva[15]   = pandas.rolling_mean(close_copy_this,   15)
+
+        long_term_mva[30]    = pandas.rolling_mean(close_copy_this,   30)
+        long_term_mva[35]    = pandas.rolling_mean(close_copy_this,   35)
+        long_term_mva[40]    = pandas.rolling_mean(close_copy_this,   40)
+        long_term_mva[45]    = pandas.rolling_mean(close_copy_this,   45)
+        long_term_mva[50]    = pandas.rolling_mean(close_copy_this,   50)
+        long_term_mva[60]    = pandas.rolling_mean(close_copy_this,   60)
+
+        # Try plotting
+        for i in short_term_mva:
+            frame_this       = self.__plot(short_term_mva[i], ratio=hratio, frame=frame_this)
+        for i in long_term_mva:
+            frame_this       = self.__plot(long_term_mva[i], ratio=hratio, frame=frame_this)
+
+        return { "ST_MA" : short_term_mva, "LT_MA" : long_term_mva }
+
     # Uses adjusted closing price
     def on_balance_volume(self, hratio=1):
         """On balance volume."""
