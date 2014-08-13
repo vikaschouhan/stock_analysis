@@ -72,6 +72,7 @@ class parameters:
 class stock_analysis_class:
     """Analysis algorithms for stock indicators."""
     pickle_dict              = {}
+    WEILDERS_CONSTANT        = 27
 
     def __init__(self, scripid, date_start, date_end=datetime.datetime.now(), name=''):
         self.scripid         = scripid
@@ -95,6 +96,8 @@ class stock_analysis_class:
         self.close_s         = self.stock_data["Close"]
         self.open_s          = self.stock_data["Open"]
         self.volume_s        = self.stock_data["Volume"]
+        self.high_s          = self.stock_data["High"]
+        self.low_s           = self.stock_data["Low"]
 
     def load_from_internal_database(self):
         self.stock_data      = pickle_dict[self.scripid]
@@ -131,6 +134,40 @@ class stock_analysis_class:
         """Accumulation Distribution Data"""
         obj = self.stock_data.copy()
         return (obj["Close"] - obj["Open"])/(obj["High"] - obj["Low"]) * obj["Volume"]
+
+    def directional_movement_system(self):
+        """Directional movement system as developed by Dr. Welles Wilder."""
+        high_copy        = self.high_s.copy()
+        low_copy         = self.low_s.copy()
+        adj_close_copy   = self.adj_close_s.copy()
+        close_copy       = self.close_s.copy()
+        plus_dm          = self.high_s.copy()
+        minus_dm         = self.low_s.copy()
+        list_size        = plus_dm.size
+        true_range       = minus_dm.copy()
+
+        # Not sure which close to use.
+        close_copy_this  = close_copy
+
+        for i in range(list_size-1, 0, -1):
+            plus_dm[i]      = high_copy[i] - high_copy[i-1]
+            minus_dm[i]     = low_copy[i-1] - low_copy[i]
+            # Insider day
+            #if plus_dm[i] > 0 and minus_dm[i] > 0:
+            #    pass
+            true_range[i]   = max(high_copy[i] - low_copy[i], high_copy[i] - close_copy_this[i-1], close_copy_this[i-1] - low_copy[i])
+
+        plus_dm14        = pandas.ewma(plus_dm,      self.WEILDERS_CONSTANT)
+        minus_dm14       = pandas.ewma(minus_dm,     self.WEILDERS_CONSTANT)
+        tr14             = pandas.ewma(true_range,   self.WEILDERS_CONSTANT)
+        plus_di14        = plus_dm14/tr14
+        minus_di14       = minus_dm14/tr14
+        di_diff          = abs(plus_di14 - minus_di14)
+        dx               = di_diff/(abs(plus_di14) + abs(minus_di14))
+        adx              = pandas.ewma(dx,           self.WEILDERS_CONSTANT)
+
+        return [plus_di14, minus_di14, adx]
+
 
     def volatility_index_single_pass(self, N):
         """This Volatility indicator is 1 pass and uses closing prices."""
