@@ -113,6 +113,7 @@ class plots_class:
         self.__draw(frame_new, x_list, y_list, label, self.PLOT_TYPE_PLOT)
         self.__append_data(frame_new,\
                   {"x_list" : x_list, "y_list" : y_list, "label" : label, "plot_type" : self.PLOT_TYPE_PLOT})
+        return frame_new
         
 
     def bar(self, x_list, y_list, label='', ratio=1, frame=None):
@@ -121,16 +122,17 @@ class plots_class:
         self.__draw(frame_new, x_list, y_list, label, self.PLOT_TYPE_BAR)
         self.__append_data(frame_new,\
                   {"x_list" : x_list, "y_list" : y_list, "label" : label, "plot_type" : self.PLOT_TYPE_BAR})
+        return frame_new
 
     def plot_pandas_series(self, series, label='', ratio=1, frame=None):
         """Plot pandas.core.series.Series type data."""
         assert(type(series) == pandas.core.series.Series)
-        self.plot(series.index.tolist(), series.tolist(), label, ratio, frame)
+        return self.plot(series.index.tolist(), series.tolist(), label, ratio, frame)
 
     def bar_pandas_series(self, series, label='', ratio=1, frame=None):
         """Plot pandas.core.series.Series type data as bars."""
         assert(type(series) == pandas.core.series.Series)
-        self.bar(series.index.tolist(), series.tolist(), label, ratio, frame)
+        return self.bar(series.index.tolist(), series.tolist(), label, ratio, frame)
 
 
 
@@ -195,21 +197,48 @@ class parameters:
 #################################################################
 class stock_analysis_class:
     """Analysis algorithms for stock indicators."""
+    use_pickle_dict          = False
     pickle_dict              = {}
     WEILDERS_CONSTANT        = 27
 
-    def __init__(self, scripid, date_start, date_end="Now", name=''):
+    def __init__(self, scripid, date_start, date_end="Now", name='', plot=False):
+        """
+        @Args
+            scripid      = yahoo scrip id of the stock (for eg. SOUTHINDBA.BO for South India Bank.)
+            date_start   = start date in form of string in \"YYYY:MM:DD\" or \"YYYY-MM-DD\" format.
+            date_end     = don't specify for current date otherwise specify in similar manner to date_start.
+            name         = name of the scrip (optional).
+            plot         = start plotting features. If enabled, each technical analysis will start plotting it's
+                           corresponding graphs.
+        """
         assert(type(date_start) == str and type(date_end) == str and type(scripid) == str and type(name) == str)
+        # Convert date_end to datetime format
         if date_end == "Now":
             date_end         = datetime.datetime.now()
         else:
             date_end         = convert_to_datetime_format(date_end)
+
         self.scripid         = scripid
         self.name            = ''
         self.date_start      = convert_to_datetime_format(date_start)
         self.date_end        = date_end
+        self.plot            = False
+        self.plot_obj        = None
+
         if self.name == '':
             self.name        = self.scripid
+        if plot:
+            self.plot        = True
+            self.plot_obj    = plots_class()
+
+        self.frame_price     = None
+        self.frame_dmx       = None
+
+        # Get data from yahoo if use_pickle_dict is not enabled
+        if not self.use_pickle_dict:
+            self.load_from_yahoo()
+        else:
+            self.load_from_internal_database()
 
     @classmethod
     def load_database_from_pickle(cls, filename):
@@ -219,7 +248,19 @@ class stock_analysis_class:
     def store_database_to_pickle(cls, filename):
         pickle.dump(cls.pickle_dict, open(filename, "wb"))
 
+    def __plot(self, series_this, ratio=1, frame=None):
+        """Internal plot function."""
+        if self.plot:
+            return self.plot_obj.plot_pandas_series(series_this, ratio=ratio, frame=frame)
+        return None
+
+    def __bar(self, series_this, ratio=1, frame=None):
+        if self.plot:
+            return self.plot_obj.bar_pandas_series(series_this, ratio=ratio, frame=frame)
+        return None
+
     def load_from_yahoo(self):
+        """Load stock information from yahoo."""
         self.stock_data      = pandas.io.data.get_data_yahoo(self.scripid, self.date_start, self.date_end)
         self.adj_close_s     = self.stock_data["Adj Close"]
         self.close_s         = self.stock_data["Close"]
@@ -231,20 +272,36 @@ class stock_analysis_class:
     def load_from_internal_database(self):
         self.stock_data      = pickle_dict[self.scripid]
 
-    def moving_average(self, N):
+    def closing_price(self, hratio=1):
+        clp                  = self.adj_close_s
+        self.frame_price     = self.__plot(clp, ratio=hratio, frame=self.frame_price)
+        return clp
+
+    def volume(self, hratio=1):
+        vol                  = self.volume_s
+        self.__plot(vol, ratio=hratio)
+        return vol
+
+    def moving_average(self, N, hratio=1):
         """Moving average for closing prices"""
-        return pandas.rolling_mean(self.adj_close_s.copy(), N)
+        mva                  = pandas.rolling_mean(self.adj_close_s.copy(), N)
+        self.frame_price     = self.__plot(mva, ratio=hratio, frame=self.frame_price)
+        return mva
 
-    def exponential_moving_average(self, N):
+    def exponential_moving_average(self, N, hratio=1):
         """Exponential moving average for closing prices."""
-        return pandas.ewma(self.adj_close_s.copy(), N)
+        ema                  = pandas.ewma(self.adj_close_s.copy(), N)
+        self.frame_price     = self.__plot(ema, ratio=hratio, frame=self.frame_price)
+        return ema
 
-    def wilders_moving_average(self):
+    def wilders_moving_average(self, hratio=1):
         """Wilder's moving average."""
-        return self.exponential_moving_average(27)
+        wma                  = self.exponential_moving_average(27)
+        self.frame_price     = self.__plot(wma, ratio=hratio, frame=self.frame_price)
+        return wma
 
     # Uses adjusted closing price
-    def on_balance_volume(self):
+    def on_balance_volume(self, hratio=1):
         """On balance volume."""
         adj_close_l          = self.adj_close_s.copy()
         obv_l                = self.volume_s.copy()
@@ -257,14 +314,17 @@ class stock_analysis_class:
                 obv_l[i]     = obv_prev - obv_l[i]
             close_prev       = adj_close_l[i]
             obv_prev         = obv_l[i]
+        self.__bar(obv_l, ratio=hratio)
         return obv_l
 
-    def accumulation_distribution(self):
+    def accumulation_distribution(self, hratio=1):
         """Accumulation Distribution Data"""
-        obj = self.stock_data.copy()
-        return (obj["Close"] - obj["Open"])/(obj["High"] - obj["Low"]) * obj["Volume"]
+        obj                  = self.stock_data.copy()
+        accum_dist           = (obj["Close"] - obj["Open"])/(obj["High"] - obj["Low"]) * obj["Volume"]
+        self.__plot(accum_dist, ratio=hratio)
+        return accum_dist
 
-    def directional_movement_system(self):
+    def directional_movement_system(self, hratio=1):
         """Directional movement system as developed by Dr. Welles Wilder."""
         high_copy        = self.high_s.copy()
         low_copy         = self.low_s.copy()
@@ -294,6 +354,10 @@ class stock_analysis_class:
         di_diff          = abs(plus_di14 - minus_di14)
         dx               = di_diff/(abs(plus_di14) + abs(minus_di14))
         adx              = pandas.ewma(dx,           self.WEILDERS_CONSTANT)
+
+        frame_this       = self.__plot(plus_di14, ratio=hratio)
+        self.__plot(minus_di14, frame=frame_this)
+        self.__plot(adx, frame=frame_this)
 
         return [plus_di14, minus_di14, adx]
 
