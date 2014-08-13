@@ -2,6 +2,7 @@
 
 import datetime
 import pickle
+import re
 
 import pandas
 import pandas.io.data
@@ -9,6 +10,129 @@ from   pandas import Series, DataFrame
 
 import matplotlib
 import matplotlib.pyplot
+
+####################################################
+# convert to datetime format
+####################################################
+def convert_to_datetime_format(date_str):
+    regex_date_format1 = re.compile(r'(\d+):(\d+):(\d+)')
+    regex_date_format2 = re.compile(r'(\d+)-(\d+)-(\d+)')
+
+    if regex_date_format1.match(date_str):
+        res = regex_date_format1.match(date_str)
+    elif regex_date_format2.match(date_str):
+        res = regex_date_format2.match(date_str)
+    else:
+        raise Exception("date format wrong.")
+    return datetime.datetime(int(res.groups()[0]), int(res.groups()[1]), int(res.groups()[2]))
+
+###############################################################################
+# new plotting class library
+###############################################################################
+class plots_class:
+    """Customized plotting class"""
+    # Plot type constants
+    PLOT_TYPE_BAR      = 0
+    PLOT_TYPE_PLOT     = 1
+
+    def __str__(self):
+        return "plots_class"
+
+    def __init__(self, label=''):
+        """Initialize a new figure object."""
+        self.fig       = matplotlib.pyplot.figure(label)
+        self.data      = {}
+        self.n_plots   = 0
+        self.n_columns = 1
+        self.n_rows    = 0
+        self.h_ratios  = []
+
+    def __layout_subplots(self):
+        """Create layouts."""
+        plot_obj_l     = []
+        x              = 0
+        for i in range(0, self.n_plots):
+            plot_obj_l.append(matplotlib.pyplot.subplot2grid((self.n_rows, 1), (x, 0), rowspan=self.h_ratios[i]))
+            x = x + self.h_ratios[i]
+        self.plot_obj  = plot_obj_l
+
+    def __inc_plots(self):
+        self.n_plots   = self.n_plots + 1
+
+    def __append_new(self, ratio=1):
+        """Make preparations for appending a new plot."""
+        self.fig.clf()                           # Clear figure
+        self.__inc_plots()                       # Increment number of n_plots
+        self.h_ratios.append(ratio)              # Calculate new hratios
+        self.n_rows    = sum(self.h_ratios)      # Calculate fresh number of rows
+        self.__layout_subplots()                 # refresh previous layouts with new configuration
+
+        # Draw previous n_plots again
+        for i in range(0, (self.n_plots - 1)):
+            for dict_this in self.data[i]:
+                if dict_this["plot_type"] == self.PLOT_TYPE_PLOT:
+                    self.__draw(i, dict_this["x_list"], dict_this["y_list"], dict_this["label"], self.PLOT_TYPE_PLOT)
+                elif dict_this["plot_type"] == self.PLOT_TYPE_BAR:
+                    self.__draw(i, dict_this["x_list"], dict_this["y_list"], dict_this["label"], self.PLOT_TYPE_BAR)
+    
+    def __check_valid_frame(self, ratio, frame):
+        """Check if the frame is valid.If not, allocate a new frame."""
+        if frame == None:
+            self.__append_new(ratio)
+            return self.n_plots - 1
+        else:
+            assert(frame < self.n_plots)
+            return frame
+
+    def __append_data(self, frame, data):
+        """Append the plot data structure to the object's internal database."""
+        if not (frame in self.data):
+            self.data[frame] = []
+        self.data[frame].append(data)
+
+    def __plot(self, obj, x_list, y_list, label):
+        obj.plot(x_list, y_list, label=label)
+
+    def __bar(self, obj, x_list, y_list, label):
+        obj.bar(x_list, y_list, label=label)
+
+    def __draw(self, frame, x_list, y_list, label, plot_type):
+        """Internal plot."""
+        obj_this       = self.plot_obj[frame]
+        obj_this.grid()
+        obj_this.set_title(label)
+        if plot_type == self.PLOT_TYPE_PLOT:
+            self.__plot(obj_this, x_list, y_list, label)
+        elif plot_type == self.PLOT_TYPE_BAR:
+            self.__bar(obj_this, x_list, y_list, label)
+        self.fig.tight_layout()
+
+    def plot(self, x_list, y_list, label='', ratio=1, frame=None):
+        """Plot the actual data."""
+        frame_new      = self.__check_valid_frame(ratio, frame)
+        self.__draw(frame_new, x_list, y_list, label, self.PLOT_TYPE_PLOT)
+        self.__append_data(frame_new,\
+                  {"x_list" : x_list, "y_list" : y_list, "label" : label, "plot_type" : self.PLOT_TYPE_PLOT})
+        
+
+    def bar(self, x_list, y_list, label='', ratio=1, frame=None):
+        """Plot the actual data as bars."""
+        frame_new      = self.__check_valid_frame(ratio, frame)
+        self.__draw(frame_new, x_list, y_list, label, self.PLOT_TYPE_BAR)
+        self.__append_data(frame_new,\
+                  {"x_list" : x_list, "y_list" : y_list, "label" : label, "plot_type" : self.PLOT_TYPE_BAR})
+
+    def plot_pandas_series(self, series, label='', ratio=1, frame=None):
+        """Plot pandas.core.series.Series type data."""
+        assert(type(series) == pandas.core.series.Series)
+        self.plot(series.index.tolist(), series.tolist(), label, ratio, frame)
+
+    def bar_pandas_series(self, series, label='', ratio=1, frame=None):
+        """Plot pandas.core.series.Series type data as bars."""
+        assert(type(series) == pandas.core.series.Series)
+        self.bar(series.index.tolist(), series.tolist(), label, ratio, frame)
+
+
 
 #################################################################
 # parameters class
@@ -74,10 +198,15 @@ class stock_analysis_class:
     pickle_dict              = {}
     WEILDERS_CONSTANT        = 27
 
-    def __init__(self, scripid, date_start, date_end=datetime.datetime.now(), name=''):
+    def __init__(self, scripid, date_start, date_end="Now", name=''):
+        assert(type(date_start) == str and type(date_end) == str and type(scripid) == str and type(name) == str)
+        if date_end == "Now":
+            date_end         = datetime.datetime.now()
+        else:
+            date_end         = convert_to_datetime_format(date_end)
         self.scripid         = scripid
         self.name            = ''
-        self.date_start      = date_start
+        self.date_start      = convert_to_datetime_format(date_start)
         self.date_end        = date_end
         if self.name == '':
             self.name        = self.scripid
@@ -201,108 +330,6 @@ class stock_analysis_class:
         print "name = {}, date_start = {}, date_end = {}" . format(self.name, self.date_start, self.date_end)
 
 
-###############################################################################
-# new plotting class library
-###############################################################################
-class plots_class:
-    """Customized plotting class"""
-    # Plot type constants
-    PLOT_TYPE_BAR      = 0
-    PLOT_TYPE_PLOT     = 1
-
-    def __init__(self, label=''):
-        """Initialize a new figure object."""
-        self.fig       = matplotlib.pyplot.figure(label)
-        self.data      = {}
-        self.n_plots   = 0
-        self.n_columns = 1
-        self.n_rows    = 0
-        self.h_ratios  = []
-
-    def __layout_subplots(self):
-        """Create layouts."""
-        plot_obj_l     = []
-        x              = 0
-        for i in range(0, self.n_plots):
-            plot_obj_l.append(matplotlib.pyplot.subplot2grid((self.n_rows, 1), (x, 0), rowspan=self.h_ratios[i]))
-            x = x + self.h_ratios[i]
-        self.plot_obj  = plot_obj_l
-
-    def __inc_plots(self):
-        self.n_plots   = self.n_plots + 1
-
-    def __append_new(self, ratio=1):
-        """Make preparations for appending a new plot."""
-        self.fig.clf()                           # Clear figure
-        self.__inc_plots()                       # Increment number of n_plots
-        self.h_ratios.append(ratio)              # Calculate new hratios
-        self.n_rows    = sum(self.h_ratios)      # Calculate fresh number of rows
-        self.__layout_subplots()                 # refresh previous layouts with new configuration
-
-        # Draw previous n_plots again
-        for i in range(0, (self.n_plots - 1)):
-            for dict_this in self.data[i]:
-                if dict_this["plot_type"] == self.PLOT_TYPE_PLOT:
-                    self.__draw(i, dict_this["x_list"], dict_this["y_list"], dict_this["label"], self.PLOT_TYPE_PLOT)
-                elif dict_this["plot_type"] == self.PLOT_TYPE_BAR:
-                    self.__draw(i, dict_this["x_list"], dict_this["y_list"], dict_this["label"], self.PLOT_TYPE_BAR)
-    
-    def __check_valid_frame(self, ratio, frame):
-        """Check if the frame is valid.If not, allocate a new frame."""
-        if frame == None:
-            self.__append_new(ratio)
-            return self.n_plots - 1
-        else:
-            assert(frame < self.n_plots)
-            return frame
-
-    def __append_data(self, frame, data):
-        """Append the plot data structure to the object's internal database."""
-        if not (frame in self.data):
-            self.data[frame] = []
-        self.data[frame].append(data)
-
-    def __plot(self, obj, x_list, y_list, label):
-        obj.plot(x_list, y_list, label=label)
-
-    def __bar(self, obj, x_list, y_list, label):
-        obj.bar(x_list, y_list, label=label)
-
-    def __draw(self, frame, x_list, y_list, label, plot_type):
-        """Internal plot."""
-        obj_this       = self.plot_obj[frame]
-        obj_this.grid()
-        obj_this.set_title(label)
-        if plot_type == self.PLOT_TYPE_PLOT:
-            self.__plot(obj_this, x_list, y_list, label)
-        elif plot_type == self.PLOT_TYPE_BAR:
-            self.__bar(obj_this, x_list, y_list, label)
-        self.fig.tight_layout()
-
-    def plot(self, x_list, y_list, label='', ratio=1, frame=None):
-        """Plot the actual data."""
-        frame_new      = self.__check_valid_frame(ratio, frame)
-        self.__draw(frame_new, x_list, y_list, label, self.PLOT_TYPE_PLOT)
-        self.__append_data(frame_new,\
-                  {"x_list" : x_list, "y_list" : y_list, "label" : label, "plot_type" : self.PLOT_TYPE_PLOT})
-        
-
-    def bar(self, x_list, y_list, label='', ratio=1, frame=None):
-        """Plot the actual data as bars."""
-        frame_new      = self.__check_valid_frame(ratio, frame)
-        self.__draw(frame_new, x_list, y_list, label, self.PLOT_TYPE_BAR)
-        self.__append_data(frame_new,\
-                  {"x_list" : x_list, "y_list" : y_list, "label" : label, "plot_type" : self.PLOT_TYPE_BAR})
-
-    def plot_pandas_series(self, series, label='', ratio=1, frame=None):
-        """Plot pandas.core.series.Series type data."""
-        assert(type(series) == pandas.core.series.Series)
-        self.plot(series.index.tolist(), series.tolist(), label, ratio, frame)
-
-    def bar_pandas_series(self, series, label='', ratio=1, frame=None):
-        """Plot pandas.core.series.Series type data as bars."""
-        assert(type(series) == pandas.core.series.Series)
-        self.bar(series.index.tolist(), series.tolist(), label, ratio, frame)
 
 
 ############################################################################
