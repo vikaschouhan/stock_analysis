@@ -59,6 +59,38 @@ class plots_class:
     def __inc_plots(self):
         self.n_plots   = self.n_plots + 1
 
+    def __dec_plots(self):
+        self.n_plots   = self.n_plots - 1
+     
+    # FIXME:
+    # This function is hack to ensure that self.data behaves as a list while popping an
+    # element i.e it's keys readjust automatically depending on which frame was popped.
+    # We may need to fix it later on.
+    def __pop_plots_data(self, pop_key):
+        n_data         = {}
+        for i in range(0, pop_key):
+            n_data[i]  = self.data[i]
+        for i in range(pop_key, len(self.data.keys()) - 1):
+            n_data[i]  = self.data[i+1]
+        self.data      = n_data
+
+    def __remove_frame(self, frame):
+        """Internal function to remove a frame."""
+        self.fig.clf()
+        self.__dec_plots()                           # Decrement number of n_plots
+        self.h_ratios.remove(self.h_ratios[frame])   # Calculate new ratios
+        self.n_rows    = sum(self.h_ratios)          # Calculate fresh number of rows
+        self.__layout_subplots()                     # refresh previous layouts with new configuration
+        self.__pop_plots_data(frame)
+        
+        # Draw all plots again
+        for i in range(0, self.n_plots):
+            for dict_this in self.data[i]:
+                if dict_this["plot_type"] == self.PLOT_TYPE_PLOT:
+                    self.__draw(i, dict_this["x_list"], dict_this["y_list"], dict_this["label"], self.PLOT_TYPE_PLOT)
+                elif dict_this["plot_type"] == self.PLOT_TYPE_BAR:
+                    self.__draw(i, dict_this["x_list"], dict_this["y_list"], dict_this["label"], self.PLOT_TYPE_BAR)
+
     def __append_new(self, ratio=1):
         """Make preparations for appending a new plot."""
         self.fig.clf()                           # Clear figure
@@ -106,6 +138,10 @@ class plots_class:
         elif plot_type == self.PLOT_TYPE_BAR:
             self.__bar(obj_this, x_list, y_list, label)
         self.fig.tight_layout()
+
+    def del_frame(self, frameno):
+        """Delete a frame."""
+        self.__remove_frame(frameno)
 
     def plot(self, x_list, y_list, label='', ratio=1, frame=None):
         """Plot the actual data."""
@@ -258,6 +294,16 @@ class stock_analysis_class:
         if self.plot:
             return self.plot_obj.bar_pandas_series(series_this, ratio=ratio, frame=frame)
         return None
+
+    def delete_frame(self, frame=None):
+        if self.plot:
+            # Clear any previously assigned frame, if it matches the frame to be deleted.
+            if self.frame_price == frame:
+                self.frame_price = None
+            elif self.frame_dmx == frame:
+                self.frame_dmx = None
+            # Delete the frame
+            self.plot_obj.del_frame(frame)
 
     def load_from_yahoo(self):
         """Load stock information from yahoo."""
