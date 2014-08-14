@@ -664,6 +664,42 @@ class stock_analysis_class:
 
         return momentum
 
+    def aroon_oscillator(self, N=None, hratio=1):
+        """
+        Return and plot aroon oscillator.
+        @args
+            N            = time period in days. If not provided, default (14 days) will be assumed.
+            hratio       = height ratio of the plot.
+        @return
+            list of aroon_up and aroon_down. aroon_up and aroon_down are of pandas.Series type.
+        """
+        adj_close_copy       = self.adj_close_s.copy()
+        close_copy           = self.close_s.copy()
+        
+        close_copy_this      = adj_close_copy
+        aroon_up             = close_copy_this.copy()
+        aroon_down           = aroon_up.copy()
+        list_size            = close_copy_this.size
+        if N == None:
+            N                = self.WEILDERS_CONSTANT
+
+        for i in range(list_size-1, -1, -1):
+            marker_a         = max(i - N + 1, 0)
+            marker_b         = i + 1
+            list_slice       = close_copy_this[marker_a:marker_b]
+
+            max_this         = list_slice.max()
+            min_this         = list_slice.min()
+            max_index        = list_slice.tolist().index(max_this)
+            min_index        = list_slice.tolist().index(min_this)
+
+            aroon_up[i]      = float(N - 1 - max_index)/N * 100
+            aroon_down[i]    = float(N - 1 - min_index)/N * 100
+
+        frame_this           = self.__plot(aroon_up,   ratio=hratio)
+        frame_this           = self.__plot(aroon_down, ratio=hratio, frame=frame_this)
+
+        return [aroon_up, aroon_down]
 
     def volatility_index_single_pass(self, N):
         """
