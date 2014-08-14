@@ -325,7 +325,7 @@ class stock_analysis_class:
 
     def volume(self, hratio=1):
         vol                  = self.volume_s
-        self.__plot(vol, ratio=hratio)
+        self.__bar(vol, ratio=hratio)
         return vol
 
     def moving_average(self, N, hratio=1):
