@@ -199,7 +199,7 @@ class stock_analysis_class:
     """Analysis algorithms for stock indicators."""
     use_pickle_dict          = False
     pickle_dict              = {}
-    WEILDERS_CONSTANT        = 27
+    WEILDERS_CONSTANT        = 14
 
     def __init__(self, scripid, date_start, date_end="Now", name='', plot=False):
         """
@@ -372,27 +372,36 @@ class stock_analysis_class:
         close_copy_this  = close_copy
 
         for i in range(list_size-1, 0, -1):
-            plus_dm[i]      = high_copy[i] - high_copy[i-1]
-            minus_dm[i]     = low_copy[i-1] - low_copy[i]
+            delta_high          = high_copy[i] - high_copy[i-1]
+            delta_low           = low_copy[i-1] - low_copy[i]
+
+            if (delta_high < 0 and delta_low < 0) or delta_high == delta_low:
+                plus_dm[i]      = 0
+                minus_dm[i]     = 0
+            elif delta_high > delta_low:
+                plus_dm[i]      = delta_high
+                minus_dm[i]     = 0
+            elif delta_high < delta_low:
+                plus_dm[i]      = 0
+                minus_dm[i]     = delta_low
             # Insider day
             #if plus_dm[i] > 0 and minus_dm[i] > 0:
             #    pass
-            true_range[i]   = max(high_copy[i] - low_copy[i], high_copy[i] - close_copy_this[i-1], close_copy_this[i-1] - low_copy[i])
+            true_range[i]   = max(abs(high_copy[i] - low_copy[i]), abs(high_copy[i] - close_copy_this[i-1]), abs(close_copy_this[i-1] - low_copy[i]))
 
-        plus_dm14        = pandas.ewma(plus_dm,      self.WEILDERS_CONSTANT)
-        minus_dm14       = pandas.ewma(minus_dm,     self.WEILDERS_CONSTANT)
-        tr14             = pandas.ewma(true_range,   self.WEILDERS_CONSTANT)
-        plus_di14        = plus_dm14/tr14
-        minus_di14       = minus_dm14/tr14
-        di_diff          = abs(plus_di14 - minus_di14)
-        dx               = di_diff/(abs(plus_di14) + abs(minus_di14))
+        plus_adm         = pandas.ewma(plus_dm,      self.WEILDERS_CONSTANT)
+        minus_adm        = pandas.ewma(minus_dm,     self.WEILDERS_CONSTANT)
+        atr              = pandas.ewma(true_range,   self.WEILDERS_CONSTANT)
+        plus_di          = plus_adm/atr * 100
+        minus_di         = minus_adm/atr * 100
+        dx               = abs(plus_di - minus_di)/(plus_di + minus_di) * 100
         adx              = pandas.ewma(dx,           self.WEILDERS_CONSTANT)
 
-        frame_this       = self.__plot(plus_di14, ratio=hratio)
-        self.__plot(minus_di14, frame=frame_this)
+        frame_this       = self.__plot(plus_di, ratio=hratio)
+        self.__plot(minus_di, frame=frame_this)
         self.__plot(adx, frame=frame_this)
 
-        return [plus_di14, minus_di14, adx]
+        return [plus_di, minus_di, adx]
 
 
     def volatility_index_single_pass(self, N):
