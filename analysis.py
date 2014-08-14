@@ -403,7 +403,7 @@ class stock_analysis_class:
         self.__plot(accum_dist, ratio=hratio)
         return accum_dist
 
-    def directional_movement_system(self, hratio=1):
+    def directional_movement_system(self, N=None, hratio=1):
         """Directional movement system as developed by Dr. Welles Wilder."""
         high_copy        = self.high_s.copy()
         low_copy         = self.low_s.copy()
@@ -416,6 +416,8 @@ class stock_analysis_class:
 
         # Not sure which close to use.
         close_copy_this  = close_copy
+        if N == None:
+            N            = self.WEILDERS_CONSTANT
 
         for i in range(list_size-1, 0, -1):
             delta_high          = high_copy[i] - high_copy[i-1]
@@ -435,19 +437,57 @@ class stock_analysis_class:
             #    pass
             true_range[i]   = max(abs(high_copy[i] - low_copy[i]), abs(high_copy[i] - close_copy_this[i-1]), abs(close_copy_this[i-1] - low_copy[i]))
 
-        plus_adm         = pandas.ewma(plus_dm,      self.WEILDERS_CONSTANT)
-        minus_adm        = pandas.ewma(minus_dm,     self.WEILDERS_CONSTANT)
-        atr              = pandas.ewma(true_range,   self.WEILDERS_CONSTANT)
+        plus_adm         = pandas.ewma(plus_dm,      N)
+        minus_adm        = pandas.ewma(minus_dm,     N)
+        atr              = pandas.ewma(true_range,   N)
         plus_di          = plus_adm/atr * 100
         minus_di         = minus_adm/atr * 100
         dx               = abs(plus_di - minus_di)/(plus_di + minus_di) * 100
-        adx              = pandas.ewma(dx,           self.WEILDERS_CONSTANT)
+        adx              = pandas.ewma(dx,           N)
 
         frame_this       = self.__plot(plus_di, ratio=hratio)
         self.__plot(minus_di, frame=frame_this)
         self.__plot(adx, frame=frame_this)
 
         return [plus_di, minus_di, adx]
+
+    def momentum_oscillator(self, N=None, hratio=1):
+        """Momentum oscillator."""
+        adj_close_copy   = self.adj_close_s.copy()
+        close_copy       = self.close_s.copy()
+        momentum         = close_copy.copy()
+
+        # Not sure which close to use.
+        close_copy_this  = close_copy
+        if N == None:
+            N            = self.WEILDERS_CONSTANT
+
+        for i in range(momentum.size-1, -1, -1):
+            prev_i       = max(i-N, 0)
+            momentum[i]  = close_copy_this[i]/close_copy_this[prev_i]
+
+        self.__plot(momentum, ratio=hratio)
+
+        return momentum
+
+    def momentum(self, N=None, hratio=1):
+        """Momentum oscillator."""
+        adj_close_copy   = self.adj_close_s.copy()
+        close_copy       = self.close_s.copy()
+        momentum         = close_copy.copy()
+
+        # Not sure which close to use.
+        close_copy_this  = close_copy
+        if N == None:
+            N            = self.WEILDERS_CONSTANT
+
+        for i in range(momentum.size-1, -1, -1):
+            prev_i       = max(i-N, 0)
+            momentum[i]  = close_copy_this[i] - close_copy_this[prev_i]
+
+        self.__plot(momentum, ratio=hratio)
+
+        return momentum
 
 
     def volatility_index_single_pass(self, N):
