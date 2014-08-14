@@ -39,7 +39,11 @@ class plots_class:
         return "plots_class"
 
     def __init__(self, label=''):
-        """Initialize a new figure object."""
+        """
+        Initialize a new figure object.
+        @args
+            label         = label to be assigned to figure.
+        """
         self.fig       = matplotlib.pyplot.figure(label)
         self.data      = {}
         self.n_plots   = 0
@@ -48,7 +52,10 @@ class plots_class:
         self.h_ratios  = []
 
     def __layout_subplots(self):
-        """Create layouts."""
+        """
+        Internal function.
+        WARNING !! Don't call this function.
+        """
         plot_obj_l     = []
         x              = 0
         for i in range(0, self.n_plots):
@@ -57,9 +64,17 @@ class plots_class:
         self.plot_obj  = plot_obj_l
 
     def __inc_plots(self):
+        """
+        Internal function.
+        WARNING !! Don't call this function.
+        """
         self.n_plots   = self.n_plots + 1
 
     def __dec_plots(self):
+        """
+        Internal function.
+        WARNING !! Don't call this function.
+        """
         self.n_plots   = self.n_plots - 1
      
     # FIXME:
@@ -67,6 +82,10 @@ class plots_class:
     # element i.e it's keys readjust automatically depending on which frame was popped.
     # We may need to fix it later on.
     def __pop_plots_data(self, pop_key):
+        """
+        Internal function.
+        WARNING !! Don't call this function.
+        """
         n_data         = {}
         for i in range(0, pop_key):
             n_data[i]  = self.data[i]
@@ -75,7 +94,10 @@ class plots_class:
         self.data      = n_data
 
     def __remove_frame(self, frame):
-        """Internal function to remove a frame."""
+        """
+        Internal function.
+        WARNING !! Don't call this function.
+        """
         self.fig.clf()
         self.__dec_plots()                           # Decrement number of n_plots
         self.h_ratios.remove(self.h_ratios[frame])   # Calculate new ratios
@@ -92,7 +114,10 @@ class plots_class:
                     self.__draw(i, dict_this["x_list"], dict_this["y_list"], dict_this["label"], self.PLOT_TYPE_BAR)
 
     def __append_new(self, ratio=1):
-        """Make preparations for appending a new plot."""
+        """
+        Internal function.
+        WARNING !! Don't call this function.
+        """
         self.fig.clf()                           # Clear figure
         self.__inc_plots()                       # Increment number of n_plots
         self.h_ratios.append(ratio)              # Calculate new hratios
@@ -108,7 +133,10 @@ class plots_class:
                     self.__draw(i, dict_this["x_list"], dict_this["y_list"], dict_this["label"], self.PLOT_TYPE_BAR)
     
     def __check_valid_frame(self, ratio, frame):
-        """Check if the frame is valid.If not, allocate a new frame."""
+        """
+        Internal function.
+        WARNING !! Don't call this function.
+        """
         if frame == None:
             self.__append_new(ratio)
             return self.n_plots - 1
@@ -117,19 +145,33 @@ class plots_class:
             return frame
 
     def __append_data(self, frame, data):
-        """Append the plot data structure to the object's internal database."""
+        """
+        Internal function.
+        WARNING !! Don't call this function.
+        """ 
         if not (frame in self.data):
             self.data[frame] = []
         self.data[frame].append(data)
 
     def __plot(self, obj, x_list, y_list, label):
+        """
+        Internal function.
+        WARNING !! Don't call this function.
+        """
         obj.plot(x_list, y_list, label=label)
 
     def __bar(self, obj, x_list, y_list, label):
+        """
+        Internal function.
+        WARNING !! Don't call this function.
+        """
         obj.bar(x_list, y_list, label=label)
 
     def __draw(self, frame, x_list, y_list, label, plot_type):
-        """Internal plot."""
+        """
+        Internal function.
+        WARNING !! Don't call this function.
+        """
         obj_this       = self.plot_obj[frame]
         obj_this.grid()
         obj_this.set_title(label)
@@ -140,11 +182,25 @@ class plots_class:
         self.fig.tight_layout()
 
     def del_frame(self, frameno):
-        """Delete a frame."""
+        """
+        Delete a frame.
+        @args
+            frameno       = frame number to be deleted.
+        """
         self.__remove_frame(frameno)
 
     def plot(self, x_list, y_list, label='', ratio=1, frame=None):
-        """Plot the actual data."""
+        """
+        Plot the actual data.
+        NOTE : Both x_list and y_list should be of same size.
+        @args
+            x_list        = list of x-axis values.
+            y_list        = list of y-axis values.
+            label         = label for this plot.
+            ratio         = height ratio for this plot.
+            frame         = frame number to be passed in case, this plot needs to be superimposed on an already
+                            drawn plot.
+        """
         frame_new      = self.__check_valid_frame(ratio, frame)
         self.__draw(frame_new, x_list, y_list, label, self.PLOT_TYPE_PLOT)
         self.__append_data(frame_new,\
@@ -153,7 +209,17 @@ class plots_class:
         
 
     def bar(self, x_list, y_list, label='', ratio=1, frame=None):
-        """Plot the actual data as bars."""
+        """
+        Plot the actual data as vertical bars.
+        NOTE : Both x_list and y_list should be of same size.
+        @args
+            x_list        = list of x-axis values.
+            y_list        = list of y-axis values.
+            label         = label for this plot.
+            ratio         = height ratio for this plot.
+            frame         = frame number to be passed in case, this plot needs to be superimposed on an already
+                            drawn plot.
+        """
         frame_new      = self.__check_valid_frame(ratio, frame)
         self.__draw(frame_new, x_list, y_list, label, self.PLOT_TYPE_BAR)
         self.__append_data(frame_new,\
@@ -161,12 +227,28 @@ class plots_class:
         return frame_new
 
     def plot_pandas_series(self, series, label='', ratio=1, frame=None):
-        """Plot pandas.core.series.Series type data."""
+        """
+        Plot pandas.core.series.Series type data.
+        @args
+            series        = data of type pandas.Series.series
+            label         = label for this plot.
+            ratio         = height ratio for this plot.
+            frame         = frame number to be passed in case, this plot needs to be superimposed on an already
+                            drawn plot.
+        """
         assert(type(series) == pandas.core.series.Series)
         return self.plot(series.index.tolist(), series.tolist(), label, ratio, frame)
 
     def bar_pandas_series(self, series, label='', ratio=1, frame=None):
-        """Plot pandas.core.series.Series type data as bars."""
+        """
+        Plot pandas.core.series.Series type data as vertical bars.
+        @args
+            series        = data of type pandas.Series.series
+            label         = label for this plot.
+            ratio         = height ratio for this plot.
+            frame         = frame number to be passed in case, this plot needs to be superimposed on an already
+                            drawn plot.
+        """
         assert(type(series) == pandas.core.series.Series)
         return self.bar(series.index.tolist(), series.tolist(), label, ratio, frame)
 
