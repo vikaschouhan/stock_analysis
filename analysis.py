@@ -175,6 +175,30 @@ class plots_class:
             self.data[frame] = []
         self.data[frame].append(data)
 
+    def __get_frame_data(self, frame):
+        """
+        Internal function.
+        WARNING !! Don't call this function.
+        """
+        assert(frame in self.data)
+        return self.data[frame]
+
+    def __get_labels_list_for_frame(self, frame):
+        return map(lambda x: x["label"], self.__get_frame_data(frame))
+
+    def __get_default_next_label(self, frame, label=''):
+        if label == '' or label == None:
+            if (frame in self.data):
+                return "frame" + str(frame) + "_diag" + str(len(self.data[frame]))
+            else:
+                return "frame" + str(frame) + "_diag0"
+        else:
+            return label
+
+    def __add_legend(self, frame):
+        self.plot_obj[frame].legend(self.__get_labels_list_for_frame(frame))
+
+
     def __plot(self, frame, x_list, y_list, label):
         """
         Internal function.
@@ -198,12 +222,14 @@ class plots_class:
         """
         obj_this       = self.plot_obj[frame]
         obj_this.grid()
+        label          = self.__get_default_next_label(frame, label)
         obj_this.set_title(label)
         if plot_type == self.PLOT_TYPE_PLOT:
             self.__plot(frame, x_list, y_list, label)
         elif plot_type == self.PLOT_TYPE_BAR:
             self.__bar(frame, x_list, y_list, label)
         self.fig.tight_layout()
+        return label
 
     def del_frame(self, frameno):
         """
@@ -226,9 +252,10 @@ class plots_class:
                             drawn plot.
         """
         frame_new      = self.__check_valid_frame(ratio, frame)
-        self.__draw(frame_new, x_list, y_list, label, self.PLOT_TYPE_PLOT)
+        label          = self.__draw(frame_new, x_list, y_list, label, self.PLOT_TYPE_PLOT)
         self.__append_data(frame_new,\
                   {"x_list" : x_list, "y_list" : y_list, "label" : label, "plot_type" : self.PLOT_TYPE_PLOT})
+        self.__add_legend(frame_new)
         return frame_new
         
 
@@ -245,9 +272,10 @@ class plots_class:
                             drawn plot.
         """
         frame_new      = self.__check_valid_frame(ratio, frame)
-        self.__draw(frame_new, x_list, y_list, label, self.PLOT_TYPE_BAR)
+        label          = self.__draw(frame_new, x_list, y_list, label, self.PLOT_TYPE_BAR)
         self.__append_data(frame_new,\
                   {"x_list" : x_list, "y_list" : y_list, "label" : label, "plot_type" : self.PLOT_TYPE_BAR})
+        self.__add_legend(frame_new)
         return frame_new
 
     def plot_pandas_series(self, series, label='', ratio=1, frame=None):
