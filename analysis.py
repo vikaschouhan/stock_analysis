@@ -175,18 +175,20 @@ class plots_class:
             self.data[frame] = []
         self.data[frame].append(data)
 
-    def __plot(self, obj, x_list, y_list, label):
+    def __plot(self, frame, x_list, y_list, label):
         """
         Internal function.
         WARNING !! Don't call this function.
         """
+        obj             = self.plot_obj[frame]
         obj.plot(x_list, y_list, label=label)
 
-    def __bar(self, obj, x_list, y_list, label):
+    def __bar(self, frame, x_list, y_list, label):
         """
         Internal function.
         WARNING !! Don't call this function.
         """
+        obj             = self.plot_obj[frame]
         obj.bar(x_list, y_list, label=label)
 
     def __draw(self, frame, x_list, y_list, label, plot_type):
@@ -198,9 +200,9 @@ class plots_class:
         obj_this.grid()
         obj_this.set_title(label)
         if plot_type == self.PLOT_TYPE_PLOT:
-            self.__plot(obj_this, x_list, y_list, label)
+            self.__plot(frame, x_list, y_list, label)
         elif plot_type == self.PLOT_TYPE_BAR:
-            self.__bar(obj_this, x_list, y_list, label)
+            self.__bar(frame, x_list, y_list, label)
         self.fig.tight_layout()
 
     def del_frame(self, frameno):
