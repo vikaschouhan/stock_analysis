@@ -388,7 +388,7 @@ class stock_analysis_class:
             self.name        = self.scripid
         if plot:
             self.plot        = True
-            self.plot_obj    = plots_class()
+            self.plot_obj    = plots_class(label=scripid)
 
         self.frame_price     = None
         self.frame_dmx       = None
