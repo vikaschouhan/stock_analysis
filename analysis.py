@@ -153,6 +153,7 @@ class plots_class:
                     self.__draw(i, dict_this["x_list"], dict_this["y_list"], dict_this["label"], self.PLOT_TYPE_PLOT)
                 elif dict_this["plot_type"] == self.PLOT_TYPE_BAR:
                     self.__draw(i, dict_this["x_list"], dict_this["y_list"], dict_this["label"], self.PLOT_TYPE_BAR)
+            self.plot_obj[i].legend(self.__get_labels_list_for_frame(i), loc="upper left")
     
     def __check_valid_frame(self, ratio, frame):
         """
@@ -196,7 +197,7 @@ class plots_class:
             return label
 
     def __add_legend(self, frame):
-        self.plot_obj[frame].legend(self.__get_labels_list_for_frame(frame))
+        self.plot_obj[frame].legend(self.__get_labels_list_for_frame(frame), loc="upper left")
 
 
     def __plot(self, frame, x_list, y_list, label):
@@ -449,7 +450,7 @@ class stock_analysis_class:
         """
         pickle.dump(cls.pickle_dict, open(filename, "wb"))
 
-    def __plot(self, series_this, ratio=1, frame=None):
+    def __plot(self, series_this, ratio=1, frame=None, label=''):
         """
         Internal plot function.
         @args
@@ -459,10 +460,10 @@ class stock_analysis_class:
                            on a previous plot.
         """
         if self.plot:
-            return self.plot_obj.plot_pandas_series(series_this, ratio=ratio, frame=frame)
+            return self.plot_obj.plot_pandas_series(series_this, ratio=ratio, frame=frame, label=label)
         return None
 
-    def __bar(self, series_this, ratio=1, frame=None):
+    def __bar(self, series_this, ratio=1, frame=None, label=''):
         """
         Helper bar function.
         @args
@@ -472,7 +473,7 @@ class stock_analysis_class:
                            on a previous plot.
         """
         if self.plot:
-            return self.plot_obj.bar_pandas_series(series_this, ratio=ratio, frame=frame)
+            return self.plot_obj.bar_pandas_series(series_this, ratio=ratio, frame=frame, label=label)
         return None
 
     def __select_frame_price(self, frame=None):
@@ -525,7 +526,7 @@ class stock_analysis_class:
             frame        = An optional prespecified frame.
         """
         clp                  = self.adj_close_s
-        self.frame_price     = self.__plot(clp, ratio=hratio, frame=self.__select_frame_price(frame))
+        self.frame_price     = self.__plot(clp, ratio=hratio, frame=self.__select_frame_price(frame), label="closing price")
         return clp
 
     def volume(self, hratio=1, frame=None):
@@ -536,7 +537,7 @@ class stock_analysis_class:
             frame        = An optional prespecified frame number.
         """
         vol                  = self.volume_s
-        self.__bar(vol, ratio=hratio, frame=frame)
+        self.__bar(vol, ratio=hratio, frame=frame, label="volume")
         return vol
 
     def moving_average(self, N, hratio=1, frame=None):
@@ -547,8 +548,9 @@ class stock_analysis_class:
             hratio       = height ratio of the plot.
             frame        = prespecified frame (optional)
         """
+        label_this           = "ma_" + str(N)
         mva                  = pandas.rolling_mean(self.adj_close_s.copy(), N)
-        self.frame_price     = self.__plot(mva, ratio=hratio, frame=self.__select_frame_price(frame))
+        self.frame_price     = self.__plot(mva, ratio=hratio, frame=self.__select_frame_price(frame), label=label_this)
         return mva
 
     def exponential_moving_average(self, N, hratio=1, frame=None):
@@ -559,8 +561,9 @@ class stock_analysis_class:
             hratio       = height ratio of the plot.
             frame        = optional prespecified frame number.
         """
+        label_this           = "ema_" + str(N)
         ema                  = pandas.ewma(self.adj_close_s.copy(), N)
-        self.frame_price     = self.__plot(ema, ratio=hratio, frame=self.__select_frame_price(frame))
+        self.frame_price     = self.__plot(ema, ratio=hratio, frame=self.__select_frame_price(frame), label=label_this)
         return ema
 
     def wilders_moving_average(self, hratio=1, frame=None):
@@ -570,8 +573,10 @@ class stock_analysis_class:
             hratio       = height ratio of the plot.
             frame        = An optional prespecified frame number.
         """
-        wma                  = self.exponential_moving_average(27)
-        self.frame_price     = self.__plot(wma, ratio=hratio, frame=self.__select_frame_price(frame))
+        N                    = 27
+        wma                  = self.exponential_moving_average(N)
+        # Don't plot again as it's already taken care by self.exponential_moving_average()
+        #self.frame_price     = self.__plot(wma, ratio=hratio, frame=self.__select_frame_price(frame))
         return wma
 
     def multiple_moving_averages(self, hratio=1, frame=None):
@@ -629,7 +634,7 @@ class stock_analysis_class:
                 obv_l[i]     = obv_prev - obv_l[i]
             close_prev       = adj_close_l[i]
             obv_prev         = obv_l[i]
-        self.__bar(obv_l, ratio=hratio, frame=frame)
+        self.__bar(obv_l, ratio=hratio, frame=frame, label="on balance volume")
         return obv_l
 
     def accumulation_distribution(self, hratio=1, frame=None):
@@ -641,7 +646,7 @@ class stock_analysis_class:
         """
         obj                  = self.stock_data.copy()
         accum_dist           = (obj["Close"] - obj["Open"])/(obj["High"] - obj["Low"]) * obj["Volume"]
-        self.__plot(accum_dist, ratio=hratio, frame=frame)
+        self.__plot(accum_dist, ratio=hratio, frame=frame, label="accum_dist")
         return accum_dist
 
     def directional_movement_system(self, N=None, hratio=1, frame=None):
@@ -694,9 +699,9 @@ class stock_analysis_class:
         dx               = abs(plus_di - minus_di)/(plus_di + minus_di) * 100
         adx              = pandas.ewma(dx,           N)
 
-        frame_this       = self.__plot(plus_di, ratio=hratio, frame=frame)
-        self.__plot(minus_di, frame=frame_this)
-        self.__plot(adx, frame=frame_this)
+        frame_this       = self.__plot(plus_di, ratio=hratio, frame=frame, label="+di")
+        self.__plot(minus_di, frame=frame_this, label="-di")
+        self.__plot(adx, frame=frame_this, label="adx")
 
         return [plus_di, minus_di, adx]
 
@@ -721,7 +726,7 @@ class stock_analysis_class:
             prev_i       = max(i-N, 0)
             momentum[i]  = close_copy_this[i]/close_copy_this[prev_i]
 
-        self.__plot(momentum, ratio=hratio, frame=frame)
+        self.__plot(momentum, ratio=hratio, frame=frame, label="momentum oscillator")
 
         return momentum
 
@@ -746,7 +751,7 @@ class stock_analysis_class:
             prev_i       = max(i-N, 0)
             momentum[i]  = close_copy_this[i] - close_copy_this[prev_i]
 
-        self.__plot(momentum, ratio=hratio, frame=frame)
+        self.__plot(momentum, ratio=hratio, frame=frame, label="momentum")
 
         return momentum
 
@@ -783,8 +788,8 @@ class stock_analysis_class:
             aroon_up[i]      = float(N - 1 - max_index)/N * 100
             aroon_down[i]    = float(N - 1 - min_index)/N * 100
 
-        frame_this           = self.__plot(aroon_up,   ratio=hratio, frame=frame)
-        frame_this           = self.__plot(aroon_down, ratio=hratio, frame=frame_this)
+        frame_this           = self.__plot(aroon_up,   ratio=hratio, frame=frame, label="arun_up")
+        frame_this           = self.__plot(aroon_down, ratio=hratio, frame=frame_this, label="arun_down")
 
         return [aroon_up, aroon_down]
 
