@@ -317,7 +317,20 @@ class parameters:
 # stock analysis class
 #################################################################
 class stock_analysis_class:
-    """Analysis algorithms for stock indicators."""
+    """
+    Analysis algorithms for stock indicators.
+
+    Plotting features.
+    =====================================================================================
+    Almost all technical indicators returning list of data in some form, also have two
+    optional function parameters called 'hratio' and 'frame'.
+    These parameters only get active, when an instance of this class is initialized with
+    plot=True parameter.
+    hratio indicates the height ratio of this plot on the figure canvas.
+    frame indicates that we want this plot to get superimposed on some previously drawn plot.
+    frame numbers always start from zero. Each new plot gets consequetively next frame numbers,
+    starting from zero.
+    """
     use_pickle_dict          = False
     pickle_dict              = {}
     WEILDERS_CONSTANT        = 14
@@ -410,6 +423,16 @@ class stock_analysis_class:
             return self.plot_obj.bar_pandas_series(series_this, ratio=ratio, frame=frame)
         return None
 
+    def __select_frame_price(self, frame=None):
+        """
+        Internal function.
+        WARNING !! Don't call this function.
+        """
+        if frame == None:
+            return self.frame_price
+        else:
+            return frame
+
     def delete_frame(self, frame):
         """
         Delete a previously drawn frame
@@ -442,70 +465,76 @@ class stock_analysis_class:
         """Load stock information from internal pickle database."""
         self.stock_data      = pickle_dict[self.scripid]
 
-    def closing_price(self, hratio=1):
+    def closing_price(self, hratio=1, frame=None):
         """
         Return and plot(if plot enabled) closing price trend.
         @args
             hratio       = height ratio of the plot.
+            frame        = An optional prespecified frame.
         """
         clp                  = self.adj_close_s
-        self.frame_price     = self.__plot(clp, ratio=hratio, frame=self.frame_price)
+        self.frame_price     = self.__plot(clp, ratio=hratio, frame=self.__select_frame_price(frame))
         return clp
 
-    def volume(self, hratio=1):
+    def volume(self, hratio=1, frame=None):
         """
         Return and plot(if plot enabled) volume trend.
         @args
             hratio       = height ratio of the plot.
+            frame        = An optional prespecified frame number.
         """
         vol                  = self.volume_s
-        self.__bar(vol, ratio=hratio)
+        self.__bar(vol, ratio=hratio, frame=frame)
         return vol
 
-    def moving_average(self, N, hratio=1):
+    def moving_average(self, N, hratio=1, frame=None):
         """
         Return and plot(if plot enabled) Moving average for closing price trend.
         @args
             N            = time period in days used for moving average calculation.
             hratio       = height ratio of the plot.
+            frame        = prespecified frame (optional)
         """
         mva                  = pandas.rolling_mean(self.adj_close_s.copy(), N)
-        self.frame_price     = self.__plot(mva, ratio=hratio, frame=self.frame_price)
+        self.frame_price     = self.__plot(mva, ratio=hratio, frame=self.__select_frame_price(frame))
         return mva
 
-    def exponential_moving_average(self, N, hratio=1):
+    def exponential_moving_average(self, N, hratio=1, frame=None):
         """
         Return and plot(optional) Exponential moving average for closing prices.
         @args
             N            = time period in days used for moving average calculation.
             hratio       = height ratio of the plot.
+            frame        = optional prespecified frame number.
         """
         ema                  = pandas.ewma(self.adj_close_s.copy(), N)
-        self.frame_price     = self.__plot(ema, ratio=hratio, frame=self.frame_price)
+        self.frame_price     = self.__plot(ema, ratio=hratio, frame=self.__select_frame_price(frame))
         return ema
 
-    def wilders_moving_average(self, hratio=1):
+    def wilders_moving_average(self, hratio=1, frame=None):
         """
         Return and plot Wilder's moving average.
         @args
             hratio       = height ratio of the plot.
+            frame        = An optional prespecified frame number.
         """
         wma                  = self.exponential_moving_average(27)
-        self.frame_price     = self.__plot(wma, ratio=hratio, frame=self.frame_price)
+        self.frame_price     = self.__plot(wma, ratio=hratio, frame=self.__select_frame_price(frame))
         return wma
 
-    def multiple_moving_averages(self, hratio=1):
+    def multiple_moving_averages(self, hratio=1, frame=None):
         """
         Multiple moving averages.
         Right now uses 3, 5, 7, 10, 12, 15 for short term MA and
         30, 35, 40, 45, 50 and 60 as long term MA.
         @args
             hratio       = height ratio of the plot.
+            frame        = An optional prespecified frame number.
         """
         close_copy_this      = self.adj_close_s.copy()
         short_term_mva       = {}
         long_term_mva        = {}
-        frame_this           = None
+        frame_this           = frame
 
         short_term_mva[3]    = pandas.rolling_mean(close_copy_this,    3)
         short_term_mva[5]    = pandas.rolling_mean(close_copy_this,    5)
@@ -530,11 +559,12 @@ class stock_analysis_class:
         return { "ST_MA" : short_term_mva, "LT_MA" : long_term_mva }
 
     # Uses adjusted closing price
-    def on_balance_volume(self, hratio=1):
+    def on_balance_volume(self, hratio=1, frame=None):
         """
         Return and plot On balance volume indicator.
         @args
             hratio       = height ratio of the plot.
+            frame        = An optional prespecified frame no.
         """
         adj_close_l          = self.adj_close_s.copy()
         obv_l                = self.volume_s.copy()
@@ -547,26 +577,28 @@ class stock_analysis_class:
                 obv_l[i]     = obv_prev - obv_l[i]
             close_prev       = adj_close_l[i]
             obv_prev         = obv_l[i]
-        self.__bar(obv_l, ratio=hratio)
+        self.__bar(obv_l, ratio=hratio, frame=frame)
         return obv_l
 
-    def accumulation_distribution(self, hratio=1):
+    def accumulation_distribution(self, hratio=1, frame=None):
         """
         Return and plot Accumulation Distribution Data
         @args
             hratio       = height ratio of the plot.
+            frame        = An optional prespecified frame number
         """
         obj                  = self.stock_data.copy()
         accum_dist           = (obj["Close"] - obj["Open"])/(obj["High"] - obj["Low"]) * obj["Volume"]
-        self.__plot(accum_dist, ratio=hratio)
+        self.__plot(accum_dist, ratio=hratio, frame=frame)
         return accum_dist
 
-    def directional_movement_system(self, N=None, hratio=1):
+    def directional_movement_system(self, N=None, hratio=1, frame=None):
         """
         Return and plot Directional movement system as developed by Dr. Welles Wilder.
         @args
             N            = time period in days. If not provided, default (14 days) will be assumed.
             hratio       = height ratio of the plot.
+            frame        = An optional prespecified frame no
         @return
             list of +di, -di and adx
         """
@@ -610,18 +642,19 @@ class stock_analysis_class:
         dx               = abs(plus_di - minus_di)/(plus_di + minus_di) * 100
         adx              = pandas.ewma(dx,           N)
 
-        frame_this       = self.__plot(plus_di, ratio=hratio)
+        frame_this       = self.__plot(plus_di, ratio=hratio, frame=frame)
         self.__plot(minus_di, frame=frame_this)
         self.__plot(adx, frame=frame_this)
 
         return [plus_di, minus_di, adx]
 
-    def momentum_oscillator(self, N=None, hratio=1):
+    def momentum_oscillator(self, N=None, hratio=1, frame=None):
         """
         Return and plot Momentum oscillator.
         @args
             N            = time period in days. If not provided, default (14 days) will be assumed.
             hratio       = height ratio of the plot.
+            frame        = An optional prespecified frame number
         """
         adj_close_copy   = self.adj_close_s.copy()
         close_copy       = self.close_s.copy()
@@ -636,16 +669,17 @@ class stock_analysis_class:
             prev_i       = max(i-N, 0)
             momentum[i]  = close_copy_this[i]/close_copy_this[prev_i]
 
-        self.__plot(momentum, ratio=hratio)
+        self.__plot(momentum, ratio=hratio, frame=frame)
 
         return momentum
 
-    def momentum(self, N=None, hratio=1):
+    def momentum(self, N=None, hratio=1, frame=None):
         """
         Return and plot Momentum oscillator.
         @args
             N            = time period in days. If not provided, default (14 days) will be assumed.
             hratio       = height ratio of the plot.
+            frame        = An optional prespecified frame no.
         """
         adj_close_copy   = self.adj_close_s.copy()
         close_copy       = self.close_s.copy()
@@ -660,16 +694,17 @@ class stock_analysis_class:
             prev_i       = max(i-N, 0)
             momentum[i]  = close_copy_this[i] - close_copy_this[prev_i]
 
-        self.__plot(momentum, ratio=hratio)
+        self.__plot(momentum, ratio=hratio, frame=frame)
 
         return momentum
 
-    def aroon_oscillator(self, N=None, hratio=1):
+    def aroon_oscillator(self, N=None, hratio=1, frame=None):
         """
         Return and plot aroon oscillator.
         @args
             N            = time period in days. If not provided, default (14 days) will be assumed.
             hratio       = height ratio of the plot.
+            frame        = an optional prespecified frame no
         @return
             list of aroon_up and aroon_down. aroon_up and aroon_down are of pandas.Series type.
         """
@@ -696,7 +731,7 @@ class stock_analysis_class:
             aroon_up[i]      = float(N - 1 - max_index)/N * 100
             aroon_down[i]    = float(N - 1 - min_index)/N * 100
 
-        frame_this           = self.__plot(aroon_up,   ratio=hratio)
+        frame_this           = self.__plot(aroon_up,   ratio=hratio, frame=frame)
         frame_this           = self.__plot(aroon_down, ratio=hratio, frame=frame_this)
 
         return [aroon_up, aroon_down]
