@@ -56,6 +56,7 @@ class plots_class:
     # Plot type constants
     PLOT_TYPE_BAR      = 0
     PLOT_TYPE_PLOT     = 1
+    LEGEND_PROP        = {'loc' : "upper left", 'fontsize' : 6}
 
     def __str__(self):
         return "plots_class"
@@ -134,6 +135,7 @@ class plots_class:
                     self.__draw(i, dict_this["x_list"], dict_this["y_list"], dict_this["label"], self.PLOT_TYPE_PLOT)
                 elif dict_this["plot_type"] == self.PLOT_TYPE_BAR:
                     self.__draw(i, dict_this["x_list"], dict_this["y_list"], dict_this["label"], self.PLOT_TYPE_BAR)
+            self.plot_obj[i].legend(self.__get_labels_list_for_frame(i), loc=self.LEGEND_PROP['loc'])
 
     def __append_new(self, ratio=1):
         """
@@ -153,7 +155,7 @@ class plots_class:
                     self.__draw(i, dict_this["x_list"], dict_this["y_list"], dict_this["label"], self.PLOT_TYPE_PLOT)
                 elif dict_this["plot_type"] == self.PLOT_TYPE_BAR:
                     self.__draw(i, dict_this["x_list"], dict_this["y_list"], dict_this["label"], self.PLOT_TYPE_BAR)
-            self.plot_obj[i].legend(self.__get_labels_list_for_frame(i), loc="upper left")
+            self.plot_obj[i].legend(self.__get_labels_list_for_frame(i), loc=self.LEGEND_PROP['loc'])
     
     def __check_valid_frame(self, ratio, frame):
         """
