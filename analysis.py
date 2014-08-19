@@ -25,6 +25,7 @@
 import datetime
 import pickle
 import re
+import numpy
 
 import pandas
 import pandas.io.data
@@ -734,6 +735,54 @@ class stock_analysis_class:
         accum_dist           = (obj["Close"] - obj["Open"])/(obj["High"] - obj["Low"]) * obj["Volume"]
         self.__plot(accum_dist, ratio=hratio, frame=frame, label="accum_dist")
         return accum_dist
+
+    def chaikin_money_flow(self, N=None, hratio=1, frame=None):
+        """
+        Return and plot Chaikin Money flow oscillator.
+        @args
+            N            = Number of days used for calculation (If not specified it's taken 20 by default).
+            hratio       = height ratio of the plot.
+            frame        = An optional prespecified frame number
+        """
+        close_copy_this      = self.__close_s.copy()
+        open_copy_this       = self.__open_s.copy()
+        low_copy_this        = self.__low_s.copy()
+        high_copy_this       = self.__high_s.copy()
+        volume_copy_this     = self.__volume_s.copy()
+        CMF                  = close_copy_this.copy()
+        list_size            = close_copy_this.size
+        frame_this           = frame
+        if N == None:
+            N                = 20
+
+        money_flow_mult      = ((close_copy_this - low_copy_this) - (high_copy_this - close_copy_this))/(high_copy_this - low_copy_this)
+
+        # sanitize money_flow_mult in cases where high, low etc are all same
+        # (for eg. on national holidays when the market is closed). This happpens due to erraneous
+        # data reporting from yahoo, wherein it includes weekdays when stock exchange is closed.
+        for i in range(list_size-1, 0, -1):
+            # Replace all NaNs with 0
+            if numpy.isnan(money_flow_mult[i]):
+                money_flow_mult[i]  = 0
+
+        # Money flow volume
+        money_flow_vol       = money_flow_mult * volume_copy_this
+
+        # 
+        for i in range(list_size-1, N, -1):
+            money_flow_vol_slice   = money_flow_vol[0:i+1]
+            volume_slice           = volume_copy_this[0:i+1]
+            CMF[i]                 = pandas.rolling_mean(money_flow_vol_slice, N)[-1]/pandas.rolling_mean(volume_slice, N)[-1]
+        for i in range(N, -1, -1):
+            CMF[i]                 = numpy.float64(numpy.nan)
+        # Drop NaNs
+        CMF                  = CMF.dropna()
+
+        ## Plot it
+        frame_this           = self.__plot(CMF, ratio=hratio, frame=frame_this, label="CMF")
+        frame_this           = self.__set_frame_title(frame_this, "chaikin_money_flow")
+
+        return CMF
 
     def directional_movement_system(self, N=None, hratio=1, frame=None):
         """
