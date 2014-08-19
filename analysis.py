@@ -543,12 +543,12 @@ class stock_analysis_class:
     def load_from_yahoo(self):
         """Load stock information from yahoo."""
         self.stock_data      = pandas.io.data.get_data_yahoo(self.scripid, self.date_start, self.date_end)
-        self.adj_close_s     = self.stock_data["Adj Close"]
-        self.close_s         = self.stock_data["Close"]
-        self.open_s          = self.stock_data["Open"]
-        self.volume_s        = self.stock_data["Volume"]
-        self.high_s          = self.stock_data["High"]
-        self.low_s           = self.stock_data["Low"]
+        self.__adj_close_s   = self.stock_data["Adj Close"]
+        self.__close_s       = self.stock_data["Close"]
+        self.__open_s        = self.stock_data["Open"]
+        self.__volume_s      = self.stock_data["Volume"]
+        self.__high_s        = self.stock_data["High"]
+        self.__low_s         = self.stock_data["Low"]
 
     def load_from_internal_database(self):
         """Load stock information from internal pickle database."""
@@ -561,7 +561,7 @@ class stock_analysis_class:
             hratio       = height ratio of the plot.
             frame        = An optional prespecified frame.
         """
-        clp                  = self.adj_close_s
+        clp                  = self.__adj_close_s
         self.frame_price     = self.__plot(clp, ratio=hratio, frame=self.__select_frame_price(frame), label="closing price")
         return clp
 
@@ -572,7 +572,7 @@ class stock_analysis_class:
             hratio       = height ratio of the plot.
             frame        = An optional prespecified frame number.
         """
-        vol                  = self.volume_s
+        vol                  = self.__volume_s
         self.__bar(vol, ratio=hratio, frame=frame, label="volume")
         return vol
 
@@ -585,7 +585,7 @@ class stock_analysis_class:
             frame        = prespecified frame (optional)
         """
         label_this           = "ma_" + str(N)
-        mva                  = pandas.rolling_mean(self.adj_close_s.copy(), N)
+        mva                  = pandas.rolling_mean(self.__adj_close_s.copy(), N)
         self.frame_price     = self.__plot(mva, ratio=hratio, frame=self.__select_frame_price(frame), label=label_this)
         return mva
 
@@ -598,7 +598,7 @@ class stock_analysis_class:
             frame        = optional prespecified frame number.
         """
         label_this           = "ema_" + str(N)
-        ema                  = pandas.ewma(self.adj_close_s.copy(), N)
+        ema                  = pandas.ewma(self.__adj_close_s.copy(), N)
         self.frame_price     = self.__plot(ema, ratio=hratio, frame=self.__select_frame_price(frame), label=label_this)
         return ema
 
@@ -624,7 +624,7 @@ class stock_analysis_class:
             hratio       = height ratio of the plot.
             frame        = An optional prespecified frame number.
         """
-        close_copy_this      = self.adj_close_s.copy()
+        close_copy_this      = self.__adj_close_s.copy()
         short_term_mva       = {}
         long_term_mva        = {}
         frame_this           = frame
@@ -659,7 +659,7 @@ class stock_analysis_class:
             hratio       = height ratio of the plot.
             frame        = An optional prespecified frame no.
         """
-        close_copy_this      = self.adj_close_s.copy()
+        close_copy_this      = self.__adj_close_s.copy()
         frame_this           = frame
 
         long_term_ewma       = pandas.ewma(close_copy_this, 26)
@@ -683,9 +683,9 @@ class stock_analysis_class:
             hratio       = An optional height ratio of the plot.
             frame        = An optional prespecified frame no.
         """
-        close_copy_this      = self.adj_close_s.copy()
-        high_copy_this       = self.high_s.copy()
-        low_copy_this        = self.low_s.copy()
+        close_copy_this      = self.__adj_close_s.copy()
+        high_copy_this       = self.__high_s.copy()
+        low_copy_this        = self.__low_s.copy()
         frame_this           = frame
         if N == None:
             N                = 10
@@ -709,8 +709,8 @@ class stock_analysis_class:
             hratio       = height ratio of the plot.
             frame        = An optional prespecified frame no.
         """
-        adj_close_l          = self.adj_close_s.copy()
-        obv_l                = self.volume_s.copy()
+        adj_close_l          = self.__adj_close_s.copy()
+        obv_l                = self.__volume_s.copy()
         obv_prev             = obv_l[0]
         close_prev           = adj_close_l[0]
         for i in range(1, obv_l.size):
@@ -745,12 +745,12 @@ class stock_analysis_class:
         @return
             list of +di, -di and adx
         """
-        high_copy        = self.high_s.copy()
-        low_copy         = self.low_s.copy()
-        adj_close_copy   = self.adj_close_s.copy()
-        close_copy       = self.close_s.copy()
-        plus_dm          = self.high_s.copy()
-        minus_dm         = self.low_s.copy()
+        high_copy        = self.__high_s.copy()
+        low_copy         = self.__low_s.copy()
+        adj_close_copy   = self.__adj_close_s.copy()
+        close_copy       = self.__close_s.copy()
+        plus_dm          = self.__high_s.copy()
+        minus_dm         = self.__low_s.copy()
         list_size        = plus_dm.size
         true_range       = minus_dm.copy()
         cmpr_line_25     = pandas.Series([25]*true_range.index.size, true_range.index.tolist())
@@ -802,8 +802,8 @@ class stock_analysis_class:
             hratio       = height ratio of the plot.
             frame        = An optional prespecified frame number
         """
-        adj_close_copy   = self.adj_close_s.copy()
-        close_copy       = self.close_s.copy()
+        adj_close_copy   = self.__adj_close_s.copy()
+        close_copy       = self.__close_s.copy()
         momentum         = close_copy.copy()
 
         # Not sure which close to use.
@@ -828,8 +828,8 @@ class stock_analysis_class:
             hratio       = height ratio of the plot.
             frame        = An optional prespecified frame no.
         """
-        adj_close_copy   = self.adj_close_s.copy()
-        close_copy       = self.close_s.copy()
+        adj_close_copy   = self.__adj_close_s.copy()
+        close_copy       = self.__close_s.copy()
         momentum         = close_copy.copy()
 
         # Not sure which close to use.
@@ -855,8 +855,8 @@ class stock_analysis_class:
         @return
             list of aroon_up and aroon_down. aroon_up and aroon_down are of pandas.Series type.
         """
-        adj_close_copy       = self.adj_close_s.copy()
-        close_copy           = self.close_s.copy()
+        adj_close_copy       = self.__adj_close_s.copy()
+        close_copy           = self.__close_s.copy()
         
         close_copy_this      = adj_close_copy
         aroon_up             = close_copy_this.copy()
