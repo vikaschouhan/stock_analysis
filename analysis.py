@@ -617,6 +617,28 @@ class stock_analysis_class:
 
         return { "ST_MA" : short_term_mva, "LT_MA" : long_term_mva }
 
+    def moving_average_convergence_divergence(self, hratio=1, frame=None):
+        """
+        Moving average convergence divergence based on 26 day & 12 day ema's difference as
+        MACD signal and using a 9 day ema of MACD as crossover signal.
+        @args
+            hratio       = height ratio of the plot.
+            frame        = An optional prespecified frame no.
+        """
+        close_copy_this      = self.adj_close_s.copy()
+        frame_this           = frame
+
+        long_term_ewma       = pandas.ewma(close_copy_this, 26)
+        short_term_ewma      = pandas.ewma(close_copy_this, 12)
+        conv_div_sig         = short_term_ewma -long_term_ewma
+        inter_sig            = pandas.ewma(conv_div_sig, 9)
+
+        # Try plotting
+        frame_this           = self.__plot(conv_div_sig, ratio=hratio, frame=frame_this, label="26_12_ema_diff")
+        frame_this           = self.__plot(inter_sig, ratio=hratio, frame=frame_this, label="9_ema_std")
+
+        return { "STD_SIG" : inter_sig, "CONV_DIV_SIG" : conv_div_sig }
+
     # Uses adjusted closing price
     def on_balance_volume(self, hratio=1, frame=None):
         """
@@ -669,6 +691,7 @@ class stock_analysis_class:
         minus_dm         = self.low_s.copy()
         list_size        = plus_dm.size
         true_range       = minus_dm.copy()
+        cmpr_line_25     = pandas.Series([25]*true_range.index.size, true_range.index.tolist())
 
         # Not sure which close to use.
         close_copy_this  = close_copy
@@ -704,6 +727,7 @@ class stock_analysis_class:
         frame_this       = self.__plot(plus_di, ratio=hratio, frame=frame, label="+di")
         self.__plot(minus_di, frame=frame_this, label="-di")
         self.__plot(adx, frame=frame_this, label="adx")
+        #self.__plot(cmpr_line_25, frame=frame_this, label="hl_25")
 
         return [plus_di, minus_di, adx]
 
