@@ -657,6 +657,33 @@ class stock_analysis_class:
 
         return { "STD_SIG" : inter_sig, "CONV_DIV_SIG" : conv_div_sig }
 
+    def keltner_channels(self, N=None, hratio=1, frame=None):
+        """
+        Keltner channels/bands based on N day high and low averages.If not specified,
+        N is taken as 10 days. It also plots closing price, hence no separate plotting is
+        required for closing price.
+        @args
+            N            = Time period in days used for high and low moving averages (10 by default).
+            hratio       = An optional height ratio of the plot.
+            frame        = An optional prespecified frame no.
+        """
+        close_copy_this      = self.adj_close_s.copy()
+        high_copy_this       = self.high_s.copy()
+        low_copy_this        = self.low_s.copy()
+        frame_this           = frame
+        if N == None:
+            N                = 10
+
+        high_limit_ind       = pandas.rolling_mean(high_copy_this, N)
+        low_limit_ind        = pandas.rolling_mean(low_copy_this, N)
+
+        # Try plotting
+        frame_this           = self.__plot(high_limit_ind, ratio=hratio, frame=frame_this, label="high_ind")
+        frame_this           = self.__plot(low_limit_ind, ratio=hratio, frame=frame_this, label="low_ind")
+        frame_this           = self.__plot(close_copy_this, ratio=hratio, frame=frame_this, label="close_price")
+
+        return { "HIGH_SIG" : high_limit_ind, "LOW_SIG" : low_limit_ind }
+
     # Uses adjusted closing price
     def on_balance_volume(self, hratio=1, frame=None):
         """
