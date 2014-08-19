@@ -74,6 +74,13 @@ class plots_class:
         self.n_rows    = 0
         self.h_ratios  = []
 
+    def __del__(self):
+        matplotlib.pylab.close(self.fig)
+        self.data      = {}
+        self.n_plots   = 0
+        self.n_rows    = 0
+        self.h_ratios  = []
+
     def __layout_subplots(self):
         """
         Internal function.
@@ -431,6 +438,17 @@ class stock_analysis_class:
             self.load_from_yahoo()
         else:
             self.load_from_internal_database()
+
+    def __del__(self):
+        self.scripid         = None
+        self.name            = None
+        self.date_start      = None
+        self.date_end        = None
+        if self.plot:
+            self.plot        = False
+            del self.plot_obj
+        self.frame_price     = None
+        self.frame_dmx       = None
 
     @classmethod
     def load_database_from_pickle(cls, filename):
