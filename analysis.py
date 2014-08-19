@@ -249,6 +249,16 @@ class plots_class:
         """
         self.__remove_frame(frameno)
 
+    def set_frame_title(self, frameno, title):
+        """
+        Set frame's title explicitly.Useful when drawing several plots on same frame.
+        @args
+            title         = title
+        """
+        assert(frameno < len(self.plot_obj))
+        self.plot_obj[frameno].set_title(title)
+        return frameno
+
     def plot(self, x_list, y_list, label='', ratio=1, frame=None):
         """
         Plot the actual data.
@@ -496,6 +506,12 @@ class stock_analysis_class:
             return self.plot_obj.bar_pandas_series(series_this, ratio=ratio, frame=frame, label=label)
         return None
 
+    def __set_frame_title(self, frame, title):
+        """
+        Set frame's title explicitly.
+        """
+        return self.plot_obj.set_frame_title(frame, title)
+
     def __select_frame_price(self, frame=None):
         """
         Internal function.
@@ -681,6 +697,7 @@ class stock_analysis_class:
         frame_this           = self.__plot(high_limit_ind, ratio=hratio, frame=frame_this, label="high_ind")
         frame_this           = self.__plot(low_limit_ind, ratio=hratio, frame=frame_this, label="low_ind")
         frame_this           = self.__plot(close_copy_this, ratio=hratio, frame=frame_this, label="close_price")
+        frame_this           = self.__set_frame_title(frame_this, "keltner_channels")
 
         return { "HIGH_SIG" : high_limit_ind, "LOW_SIG" : low_limit_ind }
 
@@ -770,8 +787,9 @@ class stock_analysis_class:
         adx              = pandas.ewma(dx,           N)
 
         frame_this       = self.__plot(plus_di, ratio=hratio, frame=frame, label="+di")
-        self.__plot(minus_di, frame=frame_this, label="-di")
-        self.__plot(adx, frame=frame_this, label="adx")
+        frame_this       = self.__plot(minus_di, frame=frame_this, label="-di")
+        frame_this       = self.__plot(adx, frame=frame_this, label="adx")
+        frame_this       = self.__set_frame_title(frame_this, "drectional movement system")
         #self.__plot(cmpr_line_25, frame=frame_this, label="hl_25")
 
         return [plus_di, minus_di, adx]
@@ -797,7 +815,8 @@ class stock_analysis_class:
             prev_i       = max(i-N, 0)
             momentum[i]  = close_copy_this[i]/close_copy_this[prev_i]
 
-        self.__plot(momentum, ratio=hratio, frame=frame, label="momentum oscillator")
+        frame            = self.__plot(momentum, ratio=hratio, frame=frame, label="momentum oscillator")
+        frame            = self.__set_frame_title(frame, "momentum oscillator")
 
         return momentum
 
