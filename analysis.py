@@ -49,6 +49,11 @@ def convert_to_datetime_format(date_str):
         raise Exception("date format wrong.")
     return datetime.datetime(int(res.groups()[0]), int(res.groups()[1]), int(res.groups()[2]))
 
+############################################################################
+# wrapper over matplotlib's show()
+def show():
+    matplotlib.pyplot.show()
+
 ###############################################################################
 # new plotting class library
 ###############################################################################
@@ -332,39 +337,63 @@ class plots_class:
 #################################################################
 class parameters:
     """Parameters class."""
-    TICKER_TREND_TYPE_FLAT       = 0
+    #TICKER_TREND_TYPE_FLAT       = 0
     TICKER_TREND_TYPE_BULLISH    = 1
     TICKER_TREND_TYPE_BEARISH    = 2
     TICKER_TREND_TYPE_NOTA       = 99
 
     ticker_trend_tostr  = {
-                                 TICKER_TREND_TYPE_FLAT     : "flat",
+                                 #TICKER_TREND_TYPE_FLAT     : "flat",
                                  TICKER_TREND_TYPE_BULLISH  : "bullish",
                                  TICKER_TREND_TYPE_BEARISH  : "bearish",
                                  TICKER_TREND_TYPE_NOTA     : "nota"
                           }
 
+    @classmethod
+    def trend_tostr(cls, trend):
+        assert(trend in cls.ticker_trend_tostr)
+        return cls.ticker_trend_tostr[trend]
+
     def __str__(self):
         return "parameters"
 
     def __init__(self):
-        self.ticker_trend        = 0          # 0 means no trend, 1 means upward trend, 2 means downward trend
+        self.ticker_trend        = self.TICKER_TREND_TYPE_BULLISH
         self.mova_days_dict      = {"20_days" : 20, "40_days" : 40, "60_days" : 60, "100_days" : 100}
         self.compr_ravg_tup      = (20, 100)
         
         self.pmin                = 10
         self.pmax                = 50
         self.trade_min           = 500000     # minium trade volume to remove less liquid stocks
-        self.volume_check        = 0
-        self.price_check         = 0
+        self.volume_check        = False
+        self.price_check         = False
         self.date_start          = datetime.datetime(2014, 01, 01)
         self.date_end            = datetime.datetime.now()                # end time is current time
-        self.plot_yes            = 0
-        self.verbose             = 0                                      # verbose mode
-        self.pickle_file_passed  = 0
+        self.plot_yes            = False
+        self.verbose             = False                                  # verbose mode
+        self.pickle_file_passed  = False
         self.pickle_file         = 'default'
-        self.db_file             = 'default.pkl'
+        #self.db_file             = 'default.pkl'
         self.db_file             = 'default.txt'
+
+    def print_info(self):
+        print "..............parameters.............................................."
+        print "ticker_trend       = {}" . format(self.trend_tostr(self.ticker_trend))
+        print "mova_days_dict     = {}" . format(self.mova_days_dict)
+        print "moving_av_tup      = {}" . format(self.compr_ravg_tup)
+        print "pmin               = {}" . format(self.pmin)
+        print "pmax               = {}" . format(self.pmax)
+        print "trade_min          = {}" . format(self.trade_min)
+        print "volume_check       = {}" . format(self.volume_check)
+        print "price_check        = {}" . format(self.price_check)
+        print "date_start         = {}" . format(self.date_start)
+        print "date_end           = {}" . format(self.date_end)
+        print "plot_yes           = {}" . format(self.plot_yes)
+        print "verbose            = {}" . format(self.verbose)
+        print "pickle_file_passed = {}" . format(self.pickle_file_passed)
+        print "pickle_file        = {}" . format(self.pickle_file)
+        print "db_file            = {}" . format(self.db_file)
+        print "....................................................................."
 
     def add_mova_days(self, days, days_label):
         assert(type(days) == int and type(days_label) == str)
@@ -383,6 +412,30 @@ class parameters:
     def set_ticker_trend(self, trend):
         assert(trend in ticker_trend_tostr)
         self.ticker_trend       = trend
+
+    def set_price_min(self, price):
+        self.pmin               = price
+        self.price_check        = True
+
+    def set_price_max(self, price):
+        self.pmax               = price
+        self.price_check        = True
+
+    def set_volume_min(self, vol):
+        self.trade_min          = vol
+        self.volume_check       = True
+
+    def set_date_start(self, date):
+        self.date_start         = convert_to_datetime_format(date)
+
+    def set_date_end(self, date):
+        self.date_end           = convert_to_datetime_format(date)
+
+    def enable_plot(self):
+        self.plot_yes           = True
+
+    def enable_verbose(self):
+        self.verbose            = True
 
 
 
@@ -550,6 +603,20 @@ class stock_analysis_class:
         self.__volume_s      = self.stock_data["Volume"]
         self.__high_s        = self.stock_data["High"]
         self.__low_s         = self.stock_data["Low"]
+
+    ## Getters
+    def get_close(self):
+        return self.__close_s.copy()
+    def get_adj_close(self):
+        return self.__adj_close_s.copy()
+    def get_open(self):
+        return self.__open_s.copy()
+    def get_high(self):
+        return self.__high_s.copy()
+    def get_low(self):
+        return self.__low_s.copy()
+    def get_volume(self):
+        return self.__volume_s.copy()
 
     def load_from_internal_database(self):
         """Load stock information from internal pickle database."""
@@ -999,10 +1066,59 @@ class analysis_class:
             assert(type(stock_analysis_class.pickle_dict) == dict)
 
     def init_stock_data(self, scripid, name='default'):
-        self.stock_data   = stock_analysis_class(scripid, self.params.date_start, self.params.date_end, name)
+        self.stock_data   = stock_analysis_class(scripid, self.params.date_start, self.params.date_end, name, self.params.plot_yes)
 
+    def stock_analysis_instance(self):
+        return self.stock_data
 
-############################################################################
-# wrapper over matplotlib's show()
-def show():
-    matplotlib.pyplot.show()
+    def __check_price_range(self):
+        close_latest      = self.stock_data.get_close()[-1]
+        if self.params.price_check and (close_latest < self.params.pmin or close_latest > self.params.pmax):
+            if self.params.verbose:
+                print "{} has latest closing price {}, hence is not in defined price range." . format(self.stock_data.scripid, close_latest)
+            return False
+        return True
+
+    def __check_volumes(self):
+        av_past_vol_100   = pandas.rolling_mean(self.stock_data.get_volume(), 100)[-1]
+        if self.params.volume_check and av_past_vol_100 < self.params.trade_min:
+            if self.params.verbose:
+                print "100 day median trade volume for {} is below {}." . format(self.stock_data.scripid, self.params.trade_min)
+            return False
+        return True
+
+    def __check_trend(self):
+        """
+        Check current trend based on moving averages.
+        """
+        mov_avg_h                 = {}
+        local_trend               = self.params.TICKER_TREND_TYPE_NOTA
+        close_data                = self.stock_data.get_close()
+        vol_data                  = self.stock_data.get_volume()
+        adj_close_data            = self.stock_data.get_adj_close()
+        param_mova_days_dict      = self.params.mova_days_dict
+        compr_ravg_tup            = self.params.compr_ravg_tup
+
+        # Calculate all moving averages as specified by parameters class
+        for dindex in param_mova_days_dict.keys():
+            mean_this                                   = pandas.rolling_mean(adj_close_data, param_mova_days_dict[dindex])
+            mov_avg_h[param_mova_days_dict[dindex]]     = mean_this
+
+        # Calculate trend
+        if mov_avg_h[max(compr_ravg_tup)][-1] < mov_avg_h[min(compr_ravg_tup)][-1]:
+            local_trend = self.params.TICKER_TREND_TYPE_BULLISH
+        elif mov_avg_h[max(compr_ravg_tup)][-1] > mov_avg_h[min(compr_ravg_tup)][-1]:
+            local_trend = self.params.TICKER_TREND_TYPE_BEARISH
+        else:
+            local_trend = self.params.TICKER_TREND_TYPE_NOTA
+
+        # Trend check
+        if self.params.ticker_trend == local_trend:
+            print "----------------> {} shows {} trend." . format(self.stock_data.scripid, self.params.trend_tostr(local_trend))
+            return True
+        return False
+
+    #def finish_plot(self):
+    #    if self.params.plot_yes:
+    #        show()
+
