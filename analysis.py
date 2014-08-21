@@ -798,8 +798,12 @@ class stock_analysis_class:
             hratio       = height ratio of the plot.
             frame        = An optional prespecified frame number
         """
-        obj                  = self.stock_data.copy()
-        accum_dist           = (obj["Close"] - obj["Open"])/(obj["High"] - obj["Low"]) * obj["Volume"]
+        close_copy_this      = self.__close_s.copy()
+        low_copy_this        = self.__low_s.copy()
+        high_copy_this       = self.__high_s.copy()
+        volume_copy_this     = self.__volume_s.copy()
+
+        accum_dist           = (2*close_copy_this - low_copy_this - high_copy_this)/(high_copy_this - low_copy_this) * volume_copy_this
         self.__plot(accum_dist, ratio=hratio, frame=frame, label="accum_dist")
         return accum_dist
 
