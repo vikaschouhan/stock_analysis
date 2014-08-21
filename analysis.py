@@ -804,30 +804,12 @@ class stock_analysis_class:
         volume_copy_this     = self.__volume_s.copy()
         frame_this           = frame
 
-        accum_dist           = (2*close_copy_this - low_copy_this - high_copy_this)/(high_copy_this - low_copy_this) * volume_copy_this
+        money_flow_vol       = (2*close_copy_this - low_copy_this - high_copy_this)/(high_copy_this - low_copy_this) * volume_copy_this
+        accum_dist           = money_flow_vol.dropna().cumsum()
+
         frame_this           = self.__plot(accum_dist, ratio=hratio, frame=frame_this, label="accum_dist")
 
         return accum_dist
-
-    def accumulation_distribution_moving_average(self, N, hratio=1, frame=None):
-        """
-        Return and plot Accumulation Distribution Data
-        @args
-            N            = number of days
-            hratio       = height ratio of the plot.
-            frame        = An optional prespecified frame number
-        """
-        close_copy_this      = self.__close_s.copy()
-        low_copy_this        = self.__low_s.copy()
-        high_copy_this       = self.__high_s.copy()
-        volume_copy_this     = self.__volume_s.copy()
-        frame_this           = frame
-
-        accum_dist           = (2*close_copy_this - low_copy_this - high_copy_this)/(high_copy_this - low_copy_this) * volume_copy_this
-        accum_dist_ema       = pandas.ewma(accum_dist, N)
-        frame_this           = self.__plot(accum_dist_ema, ratio=hratio, frame=frame_this, label="accum_dist_ema")
-
-        return accum_dist_ema
 
     def chaikin_money_flow(self, N=None, hratio=1, frame=None):
         """
