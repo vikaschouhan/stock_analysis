@@ -778,16 +778,27 @@ class stock_analysis_class:
             frame        = An optional prespecified frame no.
         """
         adj_close_l          = self.__adj_close_s.copy()
+        close_l              = self.__close_s.copy()
         obv_l                = self.__volume_s.copy()
+        close_l_this         = close_l
+
+        # Assign previous values at index 0
         obv_prev             = obv_l[0]
-        close_prev           = adj_close_l[0]
+        close_prev           = close_l_this[0]
+
+        # Start from index 1
         for i in range(1, obv_l.size):
-            if adj_close_l[i] > close_prev:
+            if close_l_this[i] > close_prev:
                 obv_l[i]     = obv_prev + obv_l[i]
-            elif adj_close_l[i] < close_prev:
+            elif close_l_this[i] < close_prev:
                 obv_l[i]     = obv_prev - obv_l[i]
-            close_prev       = adj_close_l[i]
+            else:
+                obv_l[i]     = obv_prev
+
+            # New previous values
+            close_prev       = close_l_this[i]
             obv_prev         = obv_l[i]
+
         self.__bar(obv_l, ratio=hratio, frame=frame, label="on balance volume")
         return obv_l
 
@@ -979,29 +990,39 @@ class stock_analysis_class:
         @return
             list of aroon_up and aroon_down. aroon_up and aroon_down are of pandas.Series type.
         """
-        adj_close_copy       = self.__adj_close_s.copy()
-        close_copy           = self.__close_s.copy()
+        #adj_close_copy       = self.__adj_close_s.copy()
+        #close_copy           = self.__close_s.copy()
+        high_copy_this       = self.__high_s.copy()
+        low_copy_this        = self.__low_s.copy()
         
-        close_copy_this      = adj_close_copy
-        aroon_up             = close_copy_this.copy()
-        aroon_down           = aroon_up.copy()
-        list_size            = close_copy_this.size
+        #close_copy_this      = adj_close_copy
+        aroon_up             = high_copy_this.copy()
+        aroon_down           = high_copy_this.copy()
+        list_size            = high_copy_this.size
+
         if N == None:
             N                = self.WEILDERS_CONSTANT
 
-        for i in range(list_size-1, -1, -1):
-            marker_a         = max(i - N + 1, 0)
+        # Calculate from highest index to N
+        for i in range(list_size-1, N-1, -1):
+            marker_a         = i - N + 1
             marker_b         = i + 1
-            list_slice       = close_copy_this[marker_a:marker_b]
+            high_slice       = high_copy_this[marker_a:marker_b]
+            low_slice        = low_copy_this[marker_a:marker_b]
 
-            max_this         = list_slice.max()
-            min_this         = list_slice.min()
-            max_index        = list_slice.tolist().index(max_this)
-            min_index        = list_slice.tolist().index(min_this)
+            max_this         = high_slice.max()
+            min_this         = low_slice.min()
+            max_index        = high_slice.tolist().index(max_this)
+            min_index        = low_slice.tolist().index(min_this)
 
-            aroon_up[i]      = float(N - 1 - max_index)/N * 100
-            aroon_down[i]    = float(N - 1 - min_index)/N * 100
+            aroon_up[i]      = float(1 + max_index)/N * 100
+            aroon_down[i]    = float(1 + min_index)/N * 100
 
+        # Downsize aroon indicators
+        aroon_up             = aroon_up[N:list_size]
+        aroon_down           = aroon_down[N:list_size]
+
+        # Plot
         frame_this           = self.__plot(aroon_up,   ratio=hratio, frame=frame, label="arun_up")
         frame_this           = self.__plot(aroon_down, ratio=hratio, frame=frame_this, label="arun_down")
 
