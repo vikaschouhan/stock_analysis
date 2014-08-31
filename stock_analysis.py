@@ -115,7 +115,14 @@ if __name__ == '__main__':
     print "pandas version                                = {}" . format(pd.__version__)
     params_local.print_info()
 
-    #main_loop(ticker_dict_n)
+    # Initialize parameters
+    analysis.analysis_class.init_params(params_local)
+
+    for index in ticker_dict_n:
+        a = analysis.analysis_class(index)
+        if a.check_price_range() and a.check_volumes():
+            print "{} is following {} trend." . format(index, a.get_trend())
+
 
     ## Dump global data structure to pickle file
     #if pickle_file_passed == 0:

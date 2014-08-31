@@ -376,6 +376,9 @@ class parameters:
         #self.db_file             = 'default.pkl'
         self.db_file             = 'default.txt'
 
+    def get_trend(self):
+        return self.trend_tostr(self.ticker_trend)
+
     def print_info(self):
         print "..............parameters.............................................."
         print "ticker_trend       = {}" . format(self.trend_tostr(self.ticker_trend))
@@ -1087,18 +1090,25 @@ class stock_analysis_class:
 # analysis class
 ############################################################################
 class analysis_class:
-    def __init__(self, params):
+    params                = None
+
+    @classmethod
+    def init_params(cls, params):
         assert(isinstance(params, parameters))
-        self.params       = params
-        if self.params.pickle_file_passed:
-            stock_analysis_class.load_database_from_pickle(self.params.pickle_file)
+        cls.params       = params
+        if cls.params.pickle_file_passed:
+            stock_analysis_class.load_database_from_pickle(cls.params.pickle_file)
             assert(type(stock_analysis_class.pickle_dict) == dict)
 
-    def init_stock_data(self, scripid, name='default'):
+    def __init__(self, scripid, name='default'):
+        assert(self.params != None)
         self.stock_data   = stock_analysis_class(scripid, self.params.date_start, self.params.date_end, name, self.params.plot_yes)
 
     def stock_analysis_instance(self):
         return self.stock_data
+
+    def get_trend(self):
+        return self.params.get_trend()
 
     def check_price_range(self):
         close_latest      = self.stock_data.get_close()[-1]
