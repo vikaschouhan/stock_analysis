@@ -367,8 +367,8 @@ class parameters:
         self.trade_min           = 500000     # minium trade volume to remove less liquid stocks
         self.volume_check        = False
         self.price_check         = False
-        self.date_start          = datetime.datetime(2014, 01, 01)
-        self.date_end            = datetime.datetime.now()                # end time is current time
+        self.date_start          = "2014:01:01"
+        self.date_end            = "Now"                                  # end time is current time
         self.plot_yes            = False
         self.verbose             = False                                  # verbose mode
         self.pickle_file_passed  = False
@@ -410,7 +410,7 @@ class parameters:
         self.db_file            = filename
 
     def set_ticker_trend(self, trend):
-        assert(trend in ticker_trend_tostr)
+        assert(trend in self.ticker_trend_tostr)
         self.ticker_trend       = trend
 
     def set_price_min(self, price):
@@ -426,10 +426,10 @@ class parameters:
         self.volume_check       = True
 
     def set_date_start(self, date):
-        self.date_start         = convert_to_datetime_format(date)
+        self.date_start         = date
 
     def set_date_end(self, date):
-        self.date_end           = convert_to_datetime_format(date)
+        self.date_end           = date
 
     def enable_plot(self):
         self.plot_yes           = True
@@ -1088,7 +1088,7 @@ class stock_analysis_class:
 ############################################################################
 class analysis_class:
     def __init__(self, params):
-        assert(type(params) == parameters)
+        assert(isinstance(params, parameters))
         self.params       = params
         if self.params.pickle_file_passed:
             stock_analysis_class.load_database_from_pickle(self.params.pickle_file)
@@ -1100,7 +1100,7 @@ class analysis_class:
     def stock_analysis_instance(self):
         return self.stock_data
 
-    def __check_price_range(self):
+    def check_price_range(self):
         close_latest      = self.stock_data.get_close()[-1]
         if self.params.price_check and (close_latest < self.params.pmin or close_latest > self.params.pmax):
             if self.params.verbose:
@@ -1108,7 +1108,7 @@ class analysis_class:
             return False
         return True
 
-    def __check_volumes(self):
+    def check_volumes(self):
         av_past_vol_100   = pandas.rolling_mean(self.stock_data.get_volume(), 100)[-1]
         if self.params.volume_check and av_past_vol_100 < self.params.trade_min:
             if self.params.verbose:
@@ -1116,7 +1116,7 @@ class analysis_class:
             return False
         return True
 
-    def __check_trend(self):
+    def check_trend(self):
         """
         Check current trend based on moving averages.
         """
