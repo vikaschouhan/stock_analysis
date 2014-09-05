@@ -360,7 +360,7 @@ class parameters:
     def __init__(self):
         self.ticker_trend        = self.TICKER_TREND_TYPE_BULLISH
         self.mova_days_dict      = {"20_days" : 20, "40_days" : 40, "60_days" : 60, "100_days" : 100}
-        self.compr_ravg_tup      = (20, 100)
+        self.compr_ravg_tup      = (20, 60)
         
         self.pmin                = 10
         self.pmax                = 50
@@ -606,6 +606,7 @@ class stock_analysis_class:
         self.__volume_s      = self.stock_data["Volume"]
         self.__high_s        = self.stock_data["High"]
         self.__low_s         = self.stock_data["Low"]
+        self.__date_s        = self.stock_data.index
 
     ## Getters
     def get_close(self):
@@ -646,6 +647,25 @@ class stock_analysis_class:
         vol                  = self.__volume_s
         self.__bar(vol, ratio=hratio, frame=frame, label="volume")
         return vol
+
+    # Make it as hidden for time being, as the plot interfere's with standard plots_class
+    def _candlestick(self):
+        date_list    = range(0, self.__open_s.size)
+        open_list    = self.__open_s.values
+        close_list   = self.__close_s.values
+        high_list    = self.__high_s.values
+        low_list     = self.__low_s.values
+        volume_list  = self.__volume_s.values
+
+        ## Candlestick plots don't agree with plots_class api. Hence they are drawn in
+        ## in an independent figure canvas.
+        pat          = zip(date_list, open_list, close_list, high_list, low_list, volume_list)
+        fig_l        = matplotlib.pyplot.figure(self.scripid + " candlestick")
+        ax           = fig_l.add_subplot(111)
+
+        matplotlib.finance.candlestick(ax, pat, width=0.6, colorup='g', colordown='r', alpha=1.0)
+
+        #return pat
 
     def moving_average(self, N, hratio=1, frame=None):
         """
@@ -1153,7 +1173,7 @@ class analysis_class:
 
         # Trend check
         if self.params.ticker_trend == local_trend:
-            print "----------------> {} shows {} trend." . format(self.stock_data.scripid, self.params.trend_tostr(local_trend))
+            #print "----------------> {} shows {} trend." . format(self.stock_data.scripid, self.params.trend_tostr(local_trend))
             return True
         return False
 

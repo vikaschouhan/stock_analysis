@@ -120,8 +120,8 @@ if __name__ == '__main__':
 
     for index in ticker_dict_n:
         a = analysis.analysis_class(index)
-        if a.check_price_range() and a.check_volumes():
-            print "{} is following {} trend." . format(index, a.get_trend())
+        if a.check_price_range() and a.check_volumes() and a.check_trend():
+            print "--------------> {} is following {} trend." . format(index, a.get_trend())
 
 
     ## Dump global data structure to pickle file
