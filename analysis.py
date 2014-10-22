@@ -34,6 +34,34 @@ from   pandas import Series, DataFrame
 import matplotlib
 import matplotlib.pyplot
 
+##########################################################
+# compunded rate pf return on growing capital
+################################################################
+def compound(P, r, rt, t, deltaP=0):
+    """ P is Principal, r is annual rate of return, rt is annual tax rate,
+        t is time period in years, deltaP is annual addition to investment."""
+    assert(r >= 0 and r <=100)        #
+    assert(rt >=0 and rt <=100)       # Both rates should be between 1 and 100
+    assert(t >=2 )                    # Time should be greater than 2 years
+
+    print "Tax rate               = {}%".format(rt)
+    print "Annual growth rate     = {}%".format(r)
+
+    r   = r/100.0
+    rt  = 1.0 - rt/100.0
+    R   = 1 + r*rt
+
+    print "Discounted growth rate = {}%".format((R-1) * 100)
+    print "After tax retention    = {}%".format(rt * 100)
+    print "Initial Principal      = {}".format(P)
+    print "Delta P                = {}".format(deltaP)
+    print "time period            = {} yrs".format(t)
+
+    P = P*R**t + deltaP*R*(R**(t-1) - 1)/(R - 1)
+
+    print "final Principal        = {}".format(P)
+    return P
+
 ####################################################
 # convert to datetime format
 ####################################################
