@@ -62,6 +62,29 @@ def compound(P, r, rt, t, deltaP=0):
     print "final Principal        = {}".format(P)
     return P
 
+def compound2(P, r, t, d=0):
+    """ P is Principal, r is annual rate of return and d is annual incrment in P. """
+    if d == 0:
+        return compound(P, r, 0, t)
+
+    print "Annual growth rate           = {}%".format(r)
+    print "Annual incrment in Principal = {}%".format(d)
+    print "Initial Principal            = {}".format(P)
+    print "time period                  = {} yrs".format(t)
+
+    r = r/100.0
+    d = d/100.0
+
+    tmp = 1
+    for i in range(0, t):
+        tmp = tmp + (1 + i*d)/(1+r)**i
+
+    P = P*(1+r)**t * tmp
+
+    print "Compunding factor            = {}".format(tmp)
+    print "final Principal              = {}".format(P)
+    return P
+
 ####################################################
 # convert to datetime format
 ####################################################
