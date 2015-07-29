@@ -718,6 +718,32 @@ class stock_analysis_class:
 
         #return pat
 
+    def _heikin_ashi(self):
+        date_list    = range(0, self.__open_s.size)
+        open_list    = self.__open_s.values
+        close_list   = self.__close_s.values
+        high_list    = self.__high_s.values
+        low_list     = self.__low_s.values
+        volume_list  = self.__volume_s.values
+        n_ele        = open_list.size
+
+        for i in range(1, n_ele):
+            close_list[i] = (open_list[i] + close_list[i] + high_list[i] + low_list[i])/4
+            open_list[i]  = (open_list[i-1] + close_list[i-1])/2
+            high_list[i]  = max(high_list[i], open_list[i], close_list[i])
+            low_list[i]   = min(low_list[i], open_list[i], close_list[i])
+        # endfor
+
+        ## Candlestick plots don't agree with plots_class api. Hence they are drawn in
+        ## in an independent figure canvas.
+        pat          = zip(date_list, open_list, close_list, high_list, low_list, volume_list)
+        fig_l        = matplotlib.pyplot.figure(self.scripid + " candlestick")
+        ax           = fig_l.add_subplot(111)
+
+        matplotlib.finance.candlestick(ax, pat, width=0.6, colorup='g', colordown='r', alpha=1.0)
+
+        #return pat
+
     def moving_average(self, N, hratio=1, frame=None):
         """
         Return and plot(if plot enabled) Moving average for closing price trend.
