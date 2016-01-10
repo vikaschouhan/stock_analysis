@@ -1,5 +1,17 @@
 #!/usr/bin/env python
 
+#######################################################################
+# Author         : Vikas Chouhan
+# email          : presentisgood@gmail.com
+# latest updated : 11th January 2016
+# license        : GPLv2
+#
+#
+# Download stock data from yahoo financial website and run
+# custom strategies over all the scrips to screen for the stocks
+# satisfying our criteria.
+#######################################################################
+
 import argparse
 import datetime
 import re
@@ -110,6 +122,8 @@ class ma_strategy_8ema_crossover(object):
             return True
         return False
 
+# Along with two 8 ema crossovers, also look for a sudden spurt in volume from average.
+#
 class ma_strategy2_8ema_crossover(object):
     def __init__(self, days_diff=2):
         self.days_diff  = days_diff
@@ -125,10 +139,41 @@ class ma_strategy2_8ema_crossover(object):
         ewma_50    = pandas.ewma(close_data, 50)
         # Check for 8ema crossover of open and close prices as well as
         # a sudden spurt in volume
-        if ewma_c[-1] > ewma_o[-1] and \
-           ewma_c[-1-self.days_diff] <= ewma_o[-1-self.days_diff] and \
-           volume[-1] > 3 * ewma_vol[-1] and \
-           ewma_50[-1] > 0:
+        rt_cross   = ewma_c[-1] > ewma_o[-1]    # Current 8ema[close] > 8ema[open]
+        lt_cross   = ewma_c[-1-self.days_diff] <= ewma_o[-1-self.days_diff]  # 8ema[close] < 8ema[open] days_dff before
+        vol_status = volume[-1] > 3 * ewma_vol[-1] # Current volume > 3 times average volume
+        ema50_tr   = ewma_50[-1] > 0   # Long term trend in bullish
+
+        # Check status
+        if rt_cross and lt_cross and vol_status and ema50_tr:
+            return True
+        return False
+
+# Along with two 8 ema crossovers, also look for a sudden spurt in volume from average.
+# Also check for -ve slope to +ve slope reversal for 8ema
+class ma_strategy3_8ema_crossover(object):
+    def __init__(self, days_diff=2):
+        self.days_diff  = days_diff
+    # enddef
+
+    def __call__(self, stk_data):
+        close_data = stk_data.get_close()
+        open_data  = stk_data.get_open()
+        volume     = stk_data.get_volume()
+        ewma_c     = pandas.ewma(close_data, 8)
+        ewma_o     = pandas.ewma(open_data,  8)
+        ewma_vol   = pandas.rolling_mean(volume,  50)
+        ewma_50    = pandas.ewma(close_data, 50)
+        # Check for 8ema crossover of open and close prices as well as
+        # a sudden spurt in volume
+        rt_cross   = ewma_c[-1] > ewma_o[-1]    # Current 8ema[close] > 8ema[open]
+        lt_cross   = ewma_c[-1-self.days_diff] <= ewma_o[-1-self.days_diff]  # 8ema[close] < 8ema[open] days_dff before
+        vol_status = volume[-1] > 3 * ewma_vol[-1] # Current volume > 3 times average volume
+        ema50_tr   = ewma_50[-1] > 0   # Long term trend in bullish
+        tr_rev     = (ewma_c[-1] > ewma_c[-2]) and (ewma_c[-1-self.days_diff] <= ewma_c[-1-self.days_diff-4])
+
+        # Check status
+        if rt_cross and lt_cross and vol_status and tr_rev:
             return True
         return False
 
@@ -227,14 +272,19 @@ if __name__ == '__main__':
 
 
     # define strategy
-    strategy_this = ma_strategy2_8ema_crossover(4)
+    strategy_this = ma_strategy2_8ema_crossover(3)
 
     for index in ticker_dict_n:
         try:
             data_this   = stock_data(scrip_id=index, date_start=params_dict["date_start"])
-            status      = strategy_this(data_this)
-            if status:
-                print "scrip_id = {}".format(index)
+            vol_status  = params_dict["vmin"] <= pandas.ewma(data_this.get_volume(), 8)[-1]  # vmin <= average volume for some days
+            # Check if volume requirement is satisfied and then only apply our strategy
+            if vol_status:
+                status  = strategy_this(data_this)
+                if status:
+                    print "scrip_id = {}".format(index)
+                # endif
+            # endif
         except:
             #print "Couldn't load data for {}".format(index)
             pass
