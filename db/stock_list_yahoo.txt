@@ -1,0 +1,2020 @@
+SBIN.NS,State Bank of India,Stock,NSI
+TATASTEEL.NS,Tata Steel Ltd,Stock,NSI
+ICICIBANK.NS,ICICI Bank Ltd,Stock,NSI
+JETAIRWAY.NS,Jet Airways (India) Ltd,Stock,NSI
+KEI.NS,KEI Industries Ltd,Stock,NSI
+AUROPHARM.NS,AUROBINDO PHARMA LIMITED,Stock,NSI
+RELINFRA.NS,Reliance Infrastructure Ltd,Stock,NSI
+SKSMICRO.NS,SKS Microfinance Ltd,Stock,NSI
+BHARTIART.NS,Bharti Airtel Ltd,Stock,NSI
+RCOM.NS,Reliance Communications Ltd,Stock,NSI
+LT.NS,Larsen & Toubro Ltd,Stock,NSI
+RELIANCE.NS,Reliance Industries Ltd,Stock,NSI
+VEDL-EQ.NS,VEDANTA LIMITED,Stock,NSI
+MARUTI.NS,Maruti Suzuki India Ltd,Stock,NSI
+DLF.NS,DLF Ltd,Stock,NSI
+ZEEL.NS,Zee Entertainment Enterprises Ltd,Stock,NSI
+AXISBANK.BO,Axis Bank Ltd,Stock,BSE
+CIPLA.NS,Cipla Ltd,Stock,NSI
+TCS.NS,Tata Consultancy Services Ltd,Stock,NSI
+HDFCBANK.NS,HDFC Bank, Ltd.,Stock,NSI
+ONGC.NS,Oil & Natural Gas Corporation Ltd.,Stock,NSI
+GRASIM.NS,Grasim Industries Ltd,Stock,NSI
+TATAMOTORS.BO,,Stock,BSE
+EXIDEIND.NS,Exide Industries Ltd,Stock,NSI
+ITC.NS,ITC Ltd,Stock,NSI
+WIPRO.NS,Wipro Ltd,Stock,NSI
+INDIANB.NS,Indian Bank,Stock,NSI
+YESBANK.NS,Yes Bank Ltd,Stock,NSI
+RELCAPITA.NS,,Stock,NSI
+SUZLON.BO,Suzlon Energy Ltd,Stock,BSE
+TATAMOTOR.NS,,Stock,NSI
+BHEL.NS,Bharat Heavy Electricals Ltd.,Stock,NSI
+SUZLON.NS,Suzlon Energy Ltd,Stock,NSI
+ASHOKLEY.NS,Ashok Leyland Ltd,Stock,NSI
+AXISBANK.NS,Axis Bank Ltd,Stock,NSI
+SPICEJET.BO,Spicejet Ltd,Stock,BSE
+HINDALCO.NS,Hindalco Industries Ltd,Stock,NSI
+LUPIN.NS,Lupin Ltd,Stock,NSI
+INFY.BO,Infosys Ltd,Stock,BSE
+MOREPENLAB.BO,Morepen Laboratories Ltd,Stock,BSE
+DLF.BO,DLF Ltd,Stock,BSE
+VEDL.BO,VEDANTA LIMITED,Stock,BSE
+PNB.NS,Punjab National Bank,Stock,NSI
+HDFC.NS,Housing Development Finance Corp Ltd,Stock,NSI
+BANKINDIA.NS,Bank Of India,Stock,NSI
+JPASSOCIA.NS,Jaiprakash Associates Ltd,Stock,NSI
+TATAPOWER.NS,Tata Power Co., Ltd.,Stock,NSI
+ESSDEE.BO,ESS DEE Aluminium Ltd,Stock,BSE
+UNIONBANK.NS,Union Bank of India,Stock,NSI
+JPASSOCIAT.BO,JAIPRAKASH ASSOCIATES LTD.,Stock,BSE
+SUNPHARMA.NS,Sun Pharmaceuticals Industries Ltd.,Stock,NSI
+RPOWER.NS,Reliance Power Ltd,Stock,NSI
+NTPC.NS,NTPC Ltd,Stock,NSI
+DISHTV.NS,Dish TV India Ltd,Stock,NSI
+APTECHT.BO,APTECH LTD.,Stock,BSE
+BANKBAROD.NS,Bank of Baroda,Stock,NSI
+RELIANCE.BO,RELIANCE INDUSTRIES LTD.,Stock,BSE
+ADANIPOWER.BO,Adani Power Ltd,Stock,BSE
+SAIL.NS,Steel Authority Of India Ltd,Stock,NSI
+INFY.NS,INFOSYS LIMITED,Stock,NSI
+DRREDDY.NS,Dr Reddy Laboratories Ltd,Stock,NSI
+TATACOFFE.NS,Tata Coffee Ltd,Stock,NSI
+LICHSGFIN.NS,LIC Housing Finance Ltd.,Stock,NSI
+IFCI.NS,IFCI Ltd,Stock,NSI
+CAIRN.NS,Cairn India Ltd,Stock,NSI
+RENUKA.NS,Shree Renuka Sugars Ltd,Stock,NSI
+MRF.NS,MRF Ltd,Stock,NSI
+TECHM.NS,Tech Mahindra Ltd,Stock,NSI
+RCOM.BO,Reliance Communications Ltd,Stock,BSE
+IGL.NS,Indraprastha Gas Ltd,Stock,NSI
+UNITECH.BO,Unitech International Ltd,Stock,BSE
+MONSANTO.NS,Monsanto India Ltd,Stock,NSI
+KWALITY.NS,Kwality Ltd,Stock,NSI
+GAIL.NS,GAIL India Ltd,Stock,NSI
+BAJAJHIND.NS,Bajaj Hindusthan Sugar Ltd,Stock,NSI
+NH-EQ.NS,Narayana Hrudayalaya Ltd.,Stock,NSI
+GMRINFRA.NS,GMR Infrastructure Ltd,Stock,NSI
+REFEX.BO,Refex Industries Ltd,Stock,BSE
+PETRONET.NS,Petronet LNG Ltd,Stock,NSI
+IDBI.BO,IDBI Bank Ltd,Stock,BSE
+HEROMOTOC.NS,HERO MOTOCORP LIMITED,Stock,NSI
+VOLTAS.NS,Voltas Ltd,Stock,NSI
+HFCL.BO,Himachal Futuristic Communications Ltd,Stock,BSE
+COALINDIA.NS,Coal India Ltd,Stock,NSI
+PNB.BO,Punjab National Bank,Stock,BSE
+HINDUNILVR-EQ.NS,HINDUSTAN UNILEVER LIMITED,Stock,NSI
+CANBK.NS,Canara Bank,Stock,NSI
+APOLLOTYRE.BO,Apollo Tyres Ltd,Stock,BSE
+ADANIENT.NS,Adani Enterprises Ltd,Stock,NSI
+PARINFRA.BO,PARAB INFRA LIMITED,Stock,BSE
+HCLTECH.NS,HCL Technologies Ltd,Stock,NSI
+HINDPETRO.NS,Hindustan Petroleum Corp Ltd,Stock,NSI
+GMBREW.NS,G M Breweries Ltd,Stock,NSI
+RADICO.NS,Radico Khaitan Ltd,Stock,NSI
+KSL.NS,Kalyani Steels Ltd,Stock,NSI
+ELDERPHARM.BO,Elder Pharmaceuticals Ltd,Stock,BSE
+BHARTIARTL.BO,Bharti Airtel Ltd,Stock,BSE
+ADANIPOWE.NS,Adani Power Ltd,Stock,NSI
+PFC.NS,Power Finance Corp Ltd,Stock,NSI
+OUDHSUG.NS,Oudh Sugar Mills Ltd.,Stock,NSI
+KERALAYUR.BO,Kerala Ayurveda Ltd,Stock,BSE
+DHFL.NS,DEWAN HOUSING FINANCE CORPORATI,Stock,NSI
+AMBUJACEM.NS,Ambuja Cements Ltd,Stock,NSI
+WOCKPHARMA-EQ.NS,WOCKHARDT LIMITED,Stock,NSI
+SYNDIBANK.NS,Syndicate Bank,Stock,NSI
+LYKALABS.NS,Lyka Labs Ltd,Stock,NSI
+JAMNAAUTO.NS,Jamna Auto Industries Ltd,Stock,NSI
+HEXAWARE.NS,Hexaware Technologies Ltd,Stock,NSI
+ALLCARGO.NS,Allcargo Logistics Ltd,Stock,NSI
+UNITECH.NS,Unitech International Ltd,Stock,NSI
+JINDALSTEL.BO,JINDAL STEEL & POWER LTD.,Stock,BSE
+APTECHT.NS,Aptech Ltd,Stock,NSI
+ACC.NS,ACC Ltd,Stock,NSI
+TATAMTRDV.NS,,Stock,NSI
+SURYAROSN.NS,Surya Roshni Ltd,Stock,NSI
+LT.BO,LARSEN & TOUBRO LTD.,Stock,BSE
+ICICIBANK.BO,ICICI Bank Ltd,Stock,BSE
+EICHERMOT.NS,Eicher Motors Ltd,Stock,NSI
+3IINFOTECH.BO,3I INFOTECH LTD.,Stock,BSE
+TWL.NS,Titagarh Wagons Ltd,Stock,NSI
+TITAN.NS,Titan Industries Ltd.,Stock,NSI
+SUBEX.NS,Subex Ltd,Stock,NSI
+SMSPHARMA.NS,SMS Pharmaceuticals Ltd,Stock,NSI
+SIEMENS.NS,Siemens Ltd,Stock,NSI
+SAIL.BO,Steel Authority Of India Ltd,Stock,BSE
+NESTLEIND.NS,Nestle India Ltd,Stock,NSI
+JSWSTEEL.NS,JSW Steel Ltd,Stock,NSI
+IRB.NS,IRB Infrastructure Developers Ltd,Stock,NSI
+GRANULES.NS,Granules India Ltd,Stock,NSI
+CADILAHC.NS,Cadila Healthcare Ltd,Stock,NSI
+TCS.BO,Tata Consultancy Services Ltd,Stock,BSE
+SREINFRA.NS,SREI Infrastructure Finance Ltd,Stock,NSI
+SJVN.BO,SJVN Ltd,Stock,BSE
+SANGFROID.BO,Sang Froid Labs (India) Limite,Stock,BSE
+NHPC.NS,NHPC Ltd,Stock,NSI
+KSCL.NS,Kaveri Seed Company Ltd.,Stock,NSI
+JKLAKSHMI.NS,JK Lakshmi Cement Ltd,Stock,NSI
+INDIGO-EQ.NS,InterGlobe Aviation Ltd,Stock,NSI
+FEDERALBN.NS,Federal Bank Limited,Stock,NSI
+BERGEPAIN.NS,Berger Paints India Ltd,Stock,NSI
+ASIANPAINT.BO,Asian Paints Ltd.,Stock,BSE
+TATACHEM.NS,Tata Chemicals Ltd,Stock,NSI
+RELCAPITAL.BO,,Stock,BSE
+NILKAMAL.BO,Nilkamal Ltd,Stock,BSE
+MOTHERSUMI-EQ.NS,MOTHERSON SUMI SYSTEMS LIMITED,Stock,NSI
+LITL.NS,Lanco Infratech Ltd,Stock,NSI
+JUBILANT.NS,Jubilant Life Sciences Ltd,Stock,NSI
+IDFC.NS,IDFC Ltd,Stock,NSI
+GOACARBON.NS,Goa Carbon Ltd,Stock,NSI
+ESSAROIL.BO,Essar Oil Ltd,Stock,BSE
+WELCORP.NS,Welspun Corp Ltd,Stock,NSI
+SELAN.NS,Selan Exploration Technology Ltd,Stock,NSI
+REDINGTON.NS,Redington (India) Ltd,Stock,NSI
+MRF.BO,MRF Ltd,Stock,BSE
+MCX.BO,MULTI COMMODITY EXCHANGE OF IN,Stock,BSE
+KOTAKBANK.NS,Kotak Mahindra Bank Ltd,Stock,NSI
+INDIACEM.BO,India Cements Ltd,Stock,BSE
+HAVELLS.NS,Havells India Ltd,Stock,NSI
+FORCEMOT.BO,Force Motors Ltd,Stock,BSE
+DISHTV.BO,Dish TV India Ltd,Stock,BSE
+CEREBRAINT-EQ.NS,CEREBRA INTEGRATED TECHNOLOGIES,Stock,NSI
+BANKBARODA.BO,BANK OF BARODA,Stock,BSE
+ASIANPAIN.NS,Asian Paints Ltd.,Stock,NSI
+8KMILES.BO,8K MILES SOFTWARE SERVICES LTD,Stock,BSE
+WIPRO.BO,Wipro Ltd,Stock,BSE
+SOUTHBANK.NS,South Indian Bank Ltd,Stock,NSI
+SBIN.BO,STATE BANK OF INDIA,Stock,BSE
+POWERGRID.BO,Power Grid Corp Of India Ltd,Stock,BSE
+JKTYRE.NS,JK Tyre & Industries Ltd,Stock,NSI
+INDIANB.BO,Indian Bank,Stock,BSE
+BEDMUTHA.BO,BEDMUTHA INDUSTRIES LTD.,Stock,BSE
+BAJAJ-AUTO-EQ.NS,BAJAJ AUTO LIMITED,Stock,NSI
+AJANTPHAR.NS,Ajanta Pharma Ltd.,Stock,NSI
+YESBANK.BO,Yes Bank Ltd,Stock,BSE
+STAR.NS,Strides Arcolab Ltd,Stock,NSI
+SINTEX.NS,Sintex Industries Limited,Stock,NSI
+PUNJLLOYD.NS,Punj Lloyd Ltd,Stock,NSI
+PIIND.NS,PI Industries Ltd.,Stock,NSI
+JAICORPLT.NS,Jai Corp Ltd,Stock,NSI
+IDEA.NS,Idea Cellular Ltd,Stock,NSI
+IDEA.BO,Idea Cellular Ltd,Stock,BSE
+HATHWAY.NS,Hathway Cable & Datacom Ltd,Stock,NSI
+ESSAROIL.NS,Essar Oil Ltd,Stock,NSI
+COLPAL.NS,Colgate-Palmolive (India) Ltd,Stock,NSI
+BOSCHLTD.NS,Bosch Ltd,Stock,NSI
+ALOKTEXT.NS,Alok Industries Ltd,Stock,NSI
+TORNTPOWE.NS,Torrent Power Ltd,Stock,NSI
+TATAELXSI.NS,Tata Elxsi Ltd,Stock,NSI
+SUNPHARMA.BO,Sun Pharmaceuticals Industries Ltd,Stock,BSE
+SJVN.NS,SJVN Ltd,Stock,NSI
+HCIL.BO,HIMADRI CHEMICALS & INDUSTRIES,Stock,BSE
+FCEL-EQ.NS,FUTURE CONSUMER ENTERPRISE LIMI,Stock,NSI
+DCW.NS,DCW Ltd,Stock,NSI
+CESC.NS,CESC Ltd,Stock,NSI
+ARROWTEX.BO,Arrow Textiles Ltd,Stock,BSE
+ADANIPORTS.BO,ADANI PORTS AND SPECIAL ECONOM,Stock,BSE
+TEXMOPIPES.BO,Texmo Pipes & Products Ltd,Stock,BSE
+SYNCOMF.BO,SYNCOM FORMULATIONS (INDIA) LT,Stock,BSE
+SKIPPER.BO,SKIPPER LTD,Stock,BSE
+SHOPERSTOP.BO,Shoppers Stop Ltd,Stock,BSE
+SELMCL.NS,SEL Manufacturing Co Ltd,Stock,NSI
+ROHLTD.NS,Royal Orchid Hotels Ltd,Stock,NSI
+PMCFIN.BO,PMC FINCORP LIMITED,Stock,BSE
+NCC.NS,NCC Limited,Stock,NSI
+LUPIN.BO,Lupin Ltd,Stock,BSE
+ITHL.BO,International Travel House Ltd,Stock,BSE
+INFRATEL.NS,Bharti Infratel Ltd,Stock,NSI
+HINDUNILVR.BO,HINDUSTAN UNILEVER LTD.,Stock,BSE
+GODREJIND.NS,Godrej Industries Ltd,Stock,NSI
+GAIL.BO,GAIL India Ltd,Stock,BSE
+RUBYMILLS.NS,Ruby Mills Ltd.,Stock,NSI
+RENUKA.BO,Shree Renuka Sugars Ltd,Stock,BSE
+NTPC.BO,NTPC Ltd,Stock,BSE
+MIC.NS,MIC Electronics Ltd,Stock,NSI
+LINCOPH.BO,Lincoln Pharmaceuticals Ltd,Stock,BSE
+IOB.NS,Indian Overseas Bank,Stock,NSI
+IBWSL.BO,INDIABULLS WHOLESALE SERVICES,Stock,BSE
+HCC.NS,Hindustan Construction Co Ltd,Stock,NSI
+GLAXO.NS,GlaxoSmithKline Pharmaceuticals Ltd,Stock,NSI
+EMAMILTD.NS,Emami Ltd,Stock,NSI
+DENABANK.BO,Dena Bank,Stock,BSE
+CEATLTD.NS,Ceat Ltd,Stock,NSI
+BHARATFOR.NS,Bharat Forge Ltd,Stock,NSI
+BALRAMCHIN.BO,Balrampur Chini Mills Ltd,Stock,BSE
+ADSL-EQ.NS,ALLIED DIGITAL SERVICES LIMITED,Stock,NSI
+ACC.BO,ACC Ltd,Stock,BSE
+WSTCSTPAPR.BO,WEST COAST PAPER MILLS LTD.,Stock,BSE
+UNITINT.BO,Unitech International Ltd,Stock,BSE
+TVSSRICHAK.BO,TVS Srichakra Ltd,Stock,BSE
+TRIVENI.BO,TRIVENI ENGINEERING & INDUSTRI,Stock,BSE
+CONCOR.NS,Container Corporation of India Ltd,Stock,NSI
+BPCL.NS,Bharat Petroleum Corp Ltd,Stock,NSI
+BEML.NS,BEML Ltd,Stock,NSI
+AKSHOPTFBR.BO,Aksh Optifibre Ltd,Stock,BSE
+ADANIPORT.NS,ADANI PORTS AND SPECIAL ECONOMI,Stock,NSI
+ABIRLANUV.NS,Aditya Birla Nuvo Ltd,Stock,NSI
+VIDHIDYE.BO,Vidhi Dyestuffs Manufacturing Ltd,Stock,BSE
+UCOBANK.NS,UCO Bank,Stock,NSI
+TV18BRDCS.NS,TV18 BROADCAST LIMITED,Stock,NSI
+TIPSINDLT.NS,TIPS Industries Ltd,Stock,NSI
+TIDEWATER.NS,Tide Water Oil Co India Ltd,Stock,NSI
+TATAGLOBAL.BO,TATA GLOBAL BEVERAGES LIMITED,Stock,BSE
+SUVEN.NS,Suven Life Sciences Ltd,Stock,NSI
+SURANAIND.BO,SURANA INDUSTRIES LTD.,Stock,BSE
+SUNTV.BO,Sun TV Network Ltd,Stock,BSE
+STARPAPER.BO,STAR PAPER MILLS LTD.,Stock,BSE
+SARLAPOLY.NS,Sarla Performance Fibers Ltd,Stock,NSI
+RICOAUTO.NS,Rico Auto Industries Ltd,Stock,NSI
+RANBAXY.NS,Ranbaxy Laboratories Ltd,Stock,NSI
+PIPAVAVDOC.BO,PIPAVAV DEFENCE AND OFFSHORE E,Stock,BSE
+THIRUSUGA.NS,Thiru Arooran Sugars Ltd,Stock,NSI
+SYMPHONY.NS,Symphony Limited,Stock,NSI
+SURANASOL.BO,SURANA SOLAR LTD.,Stock,BSE
+SUNTV.NS,Sun TV Network Ltd,Stock,NSI
+SUBEX.BO,SUBEX LTD.,Stock,BSE
+SCHABLON.BO,Schablona India Ltd,Stock,BSE
+SAKHTISUG.BO,SAKTHI SUGARS LTD.,Stock,BSE
+RELINFRA.BO,Reliance Infrastructure Ltd,Stock,BSE
+RALLIS.NS,Rallis India Ltd.,Stock,NSI
+PHILIPCAR.NS,Phillips Carbon Black Ltd,Stock,NSI
+PETRONET.BO,Petronet LNG Ltd,Stock,BSE
+OIL.NS,Oil India Ltd,Stock,NSI
+MUKTAARTS.NS,Mukta Arts Ltd,Stock,NSI
+MJCO.BO,MAJESCO LIMITED,Stock,BSE
+MINDAIND.NS,Minda Industries Ltd,Stock,NSI
+MANAPPURA.NS,Manappuram Finance Ltd,Stock,NSI
+KTKBANK.NS,Karnataka Bank Ltd,Stock,NSI
+KFA.BO,Kingfisher Airlines Ltd,Stock,BSE
+KANSAINER.NS,Kansai Nerolac Paints Ltd,Stock,NSI
+JETAIRWAYS.BO,Jet Airways (India) Ltd,Stock,BSE
+PAGEIND.NS,Page Industries Ltd,Stock,NSI
+NMDC.NS,NMDC Ltd,Stock,NSI
+MOSERBAER.NS,Moser Baer India Ltd,Stock,NSI
+MINDTREE.NS,MindTree Ltd,Stock,NSI
+MARUTI.BO,Maruti Suzuki India Ltd,Stock,BSE
+LOTUSCHO.BO,Lotus Chocolate Co Ltd,Stock,BSE
+KMCSHIL.BO,KMC Speciality Hospitals (India) Ltd,Stock,BSE
+KELLTONTEC.BO,KELLTON TECH SOLUTIONS LTD.,Stock,BSE
+JUBLFOOD.NS,Jubilant Foodworks Ltd,Stock,NSI
+JCTLTD.BO,JCT Ltd,Stock,BSE
+ITDC.BO,INDIA TOURISM DEVELOPMENT CORP,Stock,BSE
+INDOWIND.NS,Indowind Energy Ltd,Stock,NSI
+IFCI.BO,IFCI Ltd,Stock,BSE
+IBULHSGFIN.BO,INDIABULLS HOUSING FINANCE LTD,Stock,BSE
+HTMEDIA.BO,HT Media Ltd,Stock,BSE
+HDIL.NS,Housing Development & Infrastructure Ltd,Stock,NSI
+GUJNRECOK.NS,Gujarat NRE Coke Ltd,Stock,NSI
+GPPL.NS,Gujarat Pipavav Port Ltd,Stock,NSI
+GENNEX.BO,Gennex Laboratories Ltd,Stock,BSE
+FCEL.BO,FUTURE CONSUMER ENTERPRISE LIM,Stock,BSE
+INDTONER.BO,Indian Toners & Developers Ltd,Stock,BSE
+INDIACEM.NS,India Cements Ltd,Stock,NSI
+IDBI.NS,IDBI Bank Ltd,Stock,NSI
+IBREALEST.NS,Indiabulls Real Estate Ltd,Stock,NSI
+HFCL.NS,Himachal Futuristic Communications Ltd,Stock,NSI
+HDIL.BO,Housing Development & Infrastructure Ltd,Stock,BSE
+GSPL.NS,Gujarat State Petronet Ltd,Stock,NSI
+GLENMARK.NS,Glenmark Pharmaceuticals Ltd,Stock,NSI
+FIBERWEB.BO,Fiberweb (India) Ltd,Stock,BSE
+ESSDEE.NS,ESS DEE Aluminium Ltd,Stock,NSI
+ESCORTS.BO,Escorts Ltd,Stock,BSE
+ECLERX.NS,eClerx Services Ltd,Stock,NSI
+DENABANK.NS,Dena Bank,Stock,NSI
+CROMPGREA.NS,Crompton Greaves Ltd,Stock,NSI
+CHENNPETR.NS,Chennai Petroleum Corp Ltd,Stock,NSI
+CERA.NS,Cera Sanitaryware Ltd,Stock,NSI
+CASTROLIND-EQ.NS,CASTROL INDIA LIMITED,Stock,NSI
+CANBK.BO,CANARA BANK,Stock,BSE
+BHEL.BO,Bharat Heavy Electricals Ltd.,Stock,BSE
+BATAINDIA.NS,Bata India Ltd,Stock,NSI
+ENGINERSI.NS,Engineers India Ltd,Stock,NSI
+DIVISLAB.NS,Divi's Laboratories Ltd,Stock,NSI
+DANLAW.BO,Danlaw Technologies India Ltd,Stock,BSE
+CONART.BO,Conart Engineers Ltd,Stock,BSE
+CESC.BO,CESC Ltd,Stock,BSE
+CENTURYTE.NS,Century Textiles & Industries Ltd,Stock,NSI
+CASTEXTECH.BO,CASTEX TECHNOLOGIES LIMITED,Stock,BSE
+BIRLACOT.NS,Birla Cotsyn (India) Ltd,Stock,NSI
+BFUTILITI.NS,BF Utilities Ltd,Stock,NSI
+BAJAJELEC.NS,Bajaj Electricals Ltd,Stock,NSI
+APOLLOTYRE-EQ.NS,APOLLO TYRES LIMITED,Stock,NSI
+ALEMBICLTD.BO,Alembic Ltd,Stock,BSE
+ABAN.NS,Aban Offshore Ltd,Stock,NSI
+WOCKPHARMA.BO,WOCKHARDT LTD.,Stock,BSE
+VOLTAMP.NS,Voltamp Transformers Ltd,Stock,NSI
+VIJAYTX.BO,Vijay Textiles Limited,Stock,BSE
+UVBOARDS.BO,UV Boards Ltd,Stock,BSE
+UNITDSPR.BO,United Spirits Ltd,Stock,BSE
+UDAICEMENT.BO,UDAIPUR CEMENT WORKS LTD.,Stock,BSE
+TVSELECT.NS,TVS Electronics  Ltd,Stock,NSI
+ANDHRABANK.BO,Andhra Bank,Stock,BSE
+ABB.NS,ABB India Ltd,Stock,NSI
+ZENITHHE.BO,Zenith Healthcare Ltd,Stock,BSE
+WHIRLPOOL.NS,Whirlpool of India Ltd,Stock,NSI
+VIVIMEDLAB.BO,VIVIMED LABS LTD.,Stock,BSE
+VAKRANGEE.BO,VAKRANGEE LIMITED,Stock,BSE
+UNITEDBNK.BO,United Bank of India,Stock,BSE
+ULTRACEMC.NS,UltraTech Cement Ltd,Stock,NSI
+TVSMOTOR.NS,TVS Motor Co Ltd,Stock,NSI
+TRITURBIN.NS,TRIVENI TURBINE LIMITED,Stock,NSI
+TRIDENT.BO,TRIDENT LTD.,Stock,BSE
+TORNTPHAR.NS,Torrent Pharmaceuticals Ltd,Stock,NSI
+TATASTEEL.BO,TATA STEEL LTD.,Stock,BSE
+TANLA.NS,Tanla Solutions Ltd,Stock,NSI
+SSWL.NS,Steel Strips Wheels Ltd,Stock,NSI
+SRF.NS,SRF Ltd,Stock,NSI
+SPARC.NS,Sun Pharma Advanced Research Co Ltd,Stock,NSI
+SHREECEM.NS,Shree Cements Ltd,Stock,NSI
+SAKHTISUG.NS,Sakthi Sugars Ltd,Stock,NSI
+RTNPOWER.BO,RATTANINDIA POWER LTD.,Stock,BSE
+TRICOM.NS,Tricom India Ltd,Stock,NSI
+TBZ.BO,TRIBHOVANDAS BHIMJI ZAVERI LTD,Stock,BSE
+TATACOFFEE.BO,Tata Coffee Ltd,Stock,BSE
+SYMPHONY.BO,Symphony Ltd.,Stock,BSE
+SRTRANSFIN.BO,SHRIRAM TRANSPORT FINANCE CO.L,Stock,BSE
+SPLIL.BO,SPL Industries Ltd,Stock,BSE
+SNOWMAN.BO,SNOWMAN LOGISTICS LTD,Stock,BSE
+SCI.NS,Shipping Corp of India Ltd,Stock,NSI
+RUCHISOYA.NS,Ruchi Soya Industries Ltd,Stock,NSI
+RPOWER.BO,Reliance Power Ltd,Stock,BSE
+RIIL.NS,Reliance Industrial Infrastructure Ltd,Stock,NSI
+RECLTD.BO,Rural Electrification Corp Ltd,Stock,BSE
+RASOYPR.BO,Rasoya Proteins Ltd.,Stock,BSE
+PURVA.BO,Puravankara Projects Ltd,Stock,BSE
+POWERGRID.NS,Power Grid Corp Of India Ltd,Stock,NSI
+PIDILITIND.BO,Pidilite Industries Ltd,Stock,BSE
+PATINTLOG.BO,Patel Integrated Logistics Ltd,Stock,BSE
+ORIENTPPR.NS,Orient Paper & Industries Ltd,Stock,NSI
+OPTOCIRCU.NS,Opto Circuits (India) Ltd,Stock,NSI
+NOIDATOLL.NS,Noida Toll Bridge Co Ltd,Stock,NSI
+RICHAIND.BO,Richa Industries Ltd,Stock,BSE
+RCF.NS,Rashtriya Chemicals and Fertilizers Ltd,Stock,NSI
+RANEENGIN.NS,Rane Engine Valve Ltd,Stock,NSI
+PRAJIND.NS,Praj Industries Ltd,Stock,NSI
+PIONEEREMB.BO,PIONEER EMBROIDERIES LTD.,Stock,BSE
+PATINTLOG.NS,Patel Integrated Logistics Ltd,Stock,NSI
+PASUPTAC.BO,Pasupati Acrylon Ltd,Stock,BSE
+ORICON.BO,Oricon Enterprises Limited,Stock,BSE
+OFSS.NS,Oracle Financial Services Software Ltd,Stock,NSI
+NITINFIRE.BO,Nitin Fire Protection Industries Ltd,Stock,BSE
+NGIND.BO,N G Industries Ltd,Stock,BSE
+NETWORK18.BO,Network 18 Media & Investments Ltd,Stock,BSE
+NELCO.NS,Nelco Ltd,Stock,NSI
+NBCC.BO,NATIONAL BUILDINGS CONSTRUCTIO,Stock,BSE
+MRPL.NS,Mangalore Refinery and Petrochemicals Ltd,Stock,NSI
+MONNETISP.NS,Monnet Ispat & Energy Ltd,Stock,NSI
+MMTC.BO,MMTC Ltd,Stock,BSE
+MIC.BO,MIC Electronics Ltd,Stock,BSE
+MARKSANS.NS,Marksans Pharma Ltd,Stock,NSI
+MANGALAM.BO,Mangalam Drugs & Organics Ltd,Stock,BSE
+NETWORK18.NS,Network 18 Media & Investments Ltd,Stock,NSI
+NESCO.NS,Nesco Ltd,Stock,NSI
+NECLIFE.NS,Nectar Lifesciences Ltd,Stock,NSI
+MTNL.BO,Mahanagar Telephone Nigam Ltd,Stock,BSE
+MPHASIS.NS,Mphasis Ltd,Stock,NSI
+MOIL.NS,MOIL Limited,Stock,NSI
+MINDTREE.BO,MindTree Ltd,Stock,BSE
+MCLEODRUS.NS,McLeod Russel India Ltd,Stock,NSI
+MARKSANS.BO,Marksans Pharma Ltd,Stock,BSE
+MAJESCO-EQ.NS,MAJESCO LIMITED,Stock,NSI
+LOYAL.BO,Loyal Equipments Limited,Stock,BSE
+LALPATHLAB-EQ.NS,Dr. Lal Path Labs Ltd.,Stock,NSI
+KSCL.BO,Kaveri Seed Company Ltd.,Stock,BSE
+KITEX.NS,Kitex Garments Ltd,Stock,NSI
+KECL.BO,KIRLOSKAR ELECTRIC COMPANY LTD,Stock,BSE
+JSL.NS,Jindal Stainless Ltd,Stock,NSI
+JETKINGQ.BO,Jetking Infotrain Ltd,Stock,BSE
+IZMO.BO,IZMO Limited,Stock,BSE
+ITC.BO,ITC Ltd,Stock,BSE
+IOC.NS,Indian Oil Corp Ltd,Stock,NSI
+LOKESHMAC.NS,Lokesh Machines Ltd,Stock,NSI
+KSE.BO,KSE LTD.,Stock,BSE
+KRBL.NS,KRBL Ltd,Stock,NSI
+KESORAMIN.NS,Kesoram Industries Ltd,Stock,NSI
+KAMATHOTE.NS,Kamat Hotels India Ltd,Stock,NSI
+JINDALSTEL-EQ.NS,JINDAL STEEL & POWER LIMITED,Stock,NSI
+JAMNAAUTO.BO,JAMNA AUTO INDUSTRIES LTD.,Stock,BSE
+ITI.BO,ITI Ltd,Stock,BSE
+IPCALAB.NS,Ipca Laboratories Ltd,Stock,NSI
+INDUSINDBK.BO,IndusInd Bank Ltd,Stock,BSE
+INDUSINDB.NS,IndusInd Bank Ltd,Stock,NSI
+INDSWFTLA.NS,Ind Swift Laboratories Ltd,Stock,NSI
+INDOSOLAR.NS,Indosolar Ltd,Stock,NSI
+IDFCBANK-EQ.NS,IDFC Bank Limited,Stock,NSI
+HOTELEELA.NS,Hotel Leela Venture Ltd,Stock,NSI
+HINDPETRO.BO,HINDUSTAN PETROLEUM CORPORATIO,Stock,BSE
+HCL-INSYS-EQ.NS,HCL INFOSYSTEMS LIMITED,Stock,NSI
+GREAVESCO.NS,Greaves Cotton Ltd.,Stock,NSI
+GODREJPRO.NS,Godrej Properties Ltd.,Stock,NSI
+GAYAPROJ.NS,Gayatri Projects Ltd,Stock,NSI
+INDSWFTLAB.BO,IND-SWIFT LABORATORIES LTD.,Stock,BSE
+INDOTECH.BO,Indo Tech Transformers Ltd,Stock,BSE
+INDOSOLAR.BO,INDOSOLAR LTD.,Stock,BSE
+IDFC.BO,IDFC Ltd,Stock,BSE
+HINDZINC.NS,Hindustan Zinc Ltd.,Stock,NSI
+HIMATSEID.NS,Himatsingka Seide Ltd,Stock,NSI
+GUJBOROS.BO,Gujarat Borosil Ltd,Stock,BSE
+GOLDBEES.NS,Goldman Sachs Gold BeES ETF,Stock,NSI
+GODREJIND.BO,Godrej Industries Ltd,Stock,BSE
+GATI.NS,Gati Ltd,Stock,NSI
+GATI.BO,Gati Ltd,Stock,BSE
+FORTIS.NS,Fortis Healthcare Ltd,Stock,NSI
+FCSSOFT.NS,FCS Software Solutions Ltd,Stock,NSI
+EROSMEDIA.NS,Eros International Media Ltd,Stock,NSI
+ELDEHSG.BO,Eldeco Housing And Industries Ltd,Stock,BSE
+DQE.BO,DQ Entertainment (International) Ltd,Stock,BSE
+DEEPIND.NS,Deep Industries Ltd,Stock,NSI
+DAICHI.BO,Dai-Ichi Karkaria Ltd,Stock,BSE
+CORALAB.BO,Coral Laboratories Ltd,Stock,BSE
+CIMMCO.NS,Cimmco Ltd,Stock,NSI
+FSL.BO,Firstsource Solutions Ltd,Stock,BSE
+FLFL.BO,FUTURE LIFESTYLE FASHIONS LTD,Stock,BSE
+EXCELCROP.NS,Excel Crop Care Ltd,Stock,NSI
+ELECON.BO,Elecon Engineering Co Ltd,Stock,BSE
+EDUCOMP.BO,Educomp Solutions Ltd,Stock,BSE
+DISHMAN.NS,Dishman Pharmaceuticals & Chemicals Ltd,Stock,NSI
+DECNGOLD.BO,Deccan Gold Mines Ltd,Stock,BSE
+CORPBANK.NS,Corporation Bank,Stock,NSI
+CIPLA.BO,Cipla Ltd,Stock,BSE
+CENTUM.BO,Centum Electronics Ltd,Stock,BSE
+CCHHL.BO,COUNTRY CLUB HOSPITALITY AND H,Stock,BSE
+CADILAHC.BO,Cadila Healthcare Ltd,Stock,BSE
+BRAWN.BO,Brawn Biotech Ltd,Stock,BSE
+BLUEDART.NS,Blue Dart Express Ltd,Stock,NSI
+BAJAJHIND.BO,Bajaj Hindusthan Sugar Ltd,Stock,BSE
+ASTRAMICRO.BO,ASTRA MICROWAVE PRODUCTS LTD.,Stock,BSE
+ASL.BO,ARIHANT SUPERSTRUCTURES LIMITE,Stock,BSE
+ASAHIINDIA-EQ.NS,ASAHI INDIA GLASS LIMITED,Stock,NSI
+ARVIND.BO,Arvind Ltd,Stock,BSE
+AMARAJABAT.BO,AMARA RAJA BATTERIES LTD.,Stock,BSE
+CANFINHOME.BO,Can Fin Homes Ltd,Stock,BSE
+BRITANNIA.BO,Britannia Industries Ltd,Stock,BSE
+BOMDYEING.NS,Bombay Dyeing & Manufacturing Co., Ltd.,Stock,NSI
+BAJFINANC.NS,BAJAJ FINANCE LIMITED,Stock,NSI
+ATULAUTO.BO,Atul Auto Ltd,Stock,BSE
+ASMTEC.BO,ASM Technologies Ltd,Stock,BSE
+ASHOKLEY.BO,Ashok Leyland Ltd,Stock,BSE
+ARVIND.NS,Arvind Ltd,Stock,NSI
+ANDHRACEMT.BO,ANDHRA CEMENTS LTD.,Stock,BSE
+ALPA.BO,Alpa Laboratories Ltd,Stock,BSE
+ALBK.NS,Allahabad Bank,Stock,NSI
+AJCON.BO,Ajcon Global Services Ltd,Stock,BSE
+ABG.BO,ABG Infralogistics Ltd,Stock,BSE
+ZYLOG.NS,Zylog Systems Ltd.,Stock,NSI
+ZUARI.NS,Zuari Agro Chemicals Ltd,Stock,NSI
+ZPPOLYSA.BO,Planter'S Polysacks Ltd,Stock,BSE
+ZODIACLOTH.BO,ZODIAC CLOTHING CO.LTD.,Stock,BSE
+ZEEMEDIA-EQ.NS,ZEE MEDIA CORPORATION LIMITED,Stock,NSI
+ZEELEARN.BO,ZEE LEARN LTD.,Stock,BSE
+ZANDUREAL.NS,Zandu Realty Ltd,Stock,NSI
+AKSHOPTFB.NS,Aksh Optifibre Ltd,Stock,NSI
+ACCELYA-EQ.NS,ACCELYA KALE SOLUTIONS LIMITED,Stock,NSI
+3IINFOTECH-EQ.NS,3I INFOTECH LIMITED,Stock,NSI
+ZYDEN.BO,Zyden Gentec Ltd.,Stock,BSE
+ZUARI.BO,ZUARI AGRO CHEMICALS LTD.,Stock,BSE
+ZODJRDMKJ.BO,ZODIAC-JRD-MKJ LTD.,Stock,BSE
+ZENITHCOM.NS,Zenith Computers Ltd,Stock,NSI
+ZEELEARN.NS,Zee Learn Ltd,Stock,NSI
+ZANDUREALT.BO,ZANDU REALTY LIMITED,Stock,BSE
+XPROINDIA.BO,XPRO INDIA LTD.,Stock,BSE
+WINSOMBR.BO,Winsome Breweries Ltd,Stock,BSE
+WANBURY.BO,Wanbury Ltd,Stock,BSE
+VRLLOG.BO,VRL Logistics Limited,Stock,BSE
+VOLTAS.BO,Voltas Ltd,Stock,BSE
+VIMTALABS.NS,Vimta Labs Ltd,Stock,NSI
+VIDEOIND.NS,Videocon Industries Ltd,Stock,NSI
+VHL.NS,Vardhman Holdings Ltd,Stock,NSI
+VGUARD.BO,V-Guard Industries Ltd,Stock,BSE
+VFL.BO,VIJI FINANCE LTD,Stock,BSE
+VERTEXSPG.BO,Vertex Spinning Ltd,Stock,BSE
+WARRENTEA.BO,WARREN TEA LTD.,Stock,BSE
+VSTIND.NS,VST Industries Ltd,Stock,NSI
+VRL.BO,VASUNDHARA RASAYANS LTD,Stock,BSE
+VOGUETEX.BO,Vogue Textiles Ltd,Stock,BSE
+VIJSHAN.BO,Vijay Shanthi Builders Ltd,Stock,BSE
+VICEROY.BO,VICEROY HOTELS LTD.,Stock,BSE
+VGUARD.NS,V-Guard Industries Ltd,Stock,NSI
+VGCL.BO,Vibrant Global Capital Limited,Stock,BSE
+VETO-EQ.NS,VETO SWITCHGEARS AND CABLES LIM,Stock,NSI
+VEERENRGY.BO,Veer Energy & Infrastructure Ltd,Stock,BSE
+VCU.BO,VCU DATA MANAGEMENT LTD,Stock,BSE
+VALECHAENG-EQ.NS,VALECHA ENGINEERING LIMITED,Stock,NSI
+USHERAGRO.NS,Usher Agro Ltd,Stock,NSI
+UNIONBANK.BO,Union Bank of India,Stock,BSE
+UGARSUGAR.BO,UGAR SUGAR WORKS LTD.,Stock,BSE
+UBL.NS,United Breweries Ltd,Stock,NSI
+TRIVENI.NS,Triveni Engineering & Industries Ltd,Stock,NSI
+TRIDENT.NS,TRIDENT LIMITED,Stock,NSI
+TNPL.NS,Tamil Nadu Newsprint & Papers Ltd,Stock,NSI
+TIRFOAM.BO,Tirupati Foam Ltd,Stock,BSE
+VARDHINDQ.BO,Vardhman Industries Ltd,Stock,BSE
+UTTAMSUGAR.BO,UTTAM SUGAR MILLS LTD.,Stock,BSE
+UPERGANGE.NS,Upper Ganges Sugar & Industries Ltd,Stock,NSI
+UJAAS.BO,UJAAS ENERGY LIMITED,Stock,BSE
+UFLEX.BO,Uflex Ltd,Stock,BSE
+TTML.NS,Tata Teleservices (Maharashtra) Ltd,Stock,NSI
+TRITONV.BO,Triton Valves Ltd,Stock,BSE
+TORNTPOWER.BO,TORRENT POWER LTD.,Stock,BSE
+TIRSARJ.BO,Tirupati Sargan Ltd,Stock,BSE
+TINPLATE.NS,Tinplate Co of India Ltd,Stock,NSI
+TIL.BO,TIL Ltd,Stock,BSE
+TIGLOB.BO,T & I Global Ltd,Stock,BSE
+TEXRAIL.NS,Texmaco Rail & Engineering Ltd,Stock,NSI
+TECPO.BO,Techtran Polylenses Ltd,Stock,BSE
+TATAELXSI.BO,Tata Elxsi Ltd,Stock,BSE
+TAJGVK.BO,Taj GVK Hotels & Resorts Ltd,Stock,BSE
+SWELECTES.BO,SWELECT ENERGY SYSTEMS LIMITED,Stock,BSE
+SURYVANSP.BO,Suryavanshi Spinning Mills Ltd,Stock,BSE
+SUPREMETEX.BO,SUPREME TEX MART LTD.,Stock,BSE
+SUPREMEIN.NS,The Supreme Industries Limited,Stock,NSI
+TIIL.NS,Technocraft Industries India Ltd,Stock,NSI
+TIDEWATER.BO,TIDE WATER OIL (INDIA) LTD.,Stock,BSE
+TEXMOPIPES-EQ.NS,TEXMO PIPES AND PRODUCTS LIMITE,Stock,NSI
+TATAPOWERLR.BO,TATA POWER CO. LTD,Stock,BSE
+TATACOMM.NS,Tata Communications Ltd,Stock,NSI
+SYNCOM.BO,Syncom Formulation (India) Ltd,Stock,BSE
+SUTLEJTEX.BO,Sutlej Textiles And Industries Ltd,Stock,BSE
+SURANAIND.NS,Surana Industries Ltd,Stock,NSI
+SUPREMEIND.BO,Supreme Industries Ltd,Stock,BSE
+SUNFLAG.NS,Sunflag Iron & Steel Co Ltd,Stock,NSI
+SUNFLAG.BO,SUNFLAG IRON & STEEL CO.LTD.,Stock,BSE
+SUNCLAYLT.NS,SUNDARAM CLAYTON LIMITED,Stock,NSI
+SUDAR.NS,Sudar Industries Ltd,Stock,NSI
+STRTECH.NS,Sterlite Technologies Ltd,Stock,NSI
+STELCOST.BO,Stelco Strips Ltd,Stock,BSE
+SSPDL.BO,SSPDL Ltd,Stock,BSE
+SRTRANSFIN-EQ.NS,SHRIRAM TRANSPORT FINANCE COMPA,Stock,NSI
+SQSBFSI.BO,SQSBFSI,Stock,BSE
+SPECIALITY.BO,SPECIALITY RESTAURANTS LTD.,Stock,BSE
+SOTL.BO,Savita Oil Technologies Ltd,Stock,BSE
+SUNDARMFI.NS,Sundaram Finance Ltd,Stock,NSI
+SUMEETINDS.BO,SUMEET INDUSTRIES LTD.,Stock,BSE
+SUBROS.BO,Subros Ltd,Stock,BSE
+STHINPA.BO,The South India Paper Mills Ltd,Stock,BSE
+STEERINTER.BO,Sterling International Enterprises Ltd,Stock,BSE
+SSLT.BO,SESA STERLITE LIMITED,Stock,BSE
+SRIPIPES-EQ.NS,SRIKALAHASTHI PIPES LIMITED,Stock,NSI
+SPMLINFRA.NS,SPML Infra Ltd,Stock,NSI
+SPARC.BO,Sparc Systems Ltd,Stock,BSE
+SOBHA.NS,Sobha Ltd,Stock,NSI
+SOBHA.BO,Sobha Ltd,Stock,BSE
+SMLISUZU.NS,SML ISUZU LIMITED,Stock,NSI
+SKYIND.BO,Sky Industries Ltd,Stock,BSE
+SINGER.BO,Singer India Ltd,Stock,BSE
+SIL.NS,Standard Industries Ltd,Stock,NSI
+SHRJAGP.BO,Shri Jagdamba Polymers Ltd,Stock,BSE
+SHRGLTR.BO,Shree Global Tradefin Ltd,Stock,BSE
+SHK.BO,S H Kelkar and Company Limited,Stock,BSE
+SHILPAMED.NS,Shilpa Medicare Ltd,Stock,NSI
+SHARDUL.BO,Shardul Securities Ltd,Stock,BSE
+SMSPHARMA.BO,SMS Pharmaceuticals Ltd,Stock,BSE
+SMENER.BO,S M Energy Teknik & Electronics Ltd,Stock,BSE
+SITASHREE.BO,Sita Shree Food Products Ltd,Stock,BSE
+SIMBHSUGAR.BO,SIMBHAOLI SUGARS LTD.,Stock,BSE
+SIEL.BO,SUPERIOR INDUSTRIAL ENTERPRISE,Stock,BSE
+SHRIRAMEP.NS,Shriram EPC Ltd,Stock,NSI
+SHREECEM.BO,Shree Cements Ltd,Stock,BSE
+SHIVAMAUT.NS,Shivam Autotech Ltd,Stock,NSI
+SHILGRAVQ.BO,Shilp Gravures Ltd,Stock,BSE
+SEYAIND.BO,SEYA INDUSTRIES LTD.,Stock,BSE
+SCANSTL.BO,Scan Steels Limited,Stock,BSE
+SASKEN.BO,Sasken Communication Technologies Ltd,Stock,BSE
+SAREGAMA.BO,Saregama India Ltd,Stock,BSE
+SANWARIA.NS,Sanwaria Agro Oils Ltd,Stock,NSI
+SANGHIPOLY.BO,SANGHI POLYESTERS LTD.,Stock,BSE
+SANCO-SM.NS,Sanco Industries Ltd.,Stock,NSI
+SAMLEPU.BO,SAM LEASECO LTD.,Stock,BSE
+SAINTGOBAIN.BO,Saint Gobain Sekurit India Ltd,Stock,BSE
+RUSHIL.NS,Rushil Decor Ltd,Stock,NSI
+RPGLIFE.NS,RPG Life Sciences Ltd,Stock,NSI
+SATHAISPAT.BO,SATHAVAHANA ISPAT LTD.,Stock,BSE
+SARLAPOLY.BO,SARLA PERFORMANCE FIBERS LTD.,Stock,BSE
+SAPPL.BO,Shree Ajit Pulp And Paper Ltd.,Stock,BSE
+SANJIVIN.BO,Sanjivani Paranterals Ltd,Stock,BSE
+SANGAMIND.NS,Sangam (India) Ltd,Stock,NSI
+SAMRATPH.BO,Samrat Pharmachem Ltd,Stock,BSE
+SALORAINTL.BO,SALORA INTERNATIONAL LTD.,Stock,BSE
+SAHARA.BO,Sahara One Media & Entertainment Ltd,Stock,BSE
+RTNINFRA.BO,RATTANINDIA INFRASTRUCTURE LTD,Stock,BSE
+RNBIND.BO,RNB INDUSTRIES LTD.,Stock,BSE
+RML.BO,RANE (MADRAS) LTD.,Stock,BSE
+RJL.NS,Renaissance Jewellery Ltd,Stock,NSI
+RISAINTL.BO,RISA INTERNATIONAL LTD.,Stock,BSE
+RIDDHI.BO,Riddhi Siddhi Gluco Biols Ltd,Stock,BSE
+RICOAUTO.BO,Rico Auto Industries Ltd,Stock,BSE
+RELAXO.BO,Relaxo Footwears Ltd,Stock,BSE
+RECLTD.NS,Rural Electrification Corp Ltd,Stock,NSI
+RCRL.BO,RCL RETAIL LTD.,Stock,BSE
+RAYMOND.NS,Raymond Ltd,Stock,NSI
+RANASUG.BO,Rana Sugars Ltd,Stock,BSE
+RKDL.NS,Ravikumar Distilleries Ltd,Stock,NSI
+RJL.BO,Renaissance Jewellery Ltd,Stock,BSE
+RIIL.BO,Reliance Industrial Infrastructure Ltd,Stock,BSE
+RICOHQ.BO,Ricoh India Ltd,Stock,BSE
+RELAXO.NS,Relaxo Footwears Limited,Stock,NSI
+REDINGTON.BO,Redington (India) Ltd,Stock,BSE
+REALSTR.BO,Real Strips Ltd,Stock,BSE
+RCIIND.BO,RCI INDUSTRIES & TECHNOLOGIES,Stock,BSE
+RATHIST.BO,Rathi Steel & Power Ltd,Stock,BSE
+RAJESHEXPO-EQ.NS,RAJESH EXPORTS LIMITED,Stock,NSI
+RAIN-EQ.NS,RAIN INDUSTRIES LIMITED,Stock,NSI
+PVR.NS,PVR Ltd,Stock,NSI
+PUNJLLOYD.BO,Punj Lloyd Ltd,Stock,BSE
+PSL.BO,PSL LTD.,Stock,BSE
+PRIMAPLA.BO,Prima Plastics Ltd,Stock,BSE
+PREMEXPLQ.BO,Premier Explosives Ltd,Stock,BSE
+PPAP.BO,PPAP Automotive Ltd,Stock,BSE
+POLARIS.NS,Polaris Consulting & Services Ltd,Stock,NSI
+PIONEEREMB-EQ.NS,PIONEER EMBROIDERIES LIMITED,Stock,NSI
+PGHH.NS,Procter & Gamble Hygiene and Health Care Ltd,Stock,NSI
+RAHME.BO,Rahul Merchandising Ltd,Stock,BSE
+PVP.NS,PVP Ventures Ltd,Stock,NSI
+PTC.NS,PTC India Ltd,Stock,NSI
+PRISMCEM.BO,Prism Cement Ltd,Stock,BSE
+PRESTIGE.NS,Prestige Estates Projects Ltd,Stock,NSI
+PRATIBHA.NS,Pratibha Industries Ltd,Stock,NSI
+PORWAL.BO,Porwal Auto Components Ltd,Stock,BSE
+PLASTIBLE.NS,Plastiblends India Ltd.,Stock,NSI
+PHOTOQUP.BO,Photoquip India Ltd,Stock,BSE
+PGEL.BO,PG ELECTROPLAST LTD.,Stock,BSE
+PFS.BO,PTC INDIA FINANCIAL SERVICES L,Stock,BSE
+PEL.BO,PIRAMAL ENTERPRISES LTD.,Stock,BSE
+PDPL.NS,Parenteral Drugs (India) Ltd,Stock,NSI
+PATELENG.NS,Patel Engineering Ltd,Stock,NSI
+PARRYSUGAR.BO,PARRYS SUGAR INDUSTRIES LTD.,Stock,BSE
+PACT.BO,Pact Industries Ltd.,Stock,BSE
+ORISSAMINE.BO,ORISSA MINERALS DEVELOPMENT CO,Stock,BSE
+ORIENTCQ.BO,Oriental Carbon And Chemicals Ltd,Stock,BSE
+ORBITCORP.NS,Orbit Corp Ltd,Stock,NSI
+ONMOBILE.BO,OnMobile Global Ltd,Stock,BSE
+PERSISTENT.BO,Persistent Systems Ltd,Stock,BSE
+PDUMJEPULP.BO,PUDUMJEE PULP & PAPER MILLS LT,Stock,BSE
+PBAINFRA.BO,PBA Infrastructure Ltd,Stock,BSE
+PARSVNATH.NS,Parsvnath Developers Limited,Stock,NSI
+PARASPETRO-BE.NS,PARAS PETROFILS LTD.,Stock,NSI
+PACL.BO,Punjab Alkalies & Chemicals Ltd,Stock,BSE
+ORIENTPPR.BO,ORIENT PAPER & INDUSTRIES LTD.,Stock,BSE
+ORIENTBANK-EQ.NS,ORIENTAL BANK OF COMMERCE,Stock,NSI
+OPTOCIRCUI.BO,OPTO CIRCUITS (INDIA) LTD.,Stock,BSE
+ONGC.BO,Oil & Natural Gas Corp Ltd,Stock,BSE
+OMNITEX.BO,Omnitex Industries (India) Ltd,Stock,BSE
+OCL.NS,OCL India Ltd,Stock,NSI
+OASISEC.BO,Oasis Securities Ltd,Stock,BSE
+NOVARTIND.BO,NOVARTIS INDIA LTD.,Stock,BSE
+NOCIL.BO,NOCIL Ltd,Stock,BSE
+NIRLON.BO,Nirlon Ltd,Stock,BSE
+NIITTECH.BO,NIIT Technologies Ltd,Stock,BSE
+NEYVELILI.NS,Neyveli Lignite Corp Ltd,Stock,NSI
+NEOCORP.BO,Neo Corp International Ltd,Stock,BSE
+NDMETAL.BO,N D Metal Industries Ltd,Stock,BSE
+OILCOUNTU.NS,Oil Country Tubular Ltd,Stock,NSI
+OBIL.BO,OCEANAA BIOTEK INDUSTRIES LTD,Stock,BSE
+NPRFIN.BO,NPR Finance Ltd,Stock,BSE
+NOCIL.NS,NOCIL Ltd,Stock,NSI
+NITINFIRE.NS,Nitin Fire Protection Industries Limited,Stock,NSI
+NIMBUSFOO.BO,Nimbus Foods Industries Ltd,Stock,BSE
+NIITLTD.BO,NIIT LTD.,Stock,BSE
+NESTLEIND.BO,NESTLE INDIA LTD.,Stock,BSE
+NELCAST.BO,Nelcast Ltd.,Stock,BSE
+NDL-EQ.NS,NANDAN DENIM LIMITED,Stock,NSI
+NCOPPER.BO,NISSAN COPPER LTD.,Stock,BSE
+NAVINFLUOR-EQ.NS,NAVIN FLUORINE INTERNATIONAL LI,Stock,NSI
+NATIONALU.NS,National Aluminium Company Limited,Stock,NSI
+NATCOPHARM-EQ.NS,NATCO PHARMA LIMITED,Stock,NSI
+NAISARG.BO,NAISARGIK AGRITECH (INDIA) LTD,Stock,BSE
+MVL.NS,MVL Ltd.,Stock,NSI
+MTNL.NS,Mahanagar Telephone Nigam Ltd,Stock,NSI
+MOSERBAER.BO,Moser Baer India Ltd,Stock,BSE
+MOREPENLAB-EQ.NS,MOREPEN LABORATORIES LIMITED,Stock,NSI
+MOLDTKPAC.BO,MOLD-TEK PACKAGING LIMITED,Stock,BSE
+NCC.BO,NCC LIMITED,Stock,BSE
+NAUKRI.NS,Info Edge (India) Ltd,Stock,NSI
+NATHBIOGEN.BO,NATH BIO-GENES (INDIA) LTD,Stock,BSE
+NATCAPSUQ.BO,Natural Capsules Ltd,Stock,BSE
+NAHARCAP.BO,Nahar Capital & Financial Services Ltd,Stock,BSE
+MUTHOOTFIN.BO,MUTHOOT FINANCE LTD.,Stock,BSE
+MPSLTD.BO,MPS Ltd,Stock,BSE
+MORGAN.BO,Morgan Ventures Ltd,Stock,BSE
+MONSANTO.BO,Monsanto India Ltd,Stock,BSE
+MODERN.BO,Modern India Ltd,Stock,BSE
+MIRCELECTR.BO,MIRC ELECTRONICS LTD.,Stock,BSE
+MHRIL.NS,Mahindra Holidays & Resorts India Ltd,Stock,NSI
+MEGASOFT.NS,Megasoft Ltd,Stock,NSI
+MCX6.BO,MULTI COMMODITY EXCHANGE OF IN,Stock,BSE
+MAZDALTD.BO,Mazda Ltd,Stock,BSE
+MAXHEIGHTS.BO,MAXHEIGHTS INFRASTRUCTURE LTD.,Stock,BSE
+MANAPPURAM.BO,MANAPPURAM FINANCE LTD.,Stock,BSE
+MAHSEAMLE.NS,Maharashtra Seamless Ltd,Stock,NSI
+MAHINDCIE-EQ.NS,MAHINDRA CIE AUTOMOTIVE LIMITED,Stock,NSI
+LUMAXIND.NS,Lumax Industries Ltd,Stock,NSI
+MINDACORP-EQ.NS,MINDA CORPORATION LIMITED,Stock,NSI
+MENONBE-EQ.NS,MENON BEARINGS LIMITED,Stock,NSI
+MEDICAPQ.BO,Medi-Caps Ltd,Stock,BSE
+MCDOWELL-N-EQ.NS,UNITED SPIRITS LIMITED,Stock,NSI
+MAYURUNIQ.BO,MAYUR UNIQUOTERS LTD.,Stock,BSE
+MAX.BO,Max India Ltd,Stock,BSE
+MANALIPETC.BO,MANALI PETROCHEMICAL LTD.,Stock,BSE
+MAHSCOOTER.BO,Maharashtra Scooters Ltd,Stock,BSE
+LYPSAGEMS.BO,LYPSA GEMS & JEWELLERY LTD,Stock,BSE
+LOTUSEYE.NS,Lotus Eye Hospital and Institute Ltd,Stock,NSI
+LOTUSEYE.BO,Lotus Eye Hospital and Institute Ltd,Stock,BSE
+LINCOLN-EQ.NS,Lincoln Pharma Ltd,Stock,NSI
+LAKPRE.NS,Lakshmi Precision Screws Ltd,Stock,NSI
+KSLIND.BO,KSL and Industries Ltd,Stock,BSE
+KRIINFRA.BO,KRIDHAN INFRA LIMITED,Stock,BSE
+KPIT.NS,KPIT Technologies Ltd,Stock,NSI
+KIRLOSBROS-EQ.NS,KIRLOSKAR BROTHERS LIMITED,Stock,NSI
+KIL.BO,Kamdhenu Ispat Ltd,Stock,BSE
+KHANDSE-EQ.NS,KHANDWALA SECURITIES LIMITED,Stock,NSI
+KESORAMIND.BO,Kesoram Industries Ltd,Stock,BSE
+LITL.BO,Lanco Infratech Ltd,Stock,BSE
+LANCORHOL.BO,Lancor Holdings Ltd,Stock,BSE
+KUSHAL.BO,KUSHAL TRADELINK LTD,Stock,BSE
+KSK.BO,KSK Energy Ventures Ltd,Stock,BSE
+KRBL.BO,KRBL Ltd,Stock,BSE
+KMGMILK.BO,KMG MILK FOOD LTD.,Stock,BSE
+KIL.NS,Kamdhenu Ispat Ltd,Stock,NSI
+KIDUJA.BO,Kiduja India Ltd,Stock,BSE
+KHAITANLTD.BO,Khaitan India Ltd,Stock,BSE
+KESARPE.BO,Kesar Petroproducts Ltd,Stock,BSE
+KEI.BO,KEI INDUSTRIES LTD.,Stock,BSE
+KDDL.BO,KDDL Ltd,Stock,BSE
+KCP.NS,KCP Ltd,Stock,NSI
+KAPILCO.BO,Kapil Cotex Ltd,Stock,BSE
+KALYANIFRG-EQ.NS,KALYANI FORGE LIMITED,Stock,NSI
+KABRADG.BO,Kabra Drugs Limited,Stock,BSE
+JYOTHYLAB.NS,Jyothy Laboratories Ltd,Stock,NSI
+JUBLINDS.BO,JUBILANT INDUSTRIES LTD.,Stock,BSE
+JMDTELEFILM.BO,JMD Telefilms Industries Ltd,Stock,BSE
+JKCEMENT.NS,JK Cement Ltd,Stock,NSI
+KEC.BO,KEC INTERNATIONAL LTD.,Stock,BSE
+KCPSUGIND.NS,KCP Sugar & Industries Corp Ltd,Stock,NSI
+KARURVYSY.NS,Karur Vysya Bank Ltd,Stock,NSI
+KANPRPLA.BO,Kanpur Plastipacks Ltd,Stock,BSE
+KALPATPOWR.BO,KALPATARU POWER TRANSMISSION L,Stock,BSE
+JYOTIRES.BO,Jyoti Resins & Adhesives Ltd,Stock,BSE
+JVLAGRO.NS,JVL Agro Industries Ltd,Stock,NSI
+JSWSTEEL-P2.NS,JSW STEEL LIMITED,Stock,NSI
+JKTYRE.BO,JK TYRE & INDUSTRIES LTD.,Stock,BSE
+JISLJALEQS.BO,JAIN IRRIGATION SYSTEMS LTD.,Stock,BSE
+JINDHOT.BO,Jindal Hotels Ltd,Stock,BSE
+JENSONICOL.BO,JENSON & NICHOLSON (INDIA) LTD,Stock,BSE
+JBFIND.NS,JBF Industries Ltd,Stock,NSI
+JAICORPLTD.BO,JAI CORP LTD.,Stock,BSE
+IVRCLINFR.NS,IVRCL Ltd,Stock,NSI
+IVC.NS,IL&FS Investment Managers Ltd,Stock,NSI
+ISFT.BO,Intrasoft Technologies Ltd,Stock,BSE
+IOLCP.BO,IOL CHEMICALS & PHARMACEUTICAL,Stock,BSE
+INTELLECT-EQ.NS,INTELLECT DESIGN ARENA LIMITED,Stock,NSI
+INDRAMEDCO.BO,Indraprastha Medical Corp Ltd,Stock,BSE
+JINDALPHOT.BO,JINDAL PHOTO LTD.,Stock,BSE
+JBMA.BO,JBM Auto Ltd,Stock,BSE
+JAYSYN.BO,Jaysynth Dyestuff (India) Ltd,Stock,BSE
+JAGPRO.BO,JAGRAN PRODUCTION LIMITED,Stock,BSE
+IVP.NS,IVP Ltd,Stock,NSI
+ITDCEM.NS,ITD Cementation India Ltd,Stock,NSI
+IRB.BO,IRB Infrastructure Developers Ltd,Stock,BSE
+INTLCOMBQ.BO,International Combustion (India) Ltd,Stock,BSE
+INGVYSYAB.NS,ING Vysya Bank Ltd,Stock,NSI
+INDRAIND.BO,Indra Industries Ltd.,Stock,BSE
+INDOTECH.NS,Indo Tech Transformers Ltd,Stock,NSI
+INDIANACRY.BO,INDIAN ACRYLICS LTD.,Stock,BSE
+IMFA.BO,Indian Metals & Ferro Alloys Ltd,Stock,BSE
+IGARASHI.BO,IGARASHI MOTORS INDIA LTD.,Stock,BSE
+IDFCBANK.BO,IDFC Bank Limited,Stock,BSE
+HSIL.BO,HSIL Ltd,Stock,BSE
+HOVS.BO,HOV Services Ltd,Stock,BSE
+HMVL.NS,Hindustan Media Ventures Ltd,Stock,NSI
+HMT.BO,HMT Ltd,Stock,BSE
+HISARMET.BO,Hisar Metal Industries Ltd,Stock,BSE
+INDIANCAR.NS,Indian Card Clothing Co Ltd,Stock,NSI
+INANI.BO,Inani Marbles & Industries Ltd,Stock,BSE
+IKFTECH.BO,IKF Technologies Ltd,Stock,BSE
+IFBAGRO.BO,IFB AGRO INDUSTRIES LTD.,Stock,BSE
+ICRA.BO,ICRA Ltd,Stock,BSE
+HOWARHO.BO,Howard Hotels Ltd,Stock,BSE
+HOTELEELA.BO,Hotel Leela Venture Ltd,Stock,BSE
+HMT.NS,HMT Ltd,Stock,NSI
+HITKITGLO.BO,Hit Kit Global Solutions Ltd,Stock,BSE
+HIPOLIN.BO,Hipolin Ltd,Stock,BSE
+HINDUNILV.NS,Hindustan Unilever Ltd,Stock,NSI
+HINDCOPPE.NS,Hindustan Copper Ltd,Stock,NSI
+HINDALCO.BO,Hindalco Industries Ltd,Stock,BSE
+HESTERBIO.BO,Hester Biosciences Ltd,Stock,BSE
+HDFCBANK.BO,HDFC Bank, Ltd.,Stock,BSE
+HDFC.BO,Housing Development Finance Corp Ltd,Stock,BSE
+HCIL.NS,Himadri Chemicals & Industries Limited,Stock,NSI
+HBLPOWER.BO,HBL POWER SYSTEMS LTD.,Stock,BSE
+HATSUN.BO,Hatsun Agro Product Ltd.,Stock,BSE
+GVKPIL.NS,GVK Power & Infrastructure Ltd,Stock,NSI
+HINDIND.BO,Hind Industries Ltd,Stock,BSE
+HINDCOMPO.NS,Hindustan Composites Ltd,Stock,NSI
+HIL.BO,HIL LTD.,Stock,BSE
+HEMORGANIC.BO,HEMO ORGANIC LIMITED,Stock,BSE
+HDFCBANK-IL.NS,HDFC BANK LIMITED,Stock,NSI
+HCLTECH.BO,HCL Technologies Ltd,Stock,BSE
+HCC.BO,Hindustan Construction Co Ltd,Stock,BSE
+HAVELLS.BO,Havells India Ltd,Stock,BSE
+HANUNG.BO,Hanung Toys & Textiles Ltd,Stock,BSE
+GVKPIL.BO,GVK Power & Infrastructure Ltd,Stock,BSE
+GUJNRECOKE.BO,GUJARAT NRE COKE LTD.,Stock,BSE
+GUJFOIL.BO,Gujarat Foils Ltd,Stock,BSE
+GTL.NS,GTL Ltd,Stock,NSI
+GRUH.BO,GRUH FINANCE LTD.,Stock,BSE
+GREENPLY.NS,Greenply Industries Ltd,Stock,NSI
+GRASIM.BO,Grasim Industries Ltd,Stock,BSE
+GOODYEAR.BO,GOODYEAR INDIA LTD.,Stock,BSE
+GOKUL.BO,Gokul Refoils & Solvent Ltd,Stock,BSE
+GODFRYPHL.NS,Godfrey Phillips India Ltd,Stock,NSI
+GMM.BO,GMM Pfaudler Ltd,Stock,BSE
+GUJINTRX.BO,Gujarat Intrux Ltd,Stock,BSE
+GUFICBIO.NS,Gufic BioSciences Ltd,Stock,NSI
+GRUH.NS,Gruh Finance Ltd.,Stock,NSI
+GREENPOWER-EQ.NS,ORIENT GREEN POWER COMPANY LIMI,Stock,NSI
+GRAUWEIL.BO,Grauer & Weil (India) Ltd.,Stock,BSE
+GRASIM-IL.NS,GRASIM INDUSTRIES LIMITED,Stock,NSI
+GOLDBEES.BO,GOLDMAN SACHS GOLD EXCHANGE TR,Stock,BSE
+GODREJCP.NS,Godrej Consumer Products Ltd,Stock,NSI
+GNRL.BO,GUJARAT NATURAL RESOURCES LIMI,Stock,BSE
+GLOBUSSPR.BO,Globus Spirits Ltd,Stock,BSE
+GLOBALVECT.BO,GLOBAL VECTRA HELICORP LTD.,Stock,BSE
+GINNIFILA.NS,Ginni Filaments Ltd,Stock,NSI
+GESHIP.NS,Great Eastern Shipping Co Ltd,Stock,NSI
+GARNET.BO,Garnet Construction Ltd,Stock,BSE
+GAMMNINFRA-EQ.NS,GAMMON INFRASTRUCTURE PROJECTS,Stock,NSI
+GAL.BO,GYSCOAL ALLOYS LTD.,Stock,BSE
+FRONTBUSS.BO,Frontline Business Solutions Ltd.,Stock,BSE
+FILATEX.NS,Filatex India Ltd,Stock,NSI
+FIEMIND.NS,FIEM Industries Ltd,Stock,NSI
+FAGBEARIN.NS,Fag Bearings India Ltd,Stock,NSI
+GLENMARK.BO,Glenmark Pharmaceuticals Ltd,Stock,BSE
+GHCL.BO,GHCL Ltd,Stock,BSE
+GEECEE.BO,GeeCee Ventures Ltd,Stock,BSE
+GAMMONIND.NS,Gammon India Ltd,Stock,NSI
+GALLISPAT.NS,Gallantt Ispat Ltd,Stock,NSI
+FRONTSP.BO,Frontier Springs Ltd,Stock,BSE
+FINCABLES.NS,Finolex Cables Ltd,Stock,NSI
+FILATEX.BO,Filatex India Ltd,Stock,BSE
+FEDERALBNK.BO,FEDERAL BANK LTD.,Stock,BSE
+EXTCO.BO,Extol Commercial Ltd,Stock,BSE
+EXCAST.BO,EXCEL CASTRONICS LIMITED,Stock,BSE
+EUROCERA.BO,Euro Ceramics Ltd,Stock,BSE
+ESL.NS,Electrosteel Steels Ltd,Stock,NSI
+ESABINDIA.NS,Esab India Ltd,Stock,NSI
+ELNET.BO,Elnet Technologies Ltd,Stock,BSE
+ELECTCAST.BO,ELECTROSTEEL CASTINGS LTD.,Stock,BSE
+EDL.BO,Empee Distilleries Ltd,Stock,BSE
+DUNLOP-B1.BO,Dunlop India Ltd,Stock,BSE
+DLINKINDI.NS,Smartlink Network Systems Ltd,Stock,NSI
+DHAMPURSU.NS,Dhampur Sugar Mills Ltd,Stock,NSI
+EVERONN.NS,Everonn Education Ltd,Stock,NSI
+ESSARSHPNG.BO,ESSAR SHIPPING LTD.,Stock,BSE
+ESARIND.BO,Esaar India Ltd,Stock,BSE
+EPCIN.BO,EPC Industrial Ltd,Stock,BSE
+ELGIRUBCO.NS,Elgi Rubber Co Ltd,Stock,NSI
+ELANGO.BO,Elango Industries Ltd,Stock,BSE
+ECLERX.BO,eClerx Services Ltd,Stock,BSE
+DRREDDY.BO,Dr Reddy Laboratories Ltd,Stock,BSE
+DIGJAM.BO,Digjam Ltd,Stock,BSE
+DENORA.BO,De Nora India Ltd,Stock,BSE
+DCW.BO,DCW Ltd,Stock,BSE
+DCHL.BO,Deccan Chronicle Holdings Ltd,Stock,BSE
+DBCORP.NS,D B Corp Ltd,Stock,NSI
+DAMOINDUS.BO,DAMODAR INDUSTRIES LTD.,Stock,BSE
+CYIENT.NS,Cyient Limited,Stock,NSI
+COSMOFILMS.BO,Cosmo Films Ltd,Stock,BSE
+COROMANDE.NS,Coromandel International Ltd.,Stock,NSI
+CONTROLPR.BO,Control Print Ltd,Stock,BSE
+COARO.BO,Coastal Roadways Ltd,Stock,BSE
+CNSDSEC.BO,Consolidated Securities Ltd,Stock,BSE
+DCMSHRIRAM-EQ.NS,DCM SHRIRAM LIMITED,Stock,NSI
+DBREALTY.NS,D B Realty Ltd,Stock,NSI
+DATAMATICS.BO,DATAMATICS GLOBAL SERVICES LTD,Stock,BSE
+DABUR.NS,Dabur India Ltd,Stock,NSI
+CUMMINSIND.BO,CUMMINS INDIA LTD.,Stock,BSE
+CORPBANK.BO,Corporation Bank,Stock,BSE
+CORALFINAC.BO,CORAL INDIA FINANCE & HOUSING,Stock,BSE
+COMPUSOFT.NS,Compucom Software Limited,Stock,NSI
+COALINDIA.BO,COAL INDIA LTD.,Stock,BSE
+CMC.BO,CMC Ltd,Stock,BSE
+CLNINDIA.BO,CLARIANT CHEMICALS (INDIA) LTD,Stock,BSE
+CHAMBLFER.NS,Chambal Fertilisers & Chemicals Ltd,Stock,NSI
+CEBBCO.NS,Commercial Engineers & Body Builders Co Ltd,Stock,NSI
+CARBORUNI.NS,Carborundum Universal Ltd.,Stock,NSI
+CAMSONBIO.BO,Camson Bio Technologies Ltd,Stock,BSE
+BUTTERFLY.BO,BUTTERFLY GANDHIMATHI APPLIANC,Stock,BSE
+BSELINFRA.NS,BSEL Infrastructure Realty Ltd,Stock,NSI
+BRIGADE.NS,Brigade Enterprises Ltd,Stock,NSI
+BRAHMINFRA.BO,BRAHMAPUTRA INFRASTRUCTURE LTD,Stock,BSE
+BORAX.BO,Borax Morarji Ltd,Stock,BSE
+CHLOGIST.BO,Chartered Logistics Ltd,Stock,BSE
+CELESTIAL.BO,Celestial Biolabs Ltd,Stock,BSE
+CARERATING.BO,CREDIT ANALYSIS AND RESEARCH L,Stock,BSE
+CANDC.NS,C & C Constructions Ltd,Stock,NSI
+CAMLINFINE-EQ.NS,CAMLIN FINE SCIENCES LIMITED,Stock,NSI
+BSLIMITED.NS,BS Limited,Stock,NSI
+BRITANNIA.NS,Britannia Industries Ltd,Stock,NSI
+BRFL.NS,Bombay Rayon Fashions Ltd,Stock,NSI
+BPCL.BO,Bharat Petroleum Corp Ltd,Stock,BSE
+BIRLACOT.BO,Birla Cotsyn (India) Ltd,Stock,BSE
+BHUSANSTL.NS,Bhushan Steel Ltd,Stock,NSI
+BHARATGEA.NS,Bharat Gears Ltd,Stock,NSI
+BFUTILITIE.BO,BF UTILITIES LTD.,Stock,BSE
+BEML.BO,BEML Ltd,Stock,BSE
+BASF.NS,BASF India Ltd,Stock,NSI
+BAJAJHLDN.NS,Bajaj Holdings and Investment Ltd,Stock,NSI
+BAJAJCORP.NS,Bajaj Corp Ltd.,Stock,NSI
+AXISCAP.BO,Elixir Capital Ltd,Stock,BSE
+ASTAR.BO,Asian Star Co Ltd,Stock,BSE
+ASHOKALC.BO,Ashok Alcochem Ltd,Stock,BSE
+BHARTISHI.NS,Bharati Shipyard Ltd,Stock,NSI
+BGRENERGY.NS,BGR Energy Systems Ltd,Stock,NSI
+BERGEPAINT.BO,Berger Paints India Ltd,Stock,BSE
+BBL.NS,Bharat Bijlee Ltd,Stock,NSI
+BALAJITELE.BO,Balaji Telefilms Ltd,Stock,BSE
+BAJAJELEC.BO,BAJAJ ELECTRICALS LTD.,Stock,BSE
+BAJAJ-AUTO.BO,BAJAJ AUTO LTD.,Stock,BSE
+ASTRAL.NS,Astral Poly Technik Ltd.,Stock,NSI
+ASSAMCO.NS,Assam Co India Ltd,Stock,NSI
+ASHOKA.NS,Ashoka Buildcon Ltd.,Stock,NSI
+ASAHINFRA.BO,Asahi Infrastructure and Projects Ltd,Stock,BSE
+ARSHIYA.BO,Arshiya Ltd,Stock,BSE
+ARNAVCORP.BO,ARNAV CORPORATION LTD.,Stock,BSE
+ARCHIES.BO,Archies Ltd,Stock,BSE
+APOLLOHOSP-EQ.NS,APOLLO HOSPITALS ENTERPRISE LIM,Stock,NSI
+APCOTEXIN.NS,Apcotex Industries Ltd.,Stock,NSI
+ANSALHSG.NS,Ansal Housing & Construction Ltd,Stock,NSI
+ANGIND-EQ.NS,ANG INDUSTRIES LIMITED,Stock,NSI
+AMTL-EQ.NS,ADVANCE METERING TECHNOLOGY LIM,Stock,NSI
+AMBALALSA.BO,Ambalal Sarabhai Enterprises Ltd,Stock,BSE
+ARSHIYA.NS,Arshiya Ltd,Stock,NSI
+ARONICOMM.BO,Aroni Commercials Ltd,Stock,BSE
+ARIAC.BO,Arihant Avenues & Credit Ltd,Stock,BSE
+APOLLOHOSP.BO,Apollo Hospitals Enterprise Ltd,Stock,BSE
+APLAPOLLO.NS,APL Apollo Tubes Limited,Stock,NSI
+ANUHPHR.BO,Anuh Pharma Ltd,Stock,BSE
+ANJANI.BO,Anjani Synthetics Ltd.,Stock,BSE
+ANANTRAJ.NS,Anant Raj Ltd,Stock,NSI
+AMBIKCO.NS,Ambika Cotton Mills Ltd,Stock,NSI
+AMARAJABAT-EQ.NS,AMARA RAJA BATTERIES LIMITED,Stock,NSI
+ALOKTEXT.BO,ALOK INDUSTRIES LTD.,Stock,BSE
+ALKYLAMIN.NS,Alkyl Amines Chemicals Ltd,Stock,NSI
+ALBK.BO,ALLAHABAD BANK,Stock,BSE
+ALANKIT.BO,ALANKIT,Stock,BSE
+AJANTSOY.BO,Ajanta Soya Ltd,Stock,BSE
+AHMDSTE.BO,Ahmedabad Steelcraft Ltd,Stock,BSE
+AEGISCHEM.NS,Aegis Logistics Ltd,Stock,NSI
+ADSL.BO,Allied Digital Services Ltd,Stock,BSE
+ADANIENT.BO,ADANI ENTERPRISES LTD.,Stock,BSE
+ABAN.BO,ABAN OFFSHORE LTD.,Stock,BSE
+ALLSEC-EQ.NS,ALLSEC TECHNOLOGIES LIMITED,Stock,NSI
+ALCHEM.BO,ALCHEMIST LTD.,Stock,BSE
+ALBERTDA.BO,Albert David Ltd,Stock,BSE
+AKZOINDIA.NS,Akzo Nobel India Ltd,Stock,NSI
+AIFL.BO,ASHAPURA INTIMATES FASHION LTD,Stock,BSE
+AHLUCONT.BO,Ahluwalia Contracts India Ltd,Stock,BSE
+ADVANIHOTR.BO,ADVANI HOTELS & RESORTS (INDIA,Stock,BSE
+ADANITRANS.BO,Adani Transmission Limited,Stock,BSE
+ABCBEARS.BO,ABC Bearings Ltd,Stock,BSE
+AARTIIND.NS,Aarti Industries Ltd,Stock,NSI
+$DCMTOYN.BO,DCM TOYOTA N,Stock,BSE
+ROOPAIND.BO,Roopa Industries Ltd,Stock,BSE
+LONTE.BO,Longview Tea Co Ltd,Stock,BSE
+GOLECHA.BO,Golechha Global Finance Ltd,Stock,BSE
+NAGREEKEXP.BO,NAGREEKA EXPORTS LTD.,Stock,BSE
+CASTROLIND.BO,CASTROL INDIA LTD.,Stock,BSE
+PRITHVI.BO,Prithvi Information Solutions Ltd,Stock,BSE
+IITL.NS,Industrial Investment Trust Ltd,Stock,NSI
+INDELTC.BO,INDIAN ELECTRO CHEMICALS LTD.,Stock,BSE
+CANBK4.BO,CANARA BANK,Stock,BSE
+PROCAL.BO,Procal Electronics India Ltd,Stock,BSE
+GOLKONDA.BO,Golkonda Aluminium Extrusions,Stock,BSE
+RELINDBBPH.BO,RELIANCIND*,Stock,BSE
+AROGRANITE-EQ.NS,ARO GRANITE INDUSTRIES LIMITED,Stock,NSI
+BODHTREE.BO,Bodhtree Consulting Limited,Stock,BSE
+SICL.BO,SUVIDHA INFRAESTATE CORPORATIO,Stock,BSE
+SOMATEX.BO,Soma Textiles & Industries Ltd,Stock,BSE
+HITTCO.BO,Hittco Tools Ltd,Stock,BSE
+DEN6.BO,DEN NETWORKS LTD,Stock,BSE
+JKAGRI.BO,Florence Investech Ltd,Stock,BSE
+ADANIPORTS6.BO,ADANI PORTS AND SPECIAL ECONOM,Stock,BSE
+538019.BO,,Stock,BSE
+UPHOT.BO,UP Hotels Ltd,Stock,BSE
+GALLANTT.NS,Gallantt Metal Ltd,Stock,NSI
+SOMICONV.BO,Somi Conveyor Beltings Ltd,Stock,BSE
+PILITA-EQ.NS,PIL ITALICA LIFESTYLE LIMITED,Stock,NSI
+539121.BO,,Stock,BSE
+SIGNETIND.BO,SIGNET INDUSTRIES LIMITED,Stock,BSE
+COVENSP-B.BO,COVENTRY SPRING & ENGINEERING,Stock,BSE
+KEWIND.BO,KEW Industries Ltd,Stock,BSE
+533121.BO,,Stock,BSE
+HDFCSENETF-EQ.NS,HDFCAMC - HDFCSENETF,Stock,NSI
+ELITE-IT.NS,Elite Conductors Limited,Stock,NSI
+HEG.BO,HEG Ltd,Stock,BSE
+TUTIALKA.BO,Tuticorin Alkali Chemicals And Fertilizers Ltd,Stock,BSE
+PANIDPR.BO,Panther Industrial Products Ltd,Stock,BSE
+CRAZYINF.BO,Crazy Infotech Ltd,Stock,BSE
+MAYARAS.BO,Maya Rasayan Ltd,Stock,BSE
+TERRYGOL.BO,Terrygold (India) Ltd,Stock,BSE
+BRIJLEAS.BO,Brijlaxmi Leasing & Finance Ltd,Stock,BSE
+LGBBROSLT.NS,LG Balakrishnan & Bros Ltd,Stock,NSI
+IPRU2488.BO,ICICI PRUDENTIAL VALUE FUND SE,Stock,BSE
+SBIGETS.BO,SBI MUTUAL FUND - SBI GOLD EXC,Stock,BSE
+LICNFR3D1.BO,LIC Nomura Mutual Fund,Stock,BSE
+PRANAVSP.BO,Pranavaditya Spinning Mills Ltd,Stock,BSE
+MEENST.BO,MEENAKSHI STEEL INDUSTRIES LTD,Stock,BSE
+NETWORTH.BO,Monarch Networth Capital Ltd,Stock,BSE
+CETHARI.BO,Cethar Industries Ltd,Stock,BSE
+KANSHST.BO,Kanishk Steel Industries Ltd,Stock,BSE
+BGLOBAL-BE.NS,BHARATIYA GLOBAL I INR10,Stock,NSI
+VINDHYATE.NS,Vindhya Telelinks Ltd,Stock,NSI
+EUROTEXIN.NS,Eurotex Industries & Exports Ltd,Stock,NSI
+ASHIMASYN.BO,ASHIMA LTD.,Stock,BSE
+RJKMRFR.BO,Rajkumar Forge Ltd,Stock,BSE
+MANVIJAY.BO,Manvijay Development Company L,Stock,BSE
+TECHTREK.BO,TECHTREK INDIA LTD.,Stock,BSE
+PHOENIXLL.NS,,Stock,NSI
+GOLDLINE.BO,GOLD LINE INTERNATIONAL FINVES,Stock,BSE
+MASL.BO,MAX ALERT SYSTEMS LTD.,Stock,BSE
+WEBELSOLAR-EQ.NS,WEBSOL ENERGY SYSTEM LIMITED,Stock,NSI
+SHUKDTA.BO,Shukla Data Technics Ltd,Stock,BSE
+ACIL.BO,Acil Cotton Industries Ltd,Stock,BSE
+HDFCNIFETF-EQ.NS,HDFCAMC - HDFCNIFETF,Stock,NSI
+ARCPR.BO,Arrow Coated Products Ltd,Stock,BSE
+HYTONE.BO,Hytone Texstyles Ltd,Stock,BSE
+GMDCLTD.NS,Gujarat Mineral Development Corp Ltd,Stock,NSI
+NAGAROIL.BO,NAGARJUNA OIL REFINERY LTD.,Stock,BSE
+PIDILITIND4.BO,PIDILITE INDUSTRIES LTD,Stock,BSE
+BRIGADE.BO,Brigade Enterprises Ltd,Stock,BSE
+SIIL-SM.NS,Supreme (India) Impex Ltd,Stock,NSI
+INTERHG.BO,International Housing Finance Corp Ltd,Stock,BSE
+CCCL.BO,Consolidated Construction Consortium Ltd,Stock,BSE
+RIDHISYN.BO,RIDHI SYNTHETICS LTD.,Stock,BSE
+NALINLEA.BO,Nalin Lease Finance Ltd,Stock,BSE
+SUPREMETEX-BE.NS,SUPREME TEX MART INR5,Stock,NSI
+CONSOFINVT-EQ.NS,CONSOLIDATED FINVEST & HOLDINGS,Stock,NSI
+SPLTECHNO.BO,SPL TECHNOCHEM LTD.,Stock,BSE
+BIRLAPOWER-BZ.NS,BIRLA POWER SOL. LTD,Stock,NSI
+533552.BO,,Stock,BSE
+PARASPETRO.BO,PARAS PETROFILS LTD.,Stock,BSE
+PUROHITCON.BO,Purohit Construction Limited,Stock,BSE
+TELECABL.BO,TELEPHONE CABLES LTD.,Stock,BSE
+EDSL.BO,EDYNAMICS SOLUTIONS LTD.,Stock,BSE
+RMMOHITE.BO,MOHITE INDUSTRIES,Stock,BSE
+SKPMIL.BO,Shree Krishna Paper Mills & Industries Ltd,Stock,BSE
+CCSIN.BO,CCS Infotech Ltd,Stock,BSE
+GULFCORP-EQ.NS,GOCL CORPORATION L INR2,Stock,NSI
+533213.BO,,Stock,BSE
+VXLINSTR.BO,VXL INSTRUMENTS LTD.,Stock,BSE
+TOPMEDIA.BO,Top Media Entertainment Ltd,Stock,BSE
+LANESEDA.BO,Lan Eseda Industries Ltd,Stock,BSE
+SHRISHM.BO,SHRISHMA FINE CHEMICALS & PHAR,Stock,BSE
+KSBPUMPS.NS,KSB Pumps Ltd,Stock,NSI
+533333.BO,,Stock,BSE
+SHIVAPPR.BO,SHIVA PAPER MILLS LTD.,Stock,BSE
+KHYATI.BO,Khyati Multimedia-Entertainment Ltd,Stock,BSE
+533632.BO,,Stock,BSE
+WARNER.BO,Warner Multimedia Ltd,Stock,BSE
+TVSMOTOR.BO,TVS Motor Co Ltd,Stock,BSE
+SUNTV6.BO,SUN TV NETWORK LTD,Stock,BSE
+AURIONPRO.BO,Aurionpro Solutions Ltd,Stock,BSE
+OBEROIRLTY-EQ.NS,OBEROI REALTY LIMITED,Stock,NSI
+RDAFTIIIDG-MF.NS,RELIANCE MUTUAL FD DUAL ADVANTA,Stock,NSI
+PIRPHYTO.BO,PIRAMAL PHYTOCARE LIMITED,Stock,BSE
+VIJSOLX.BO,Vijay Solvex Ltd,Stock,BSE
+SREEL2.BO,SREELEATHERS LTD.,Stock,BSE
+JAGRAN.BO,Jagran Prakashan Ltd,Stock,BSE
+BZSHLAKSH.NS,,Stock,NSI
+IPCALAB.BO,Ipca Laboratories Ltd,Stock,BSE
+INGERMS.BO,INDO-GERMA PRODUCTS LTD.,Stock,BSE
+SAIBABA.BO,SAI BABA INVESTMENT AND COMMER,Stock,BSE
+GENERAAGRI.BO,GENERA AGRI CORP LTD.,Stock,BSE
+HIGHSTREE.BO,HIGH STREET FILATEX LTD.,Stock,BSE
+KINETICENG.BO,KINETIC ENGINEERING LTD.,Stock,BSE
+KITEX.BO,KITEX GARMENTS LTD.,Stock,BSE
+SURYAINDIA.BO,Surya India Limited,Stock,BSE
+NEWMKTADV.BO,New Markets Advisory Ltd,Stock,BSE
+MAJESIN.BO,MAJESTIC INDUSTRIES LTD.,Stock,BSE
+RAMAPULP.BO,Rama Pulp & Papers Ltd,Stock,BSE
+SKUMSNB.BO,S KUMAR SNFB,Stock,BSE
+SHALPRO.BO,Shalimar Productions Ltd,Stock,BSE
+DYNAMATEC.NS,Dynamatic Technologies Ltd,Stock,NSI
+KHODAY.BO,Khoday India Ltd,Stock,BSE
+MAHLIFE.BO,MAHINDRA LIFESPACE DEVELOPERS,Stock,BSE
+MINOLTAF.BO,MINOLTA FINANCE LTD.,Stock,BSE
+JYOTHYLAB.BO,Jyothy Laboratories Ltd,Stock,BSE
+TULASEEBIOE.BO,TULASEE BIO-ETHANOL LTD.,Stock,BSE
+538465.BO,,Stock,BSE
+STEL-BE.NS,STEL HOLDINGS LTD INR10,Stock,NSI
+534674.BO,,Stock,BSE
+BSLFEFS1RN.BO,BIRLA SUN LIFE MUTUAL FUND- BI,Stock,BSE
+JASCH.BO,Jasch Industries Ltd,Stock,BSE
+PRAENG6.BO,PRAJAY ENGINEERS SYNDICATE LTD,Stock,BSE
+TRANSCON.BO,Transcon Research & Infotech Ltd,Stock,BSE
+RAJSPTR.BO,Rajasthan Petro Synthetics Limited,Stock,BSE
+SAGCEM.BO,SAGAR CEMENTS LTD.,Stock,BSE
+NAVALTC.BO,NAVAL TECHNOPLAST INDUSTRIES L,Stock,BSE
+NIITLTD.NS,      ,Stock,NSI
+BAJAJ-AUTO4.BO,BAJAJ AUTO LTD,Stock,BSE
+NIFTYBEES.NS,Goldman Sachs Nifty BeES ETF,Stock,NSI
+DELTRON.BO,Deltron Ltd,Stock,BSE
+CUBIFIN.BO,Cubical Financial Services Ltd,Stock,BSE
+ABCBEARS6.BO,ABC BEARINGS LTD,Stock,BSE
+IPRU8937.BO,ICICI Prudential Mutual Fund,Stock,BSE
+KGNENT6.BO,KGN ENTERPRISES LTD,Stock,BSE
+ADANIPOWER6.BO,ADANI POWER LTD,Stock,BSE
+TITANSEC.BO,Titan Securities Ltd,Stock,BSE
+SANGHVIFOR.BO,SANGHVI FORGING AND ENGINEERIN,Stock,BSE
+SNOWCEMIND.BO,SNOWCEM INDIA LTD.,Stock,BSE
+RCLEDPLADG.BO,RELIANCE MUTUAL FUND- RELIANCE,Stock,BSE
+EKC.BO,Everest Kanto Cylinder Ltd,Stock,BSE
+RJSHAH.BO,R.J.SHAH & CO.LTD.,Stock,BSE
+PATHEJA-B.BO,PATHEJA FORGINGS & AUTO PARTS,Stock,BSE
+533581.BO,,Stock,BSE
+FIRSTWIN.NS,First Winner Industries Ltd,Stock,NSI
+PRESYNT.BO,PREMIER SYNT,Stock,BSE
+NAGAAGRI.BO,Nagarjuna Agrichem Ltd.,Stock,BSE
+KANCHAN.BO,Kanchan International Ltd,Stock,BSE
+BEML6.BO,BEML LTD,Stock,BSE
+RAJOOENG.BO,Rajoo Engineers Ltd,Stock,BSE
+VIKASHMET.BO,Vikash Metal & Power Ltd,Stock,BSE
+TRANSCHEM.BO,TRANSCHEM LTD.,Stock,BSE
+UNIRLEA.BO,Uniroll Leather India Ltd,Stock,BSE
+GLENMARK4.BO,GLENMARK PHARMACEUTICALS LTD,Stock,BSE
+IPRU2487.BO,ICICI PRUDENTIAL VALUE FUND SE,Stock,BSE
+AROGRANITE.BO,ARO GRANITE INDUSTRIES LTD.,Stock,BSE
+NAYAPAP.BO,Nayagara Paper Products (I) Ltd,Stock,BSE
+KENFIN.BO,Ken Financial Services Ltd,Stock,BSE
+KHAITANLT.NS,Khaitan India Ltd,Stock,NSI
+BOBSHELL.BO,Bobshell Electrodes Ltd,Stock,BSE
+VENLONENT.BO,Venlon Enterprises Ltd,Stock,BSE
+POKARNA.BO,Pokarna Ltd,Stock,BSE
+MAHANIN.BO,Mahan Industries Ltd.,Stock,BSE
+HAVELLS6.BO,HAVELLS INDIA LTD,Stock,BSE
+MAHAV.BO,Mahavir Impex Ltd,Stock,BSE
+MARVEL.BO,Marvel Capital & Finance (India) Ltd,Stock,BSE
+FLUIDOM.BO,Fluidomat Ltd,Stock,BSE
+LALITPL.BO,LALIT POLYMERS & ELECTRONICS L,Stock,BSE
+ZNEWSAGA.BO,NEW SAGAR TRADING CO.LTD.,Stock,BSE
+LUSTRTI.BO,LUSTRE TILES LTD.,Stock,BSE
+CYBERTECH.NS,Cybertech Systems & Software Ltd,Stock,NSI
+MARICO6.BO,MARICO LTD,Stock,BSE
+ARISE.BO,Arihant's Securities Ltd,Stock,BSE
+SHARDFI.BO,Sharad Fibres & Yarn Processors Ltd,Stock,BSE
+WYETH6.BO,WYETH LTD,Stock,BSE
+APPLEFIN.BO,Apple Finance Ltd,Stock,BSE
+PETPLST.BO,Pet Plastics Ltd,Stock,BSE
+SCHNEIDER.NS,Schneider Electric Infrastructure Ltd,Stock,NSI
+SUBHLTR.BO,SUBHLAXMI EXPORTS LTD.,Stock,BSE
+GLXYENT.BO,Galaxy Entertainment Corp Ltd,Stock,BSE
+YUVINTL.BO,YUVRAJ INTERNATIONAL LTD.,Stock,BSE
+ULTRAMAR.BO,Ultramarine & Pigments Ltd,Stock,BSE
+SEAMECLTD.BO,Seamec Ltd,Stock,BSE
+BSL.BO,BSL Ltd,Stock,BSE
+ESSARSHPN.NS,,Stock,NSI
+HARI.BO,Haricharan Projects Limited,Stock,BSE
+DIAMOND.BO,DIAMOND INFOSYSTEMS LTD.,Stock,BSE
+SHSAINA.BO,SHRI SAINATH PROTEINS LTD.,Stock,BSE
+SUBHTXT.BO,SUBHAKTI TEXTILES LTD.,Stock,BSE
+BHAGCOT.BO,BHAGWATI COTTONS LTD.,Stock,BSE
+CASTROLIND6.BO,CASTROL INDIA LTD,Stock,BSE
+VISIONCINE.BO,VISION CINEMAS LTD.,Stock,BSE
+NEELKNT.BO,Nellkanth Motels & Hotels Ltd,Stock,BSE
+RANEENGINE.BO,RANE ENGINE VALVE LTD.,Stock,BSE
+AGCNET.NS,AGC Networks Ltd,Stock,NSI
+533398.BO,,Stock,BSE
+PRESTIGE-IL.NS,PRESTIGE ESTATES PROJECTS LIMIT,Stock,NSI
+GIRNFIB.BO,GIRNAR FIBRES LTD.,Stock,BSE
+GODFRYPHLP.BO,Godfrey Phillips India Ltd,Stock,BSE
+FCSSOFT.BO,FCS Software Solutions Ltd,Stock,BSE
+KOHINOORT.BO,Kohinoor Techno Engineers Ltd,Stock,BSE
+MOH.BO,Moh Ltd,Stock,BSE
+BABA.BO,Baba Arts Ltd,Stock,BSE
+CORNE.BO,CORAL NEWSPRINTS LTD.,Stock,BSE
+ACC6.BO,ACC LTD,Stock,BSE
+RATNAMAGRO.BO,RATNAMANI AGRO INDUSTRIES LTD,Stock,BSE
+AKARTOOL.BO,Akar Tools Ltd,Stock,BSE
+USHAMART6.BO,USHA MARTIN LTD,Stock,BSE
+RENCHEM.BO,RENCAL CHEMICALS (INDIA) LTD.,Stock,BSE
+RSYSTEMINT-.BO,R SYSTEMS INTERNATIONAL LTD.,Stock,BSE
+REIAGROLTD.BO,REI AGRO LTD.,Stock,BSE
+IPRU8711.BO,ICICI Prudential Mutual Fund,Stock,BSE
+TRITURBINE6.BO,TRIVENI TURBINE LTD,Stock,BSE
+GUJFILA.BO,GUJARAT FILAMENTS LTD.,Stock,BSE
+GRATEXI.BO,Gratex Industries Ltd,Stock,BSE
+VRLLOG-EQ.NS,VRL LOGISTICS LIMITED,Stock,NSI
+CEEJAY.BO,Ceejay Finance Ltd,Stock,BSE
+BZAFTEK.NS,,Stock,NSI
+AEGISLOGBB.BO,AEGIS LOGIS,Stock,BSE
+533219.BO,,Stock,BSE
+KARURKCP.NS,Karur KCP Packkagings Ltd,Stock,NSI
+HIRAN.BO,Hiran Orgochem Ltd,Stock,BSE
+GENOMICS.BO,GENOMICS BIOTECH LTD.,Stock,BSE
+SABOOSOD.BO,Saboo Sodium Chloro Ltd,Stock,BSE
+VISHNU.NS,Vishnu Chemicals Ltd,Stock,NSI
+ARCUTTIP.BO,Arcuttipore Tea Co Ltd,Stock,BSE
+VAIBHAVGBL6.BO,VAIBHAV GLOBAL LTD,Stock,BSE
+IECEDU.BO,IEC Education Ltd,Stock,BSE
+VIRPP.BO,VIRINCHI PP,Stock,BSE
+UNIQEST.BO,UNIQUE ESTATES DEVELOPMENTS CO,Stock,BSE
+BAFEG.BO,Baffin Engineering Projects Ltd.,Stock,BSE
+SRIMSPG.BO,SRI MALINI S,Stock,BSE
+POCHIRAJU.BO,Pochiraju Industries Ltd,Stock,BSE
+MROTEKBBPH.BO,MRO-TEK LTD*,Stock,BSE
+538540.BO,,Stock,BSE
+KERNEX.BO,Kernex Microsystems India Ltd,Stock,BSE
+MANAKSIA.NS,Manaksia Ltd,Stock,NSI
+GUJCONT.BO,GUJARAT CONTAINERS LTD.,Stock,BSE
+MVL.BO,MVL Ltd,Stock,BSE
+TRELCHE-B.BO,TECIL CHEMICALS & HYDRO POWER,Stock,BSE
+ALLSOFT.BO,Allsoft Corp Ltd,Stock,BSE
+WELTI.BO,Welterman International Ltd,Stock,BSE
+RASRESOR.BO,Ras Resorts & Apart Hotels Ltd,Stock,BSE
+538923.BO,,Stock,BSE
+533059.BO,,Stock,BSE
+ALICON.BO,ALICON CASTALLOY LIMITED,Stock,BSE
+POLYPLEX.NS,Polyplex Corp Ltd,Stock,NSI
+TOWELIN.BO,TOWELS INDIA EXPORTS LTD.,Stock,BSE
+FORTIS6.BO,FORTIS HEALTHCARE LTD,Stock,BSE
+JMTAUTOLT.NS,JMT Auto Ltd,Stock,NSI
+RELNV20-EQ.NS,RELCAPAMC - RELNV20,Stock,NSI
+GNFC.BO,Gujarat Narmada Valley Fertilizers & Chemicals Ltd,Stock,BSE
+534623.BO,,Stock,BSE
+MAHENPET.BO,Mahendra Petrochemicals Ltd,Stock,BSE
+TECHNO.NS,Techno Electric & Engineering Co Ltd,Stock,NSI
+ZENITHEXP.NS,Zenith Exports Ltd,Stock,NSI
+SUKHJITS.BO,Sukhjit Starch & Chemicals Ltd,Stock,BSE
+VIRTUALS.BO,Virtualsoft Systems Ltd,Stock,BSE
+BANKINDIA4.BO,BANK OF INDIA,Stock,BSE
+VAJRABE.BO,VAJRA BEARINGS LTD.,Stock,BSE
+MHNAVPH.BO,MANAV PHARMA LTD.,Stock,BSE
+TRENT.BO,Trent Ltd,Stock,BSE
+TINNAFN.BO,Tinna Finex Ltd,Stock,BSE
+BILINDU.BO,BIL INDUSTRIES LTD.,Stock,BSE
+SCI4.BO,SHIPPING CORPORATION OF INDIA,Stock,BSE
+SHBAJRG.BO,Shri Bajrang Alloys Ltd,Stock,BSE
+GALAXCP.BO,Galaxy Consolidated Finance Ltd,Stock,BSE
+KOKUYOCML.NS,KOKUYO CAMLIN LIMITED,Stock,NSI
+MAARSOFTW6.BO,MAARS SOFTWARE INTERNATIONAL L,Stock,BSE
+534920.BO,,Stock,BSE
+PRSRIND.BO,PARASRAMPURIA INDUSTRIES LTD.,Stock,BSE
+SONUSYN.BO,SONU SYNTHETICS LTD.,Stock,BSE
+JSWENERGY.NS,JSW Energy Ltd,Stock,NSI
+MOMAI-SM.NS,Momai Apparels Ltd.,Stock,NSI
+GLODYNE.BO,Glodyne Technoserve Ltd,Stock,BSE
+AHLCONQ.BO,Ahlcon Parenterals India Ltd,Stock,BSE
+KEERTHI.BO,Keerthi Industries Ltd,Stock,BSE
+ELLOPAP.BO,Ellora Paper Mills Ltd,Stock,BSE
+TIPSINDLTD-.BO,TIPS INDUSTRIES LTD.,Stock,BSE
+SHIVGAR.BO,SHIVGARH RESORTS LTD.,Stock,BSE
+INDCEMCAP.BO,India Cements Capital Ltd,Stock,BSE
+PHYTO.BO,Phyto Chem (India) Ltd,Stock,BSE
+ZVINADTR.BO,VINADITYA TRADING CO.LTD.,Stock,BSE
+RINADRG.BO,RATNA DRUGS LTD.,Stock,BSE
+LIMECHM.BO,Lime Chemicals Ltd,Stock,BSE
+TRIVENIENT.BO,TRIVENI ENTERPRISES LTD,Stock,BSE
+CMAHENDRA.NS,C Mahendra Exports Ltd,Stock,NSI
+ESHAMEDIA.BO,ESHA MEDIA RESEARCH LIMITED,Stock,BSE
+RADAAN-BE.NS,RADAAN MEDIAWORKS (I) LTD,Stock,NSI
+SAMSPIN.BO,Samrat Spinners Ltd,Stock,BSE
+GENUINC.BO,GENUINE COMMODITIES DEVELOPMEN,Stock,BSE
+WERTERNIN.BO,WESTERN INDUSTRIES LTD.,Stock,BSE
+GREENFIELD.BO,Green Field Agri Ventures Limi,Stock,BSE
+EXCELINDUS.BO,EXCEL INDUSTRIES LTD.,Stock,BSE
+NARPROP.BO,Narendra Properties Ltd,Stock,BSE
+SMVETO.NS,,Stock,NSI
+VIKASWSP6.BO,VIKAS WSP LTD,Stock,BSE
+INDAGIV.BO,Ind-Agiv Commerce Ltd,Stock,BSE
+8KMILES.NS,8K Miles Software Services Ltd,Stock,NSI
+CRYPTAG.BO,CRYPTOGEN AGRO INDUSTRIES LTD.,Stock,BSE
+GSLNOVA.BO,GSL Nova Petrochemicals Ltd,Stock,BSE
+LOHIASEC.BO,Lohia Securities Ltd,Stock,BSE
+ALERPTR.BO,ALERT PETROGAS LTD.,Stock,BSE
+BRANDHOUSE-EQ.NS,BRANDHOUSE RETAILS LTD.,Stock,NSI
+SHYAMAINFO.BO,SHYAMA INFOSYS LTD.,Stock,BSE
+IDFCD1238-MF.NS,IDFCAMC - IDFCD1238,Stock,NSI
+PALREDTECH-BE.NS,Palred Technologies Ltd,Stock,NSI
+3RDROCK-IT.NS,3rd Rock Multimedia Ltd,Stock,NSI
+CYBERMEDI.NS,Cyber Media India Ltd,Stock,NSI
+KOPDRUGS-BZ.NS,KDL BIOTECH LIMITED,Stock,NSI
+GLTES6.BO,GTL LTD,Stock,BSE
+STIPROD.BO,Sti Products India Ltd,Stock,BSE
+MATRAREAL6.BO,MATRA REALTY LTD,Stock,BSE
+INDTERRAIN.BO,INDIAN TERRAIN FASHIONS LTD.,Stock,BSE
+539116.BO,,Stock,BSE
+USHAINDIA.BO,USHA (INDIA) LTD.,Stock,BSE
+WINSOMEDJ.NS,WINSOME DIAMONDS INR10,Stock,NSI
+JINDRILL.BO,Jindal Drilling & Industries Ltd,Stock,BSE
+MIDPOLY.BO,MIDLAND POLYMERS LTD.,Stock,BSE
+GOACARBON.BO,GOA CARBON LTD.,Stock,BSE
+NITINSPIN.NS,Nitin Spinners Ltd,Stock,NSI
+CSSTECH2.BO,CSS TECHNERGY LTD.,Stock,BSE
+VISESHINFO-BE.NS,VISESH INFO NPP231299 DEP,Stock,NSI
+KHTRFIB.BO,Khator Fibre & Fabrics Ltd,Stock,BSE
+ARVINDIN.BO,Arvind International Ltd,Stock,BSE
+RCBFIICDD.BO,Reliance Mutual Fund,Stock,BSE
+CALCOM.BO,Calcom Vision Ltd,Stock,BSE
+CHEMIESYNT.BO,Chemiesynth (Vapi) Limited,Stock,BSE
+KANCOENT.BO,Kanco Enterprises Ltd,Stock,BSE
+ECEINDBBPH.BO,ECE IND*,Stock,BSE
+CINELINE.BO,CINELINE INDIA LIMITED,Stock,BSE
+VIBROSO.BO,Vibros Organics Ltd,Stock,BSE
+VALLABHSQ.BO,Vallabh Steels Ltd,Stock,BSE
+MDHITCH.BO,Madras Hi-Tech Circuits Ltd,Stock,BSE
+ZSVTRADI.BO,S.V.TRADING & AGENCIES LTD.,Stock,BSE
+IPRU-8484-MF.NS,ICICIPRAMC - IPRU-8484,Stock,NSI
+ACGL.BO,Automobile Corp of GOA Ltd,Stock,BSE
+NCOPPER-BE.NS,NISSAN COPPER LTD INR10,Stock,NSI
+VIPUL.BO,Vipul Ltd,Stock,BSE
+ISHITADR.BO,Ishita Drugs And Industries Ltd,Stock,BSE
+UNIONBANK4.BO,UNION BANK OF INDIA,Stock,BSE
+BHILTEX.BO,Bhilwara Tex-Fin Ltd,Stock,BSE
+RD366D38RG-MF.NS,SBIAMC - RD366D38RG,Stock,NSI
+CUB.BO,CITY UNION BANK LTD.,Stock,BSE
+NAVNETEDU.NS,,Stock,NSI
+HIMFINC.BO,HIMGIRI FINCAP LTD.,Stock,BSE
+OSWALOR.BO,OSWAL OVERSEAS LTD.,Stock,BSE
+EIMCOELEC.NS,Eimco Elecon India Ltd,Stock,NSI
+GRAVITA.NS,Gravita India Limited,Stock,NSI
+AVANTI.BO,AVANTI FEEDS LTD.,Stock,BSE
+MANINDS.NS,Man Industries (India) Ltd,Stock,NSI
+ZBHAVIIN.BO,BHAVI INVESTMENTS LTD.,Stock,BSE
+SAVERA.BO,SAVERA INDUSTRIES LTD.,Stock,BSE
+533285.BO,,Stock,BSE
+SABERORGAN.BO,SABERO ORGANICS GUJARAT LTD.,Stock,BSE
+GMRINFRA6.BO,GMR INFRASTRUCTURE LTD,Stock,BSE
+KOTHARIFIN.BO,KOTHARI WORLD FINANCE LTD.,Stock,BSE
+MRGNIND.BO,Morgan Industries Ltd,Stock,BSE
+533144.BO,,Stock,BSE
+SONATSOFTW.BO,SONATA SOFTWARE LTD.,Stock,BSE
+STIGRAN.BO,STI GRANITE INDIA LTD.,Stock,BSE
+ZYLOG.BO,Zylog Systems Ltd.,Stock,BSE
+FRONTINF.BO,Frontier Informatics Ltd,Stock,BSE
+JAIPAN.BO,Jaipan Industries Ltd,Stock,BSE
+CITIZYN.BO,Citizen Yarns Ltd,Stock,BSE
+BHRKALM.BO,Bhoruka Aluminium Ltd,Stock,BSE
+SBT.NS,State Bank of Travancore,Stock,NSI
+ASIANTILES.BO,Asian Granito India Ltd,Stock,BSE
+PRIMSOL.BO,Prime Solvent Extractions Ltd,Stock,BSE
+ONMOBILE6.BO,ONMOBILE GLOBAL LTD,Stock,BSE
+HITESTX.BO,HITESH TEXTILE MILLS LTD.,Stock,BSE
+RCBFIIIAD.BO,Reliance Mutual Fund,Stock,BSE
+OXEMBAP.BO,Oxemberg Apparels Ltd,Stock,BSE
+PUNJCOMMU.BO,Punjab Communications Ltd,Stock,BSE
+UNISON.BO,UNISON METALS LTD,Stock,BSE
+RANJEEV.BO,Ranjeev Alloys Ltd,Stock,BSE
+PCJEWELLE.NS,,Stock,NSI
+ADIRASA.BO,Adi RaSAyan Ltd,Stock,BSE
+VICEROY.NS,Viceroy Hotels Ltd,Stock,NSI
+TIJARIA.NS,Tijaria Polypipes Ltd,Stock,NSI
+EXIDEIND.BO,Exide Industries Ltd,Stock,BSE
+533605.BO,,Stock,BSE
+STURDY.BO,Sturdy Industries Ltd,Stock,BSE
+GOLDENGOLR.BO,GOLDEN GOENKA FINCORP LIMITED,Stock,BSE
+KANDAGIRI-EQ.NS,Kandagiri Mills Ltd,Stock,NSI
+PENINLAND.BO,PENINSULA LAND LTD.,Stock,BSE
+RELSIND.BO,RELSON INDIA LTD.,Stock,BSE
+FILTRA.BO,Filtra Consultants and Enginee,Stock,BSE
+AUTOIND.NS,Autoline Industries Ltd,Stock,NSI
+539113.BO,,Stock,BSE
+533033.BO,,Stock,BSE
+BALMERL-B.BO,Balmer Lawrie Freight Containers Ltd,Stock,BSE
+PREMIERPOL.BO,PREMIER POLYFILM LTD.,Stock,BSE
+AFEL.BO,A.F. ENTERPRISES LTD,Stock,BSE
+VBDESAI.BO,V B Desai Financial Services Ltd,Stock,BSE
+535142.BO,,Stock,BSE
+ECOM.BO,e.Com Infotech Ltd,Stock,BSE
+VERTEX.BO,Vertex Securities Limited,Stock,BSE
+JPOLYINVST.BO,JINDAL POLY INVESTMENT AND FIN,Stock,BSE
+DAAWAT.BO,LT Foods Ltd,Stock,BSE
+BILATOR.BO,BILATI (ORISSA) LTD.,Stock,BSE
+THOMASCOT.NS,,Stock,NSI
+MANALIPETC-EQ.NS,MANALI PETROCHEMICALS LIMITED,Stock,NSI
+LICHSGFIN4.BO,LIC HOUSING FINANCE LTD,Stock,BSE
+ANSINDUS.BO,ANS INDUSTRIES LTD,Stock,BSE
+SUDTIND-B.BO,Suditi Industries Ltd,Stock,BSE
+SCOOTER.BO,Scooters India Ltd,Stock,BSE
+BELAGRO.BO,Bell AGromachina Ltd,Stock,BSE
+SOUISPAT.BO,SOUTHERN ISPAT AND ENERGY LTD,Stock,BSE
+DRREDDY4.BO,DR REDDYS LABORATORIES LTD,Stock,BSE
+RTNINFRA.NS,RattanIndia Infrastructure Ltd,Stock,NSI
+SREEJAYA.BO,Sree Jayalakshmi Autospin Ltd,Stock,BSE
+LADDERUP.BO,Ladderup Finance Ltd,Stock,BSE
+POPULARES.BO,Popular Estate Management Ltd,Stock,BSE
+RAPIDIN.BO,RAPID INVESTMENTS LTD.,Stock,BSE
+GREENPOWER.BO,ORIENT GREEN POWER COMPANY LTD,Stock,BSE
+HINDPETRO4.BO,HINDUSTAN PETROLEUM CORPORATIO,Stock,BSE
+HERCULES.BO,Hercules Hoists Ltd,Stock,BSE
+APLAPOLLO.BO,APL APOLLO TUBES LTD.,Stock,BSE
+JBFIND.BO,JBF Industries Ltd,Stock,BSE
+INNOIND-BZ.NS,INNOVENTIVE IND LTD,Stock,NSI
+SHRISTI.BO,Shristi Infrastructure Development Corp Ltd,Stock,BSE
+INDIANB6.BO,INDIAN BANK,Stock,BSE
+KHODIYAR.BO,Khodiyar Industries Ltd,Stock,BSE
+SEPOWER.BO,S.E. POWER LTD.,Stock,BSE
+IFINSEC.BO,INDIA FINSEC LTD.,Stock,BSE
+PEETISEC.BO,Peeti Securities Ltd,Stock,BSE
+SUMEDHA.BO,Sumedha Fiscal Services Ltd,Stock,BSE
+ORIENTCEM-EQ.NS,ORIENT CEMENT LIMITED,Stock,NSI
+KOTAKNIFTY2.BO,KOTAK MAHINDRA MUTUAL FUND - P,Stock,BSE
+JBCHEPHARM6.BO,JB CHEMICALS & PHARMACEUTICALS,Stock,BSE
+KKUMTFN.BO,KMF LTD.,Stock,BSE
+TTML6.BO,TATA TELESERVICES (MAHARASHTRA,Stock,BSE
+IKAB.BO,Ikab Securities & Investment Ltd,Stock,BSE
+PRADPME.BO,Pradeep Metals Ltd,Stock,BSE
+UTTAMSUGA.NS,Uttam Sugar Mills Ltd,Stock,NSI
+COREEDUTEC.BO,CORE EDUCATION & TECHNOLOGIES,Stock,BSE
+MUNISFG.BO,MUNIS FORGE LTD.,Stock,BSE
+SWETAST.BO,SWEATAMBER STEEL LTD.,Stock,BSE
+GARWAMAR.BO,Garware Marine Industries Ltd,Stock,BSE
+RELINFRA6.BO,RELIANCE INFRASTRUCTURE LTD,Stock,BSE
+ALANKIT-EQ.NS,ALANKIT LIMITED,Stock,NSI
+NIKKIGL.BO,Nikki Global Finance Ltd,Stock,BSE
+CHABRASP.BO,Chhabra Spinners Ltd,Stock,BSE
+UNITECH4.BO,UNITECH LTD,Stock,BSE
+PAPERPROD.BO,Huhtamaki PPL Ltd,Stock,BSE
+DBREALTY.BO,D B Realty Ltd,Stock,BSE
+539141.BO,,Stock,BSE
+GREYCELLS.BO,Greycells Education Ltd,Stock,BSE
+GSBFIN.BO,GSB Finance Ltd,Stock,BSE
+SAURASHCEM.BO,Saurashtra Cement Ltd,Stock,BSE
+LAKHANI.BO,Lakhani India Ltd,Stock,BSE
+TRIOMERC.BO,TRIO MERCANTILE & TRADING LTD.,Stock,BSE
+ISGEC.BO,ISGEC HEAVY ENGINEERING LTD.,Stock,BSE
+BLCISER6.BO,BLUE CIRCLE SERVICES LTD,Stock,BSE
+ZAMBISLK.BO,AMBIKA SILK MILLS LTD.,Stock,BSE
+VISHALEXPO.BO,Vishal Exports Overseas Ltd,Stock,BSE
+INTERDIA.BO,International Diamond Services Ltd,Stock,BSE
+INDCTST.BO,Inducto Steel Ltd,Stock,BSE
+SHAMKNSPIN.BO,SHAMKEN SPINNERS LTD.,Stock,BSE
+ALPA-EQ.NS,ALPA LABORATORIES LIMITED,Stock,NSI
+SETFNIF50-EQ.NS,SBI-ETF NIFTY 50,Stock,NSI
+ARIHCAPM.BO,Arihant Capital Markets Ltd,Stock,BSE
+533301.BO,,Stock,BSE
+MDRNSTL.BO,Modern Steels Ltd,Stock,BSE
+SAMYAKINT.BO,Samyak International Ltd,Stock,BSE
+TIRUFIN.BO,Tirupati Fincorp Limited,Stock,BSE
+SRIVASAV.BO,Sri Vasavi Industries Ltd,Stock,BSE
+MOIL.BO,MOIL LTD.,Stock,BSE
+SATELENG.BO,Satellite Engineering Ltd,Stock,BSE
+538537.BO,,Stock,BSE
+STOVACQ.BO,Stovec Industries Ltd,Stock,BSE
+PRECWIRE.NS,Precision Wires India Ltd,Stock,NSI
+LYONSCO.BO,Lyons Corporate Market Ltd,Stock,BSE
+ZINDUCIN.BO,INDUCON INDIA LTD.,Stock,BSE
+HINDAPL.BO,Hindustan Appliances Ltd,Stock,BSE
+TANTIACONS.BO,TANTIA CONSTRUCTIONS LTD.,Stock,BSE
+EMMESSA.BO,Emmessar Biotech And Nutrition Ltd,Stock,BSE
+PHOENIXLTD6.BO,THE PHOENIX MILLS LTD,Stock,BSE
+CLIOINFO.BO,Clio Infotech Ltd,Stock,BSE
+SANCF.BO,Sanchay Finvest Ltd,Stock,BSE
+SPECFOOD.BO,Spectrum Foods Ltd,Stock,BSE
+WENDT.BO,Wendt (India) Ltd,Stock,BSE
+MITL.BO,MAHADUSHI INTERNATIONAL TRADE,Stock,BSE
+UNIVSTAR.BO,Universal Starch-Chem Allied Ltd,Stock,BSE
+KAYA-EQ.NS,KAYA LIMITED,Stock,NSI
+ZSOMAIYO.BO,SOMAIYA ORGANICS (INDIA) LTD.,Stock,BSE
+MNKALCOLTD.BO,Manaksia Aluminium Company Ltd,Stock,BSE
+SHBENZO.BO,Shree Benzophen Industries Ltd,Stock,BSE
+SREERAYA.BO,Sree Rayalaseema Alkalies & Allied Chemicals Ltd,Stock,BSE
+OSEASPR.BO,OSEASPRE CONSULTANTS LTD.,Stock,BSE
+GUJPOLYA.BO,Gujarat Poly-AVX Electronics Ltd,Stock,BSE
+GBLINFRA.BO,GLOBAL INFRATECH & FINANCE LIM,Stock,BSE
+SPECIAPP.BO,Speciality Papers Ltd,Stock,BSE
+SHRMFGC.BO,Shree Manufacturing Co Ltd,Stock,BSE
+SSLT4.BO,SESA STERLITE LTD,Stock,BSE
+EMKAR.BO,EMKAY AROMATICS LTD.,Stock,BSE
+RPPINFRA.BO,RPP INFRA PROJECTS LTD.,Stock,BSE
+BPL.BO,BPL Ltd,Stock,BSE
+KRISSYN.BO,KRISHNA SYNTHETICS LTD.,Stock,BSE
+SUNDRMBRAK.BO,Sundaram Brake Linings Ltd,Stock,BSE
+OKPLA.BO,OK Play India Ltd,Stock,BSE
+SRANGMARK.BO,Shree Rang Mark Travels Ltd,Stock,BSE
+TIMETECHNO.BO,TIME TECHNOPLAST LTD.,Stock,BSE
+SSFORMT.BO,S S Forgings & Engineering Ltd,Stock,BSE
+ORIENTHOT.BO,Oriental Hotels Ltd,Stock,BSE
+GODAVARI.BO,Godavari Drugs Ltd,Stock,BSE
+KAUSHALYA.BO,Kaushalya Infrastructure Development Corp Ltd,Stock,BSE
+MMWL-EQ.NS,MEDIA MATRIX WORLDWIDE LT,Stock,NSI
+FRSHTRP.BO,Freshtrop Fruits Ltd,Stock,BSE
+MAHAVIRIND.BO,MAHAVIR INDUSTRIES LIMITED,Stock,BSE
+ICRA.NS,ICRA Ltd,Stock,NSI
+SWORDEDGE.BO,SWORD-EDGE COMMERCIALS LIMITED,Stock,BSE
+TWPL.BO,TENTIWAL METAL PRO,Stock,BSE
+ONELIFECAP.BO,ONELIFE CAPITAL ADVISORS LTD.,Stock,BSE
+AURANPAP.BO,Aurangabad Paper Mills Ltd,Stock,BSE
+DRAGARWQ.BO,Dr Agarwal'S Eye Hospital Ltd,Stock,BSE
+SSLT.NS,Vedanta Limited,Stock,NSI
+SKUMAR.BO,S Kumars Online Ltd,Stock,BSE
+WIPRO4.BO,WIPRO LTD,Stock,BSE
+SPECTRA.BO,Spectra Industries Ltd,Stock,BSE
+KALINDEE.BO,KALINDEE RAIL NIRMAN (ENGINEER,Stock,BSE
+SMIFS.BO,Smifs Capital Markets Ltd,Stock,BSE
+JRFOODS.BO,JR Foods Ltd.,Stock,BSE
+BRPL.BO,BANSAL ROOFING PRODUCTS LTD,Stock,BSE
+ARLABS.BO,ARLABS LTD.,Stock,BSE
+HEXAWARE.BO,Hexaware Technologies Ltd,Stock,BSE
+CELUPRO.BO,CELLULOSE PRODUCTS OF INDIA LT,Stock,BSE
+TATASPONGE-EQ.NS,TATA SPONGE IRON LIMITED,Stock,NSI
+CMAHENDRA-BZ.NS,C.MAHENDRA EXPORTS LTD,Stock,NSI
+UNISHIRE.BO,UNISHIRE URBAN INFRA LTD,Stock,BSE
+TVTODAY.NS,TV Today Network Ltd,Stock,NSI
+MASCH.BO,Master Chemical Ltd,Stock,BSE
+PIDILITIND-EQ.NS,PIDILITE INDUSTRIES LIMITED,Stock,NSI
+SOFTTECHG.NS,,Stock,NSI
+538834.BO,,Stock,BSE
+SAINIK.BO,Sainik Finance Industries Ltd,Stock,BSE
+GANDLEA.BO,Gandhinagar Leasing & Finance Ltd,Stock,BSE
+MIRCELECTR-EQ.NS,MIRC ELECTRONICS LIMITED,Stock,NSI
+PARASPETRO-EQ.NS,PARAS PETROFILS LIMITED,Stock,NSI
+THIRDFIN.BO,Thirdwave Financial Intemediaries Ltd,Stock,BSE
+GILTPKG.BO,GILT PACK LTD.,Stock,BSE
+GEMOIL.BO,GEMMIA OILTECH (INDIA) LTD.,Stock,BSE
+ADVPETR-B.BO,Advance Petrochemicals Ltd.,Stock,BSE
+RAJABAH.BO,RAJA BAHADUR INTERNATIONAL LTD,Stock,BSE
+LTMFXTG-MF.NS,LTAMC - LTMFXTG,Stock,NSI
+PAGITLS.BO,PAGITA LEASING & FINANCE CO.LT,Stock,BSE
+SECEARTH.BO,SECURE EARTH TECHNOLIGIES LTD.,Stock,BSE
+M&MFIN.NS,Mahindra & Mahindra Financial Services Ltd.,Stock,NSI
+TANAA.BO,Taneja Aerospace & Aviation Ltd,Stock,BSE
+HIKAL.BO,Hikal Ltd,Stock,BSE
+GSPL4.BO,GUJARAT STATE PETRONET LTD,Stock,BSE
+RCLEDIIADG.BO,RELIANCE CLOSE ENDED EQUITY FU,Stock,BSE
+KUBERJI.BO,Kuber Udyog Limited,Stock,BSE
+GENIUSCO.BO,Genus Commu-Trade Ltd,Stock,BSE
+VTL.NS,Vardhman Textiles Ltd,Stock,NSI
+GAZIFIN.BO,Gazi Financial Services & Investments Ltd,Stock,BSE
+SUNGOLD.BO,Sungold Capital Ltd,Stock,BSE
+PIPAVAVDOC6.BO,PIPAVAV DEFENCE AND OFFSHORE E,Stock,BSE
+CUBEXTUB-EQ.NS,CUBEX TUBINGS LIMITED,Stock,NSI
+CREATIVEYE-EQ.NS,CREATIVE EYE LIMITED,Stock,NSI
+MALVI.BO,Malvika Steel Ltd,Stock,BSE
+534734.BO,,Stock,BSE
+SURYNGRF.BO,SFL International Ltd,Stock,BSE
+BI.BO,Bilcare Ltd,Stock,BSE
+UNQAGRO.BO,Unique Agro Processors (India) Ltd,Stock,BSE
+AMARDEE.BO,Amradeep Industries Ltd,Stock,BSE
+LOGIXMICRO6.BO,LOGIX MICROSYSTEMS LTD,Stock,BSE
+SAURAPB-B.BO,SAURASHTRA PAPER & BOARD MILLS,Stock,BSE
+538765.BO,,Stock,BSE
+PITTILAM.NS,Pitti Laminations Ltd,Stock,NSI
+DIVSHKT.BO,Divyashakti Granites Ltd,Stock,BSE
+CLNINDIA.NS,Clariant Chemicals India Ltd,Stock,NSI
+QUINTEGRA.BO,Quintegra Solutions Ltd,Stock,BSE
+RICHIRICH.BO,RICHIRICH INVENTURES LIMITED,Stock,BSE
+VINRKLB.BO,Rekvina Laboratories Limited,Stock,BSE
+FORBESCO.BO,Forbes & Co Ltd,Stock,BSE
+NAKODA-EQ.NS,NAKODA LIMITED,Stock,NSI
+EVINIX.BO,Evinix Accessories Ltd,Stock,BSE
+WONDERLA.NS,Wonderla Holidays Ltd,Stock,NSI
+ASEEMG.BO,ASEEM GLOBAL LTD.,Stock,BSE
+UPSURGE.BO,Upsurge Investment & Finance Ltd,Stock,BSE
+ALPINEHOU-BE.NS,Alpine Housing Dev Corp,Stock,NSI
+RBGUPTA.BO,R.B.GUPTA FINANCIALS LTD.,Stock,BSE
+RML.NS,Rane (Madras) Ltd,Stock,NSI
+NEXTMEDIA-EQ.NS,NEXT MEDIAWORKS LIMITED,Stock,NSI
+CIGNITI.BO,CIGNITI TECHNOLOGIES LTD.,Stock,BSE
+IDFC6.BO,IDFC LTD,Stock,BSE
+RANJITSE.BO,Ranjit Securities Ltd,Stock,BSE
+SWASTIKA.BO,Swastika Investsmart Ltd,Stock,BSE
+BIRLAPREC.BO,Birla Precision Technologies Ltd,Stock,BSE
+BANG.BO,Bang Overseas Ltd,Stock,BSE
+GIPCL.NS,Gujarat Industries Power Co Ltd,Stock,NSI
+APEXINT.BO,APEX INTERTECH LTD.,Stock,BSE
+LIBORDFIN.BO,LIBORD FINANCE LTD,Stock,BSE
+BHUSANSTL.BO,BHUSHAN STEEL LTD.,Stock,BSE
+EXCEL.NS,,Stock,NSI
+PGEL.NS,PG Electroplast Ltd,Stock,NSI
+KLRF.NS,KLRF Ltd,Stock,NSI
+INDOCO.BO,Indoco Remedies Ltd.,Stock,BSE
+CMSINFO.BO,CMS Finvest Ltd,Stock,BSE
+MUKATPIP.BO,Mukat Pipes Ltd,Stock,BSE
+ENTRINT.BO,Enterprise International Ltd,Stock,BSE
+PENTAGLO.BO,PENTAGON GLOBAL SOLUTIONS LTD.,Stock,BSE
+CATECH.BO,CAT Technologies Ltd,Stock,BSE
+METAI.BO,Metalman Industries Ltd,Stock,BSE
+CELESTIAL.NS,Celestial Biolabs Ltd,Stock,NSI
+KKCL.BO,Kewal Kiran Clothing Ltd,Stock,BSE
+BGIL.BO,BGIL Films & Technologies Ltd,Stock,BSE
+538732.BO,,Stock,BSE
+TIMKEN6.BO,TIMKEN INDIA LTD,Stock,BSE
+EONBBPH.BO,EONELEC*,Stock,BSE
+VALECHAENG.BO,VALECHA ENGINEERING LTD.,Stock,BSE
+NORBTEAEX.NS,Norben Tea & Exports Ltd,Stock,NSI
+GUJRAFIA.BO,Gujarat Raffia Industries Ltd,Stock,BSE
+538452.BO,,Stock,BSE
+TCMLMTD.BO,T C M Ltd,Stock,BSE
+COCHMAL.BO,COCHIN MALABAR ESTATES & INDUS,Stock,BSE
+MENONBE.BO,Menon Bearings Ltd,Stock,BSE
+POWERHOUSE.BO,Powerhouse Fitness And Realty,Stock,BSE
+WILFI.BO,WILWAYFORT INDIA LTD.,Stock,BSE
+AMDIND.NS,AMD Industries Ltd,Stock,NSI
+BHAGWOX.BO,BHAGWATI OXYGEN LTD.,Stock,BSE
+SOLIMAC.BO,Solitaire Machine Tools Ltd,Stock,BSE
+PARLESOFT.BO,Parle Software Ltd,Stock,BSE
+ODVDC.BO,ODYSSEY VIDEO COMMUNICATIONS L,Stock,BSE
+GOVINDRU.BO,Govind Rubber Ltd,Stock,BSE
+DUNCANSLTD-BE.NS,DUNCANS INDUSTRIES INR10,Stock,NSI
+JSLINDL.BO,JSL INDUSTRIES LTD.,Stock,BSE
+INTECH.BO,Integrated Technologies Ltd,Stock,BSE
+NFL.NS,National Fertilizers Ltd,Stock,NSI
+PANACEABBPH.BO,PANACEA BIO*,Stock,BSE
+JUSTDIAL.BO,JUST DIAL LTD.,Stock,BSE
+SURBHIN.BO,Surbhi Industries Ltd,Stock,BSE
+ABB4.BO,ABB INDIA LTD,Stock,BSE
+538890.BO,,Stock,BSE
+EASTSILK-EQ.NS,EASTERN SILK INDUSTRIES LIMITED,Stock,NSI
+RMCL.NS,Radha Madhav Corp Ltd,Stock,NSI
+VALPLUS.BO,VALPLUS BIOTECH LTD.,Stock,BSE
+CLUTCHAUTO-BE.NS,CLUTCH AUTO LTD,Stock,NSI
+BLUEBIRD.BO,Blue Bird (India) Ltd,Stock,BSE
+PRSYNP1.BO,PARAS SYN PP,Stock,BSE
+WELLWININD.BO,WELLWIN INDUSTRY LTD.,Stock,BSE
+REMIPRO.BO,Remi Process Plant & Machinery Ltd,Stock,BSE
+LINEARPO.BO,Linear Industries Ltd,Stock,BSE
+SHRUBER.BO,SHREE RUBBER INDUSTRIES LTD.,Stock,BSE
+SHARMEH.BO,Sharma East India Hospitals & Medical Research Ltd,Stock,BSE
+SIMBHSUGAR-EQ.NS,SIMBHAOLI SUGARS LIMITED,Stock,NSI
+WLPACKP.BO,Well Pack Papers & Containers Ltd,Stock,BSE
+EMTEXIND.BO,EMTEX INDUSTRIES (I) LTD.,Stock,BSE
+UNIENTER.NS,Uniphos Enterprises Ltd,Stock,NSI
+NIRMA41.BO,NIRMAN CEMEN,Stock,BSE
+BEARDSELL-RL.NS,BEARDSELL LTD INR10,Stock,NSI
+NEOCORP-BE.NS,Neo Corp International Limited,Stock,NSI
+SHREYAS.BO,SHREYAS SHIPPING & LOGISTICS L,Stock,BSE
+LOKHSG.BO,Lok Housing & Constructions Ltd,Stock,BSE
+ASUTENT.BO,ASUTOSH ENTERPRISES LTD.,Stock,BSE
+UNISTRMU.BO,Unistar Multimedia Ltd,Stock,BSE
+ASIANELEC.BO,ASIAN ELECTRONICS LTD.,Stock,BSE
+GUJBP.BO,Gujarat Bulk Packs Ltd,Stock,BSE
+IDFCEOS1RD.BO,IDFC EQUITY OPPORTUNITY- SERIE,Stock,BSE
+JENBURPH.BO,Jenburkt Pharmaceuticals Ltd,Stock,BSE
+SAMTEL.BO,Samtel Color Ltd,Stock,BSE
+MOHITIND-EQ.NS,MOHIT INDUSTRIES LIMITED,Stock,NSI
+CGVAK.BO,CG-Vak Software & Exports Ltd,Stock,BSE
+ELECTCAST.NS,Electrosteel Castings Ltd,Stock,NSI
+PARABDRUG.NS,Parabolic Drugs Ltd,Stock,NSI
+MCLEODRUSS6.BO,MCLEOD RUSSEL INDIA LTD,Stock,BSE
+INFRAIND.BO,Infra Industries Ltd,Stock,BSE
+539008.BO,,Stock,BSE
+EMERALD.BO,Emerald Leasing Finance & Inve,Stock,BSE
+UBEINDL.BO,UBE Industries Ltd,Stock,BSE
+DHAMSUGR.BO,Kashipur Sugar Mills Ltd,Stock,BSE
+BLUESTARC.NS,Blue Star Ltd,Stock,NSI
+HRYNSHP.BO,Hariyana Ship Breakers Ltd,Stock,BSE
+POLYLINK.BO,Polylink Polymers ( India ) Limited,Stock,BSE
+533344.BO,,Stock,BSE
+MAKERSL.BO,Makers Laboratories Ltd,Stock,BSE
+CHROMATIC.NS,Chromatic India Ltd,Stock,NSI
+DSINVEST.BO,Dalal Street Investments Ltd,Stock,BSE
+AIL4.BO,ALSTOM INDIA LTD,Stock,BSE
+SPENTA.BO,Spenta International Ltd,Stock,BSE
+ULTRACAB.BO,Ultracab (India) Limited,Stock,BSE
+ZFRONTLE.BO,Frontier Capital Ltd,Stock,BSE
+RAJPUTANA.BO,Rajputana Investment and Finan,Stock,BSE
+ESTER.BO,ESTER INDUSTRIES LTD.,Stock,BSE
+BAJFINANCER.BO,BAJFINANCER,Stock,BSE
+APPOSTO.BO,APPOLLO STONES LTD.,Stock,BSE
+OMKARPH.BO,Omkar Pharmachem Ltd,Stock,BSE
+BVCL.NS,Barak Valley Cements Ltd,Stock,NSI
+MONNETPRO.BO,MONNET PROJECT DEVELOPERS LTD.,Stock,BSE
+KIFS.BO,KIFS FINANCIAL SERVICES LTD.,Stock,BSE
+KEMP.BO,Kemp & Co Ltd,Stock,BSE
+INTRCRF.BO,INTERCRAFT LTD.,Stock,BSE
+PARABDRUGS-EQ.NS,PARABOLIC DRUGS LIMITED,Stock,NSI
+VATSAEDU.BO,VATSA EDUCATIONS LTD.,Stock,BSE
+538706.BO,,Stock,BSE
+NEULABLR.BO,Neuland Laboratories Limited.,Stock,BSE
+DBCORP6.BO,DBCORP LTD,Stock,BSE
+PSTL.BO,Pyramid Saimira Theatre Ltd,Stock,BSE
+KIRANPR.BO,Kiran Print Pack Ltd,Stock,BSE
+538546.BO,,Stock,BSE
+TRIBHSG.BO,Tribhuvan Housing Ltd,Stock,BSE
+PRMRPRT.BO,Premier Proteins Ltd,Stock,BSE
+SANOFI.NS,SANOFI INDIA LIMITED,Stock,NSI
+SIBARSOF.BO,Sibar Software Services (India) Ltd,Stock,BSE
+RELGOLD.NS,R* Shares Gold ETF,Stock,NSI
+BACPHAR.BO,Bacil Pharma Ltd,Stock,BSE
+GSLINDL.BO,GSL (INDIA) LTD.,Stock,BSE
+MINAXI.BO,Minaxi Textiles Ltd,Stock,BSE
+SUNDRMBRA.NS,Sundaram Brake Linings Ltd,Stock,NSI
+BELLARYS.BO,Bellary Steels & Alloys Ltd,Stock,BSE
+BALATECGL.BO,Bala Techno Global Ltd,Stock,BSE
+PCCOSMA.BO,Pee Cee Cosma Sope Ltd,Stock,BSE
+534757.BO,,Stock,BSE
+ZODIACVEN.BO,ZODIAC VENTURES LIMITED,Stock,BSE
+RPIL.BO,Ritesh Properties and Industries Ltd,Stock,BSE
+538857.BO,,Stock,BSE
+INGVYSYABK4.BO,ING VYSYA BANK LTD,Stock,BSE
+ZCHANAIN.BO,CHANAKYA INVESTMENTS LTD.,Stock,BSE
+RCLEDPLADD.BO,RELIANCE MUTUAL FUND - RELIANC,Stock,BSE
+TILAKFIN.BO,TILAK FINANCE LIMITED,Stock,BSE
+AJWAFUN.BO,Ajwa Fun World & Resort Ltd,Stock,BSE
+LAKSELEC.BO,Lakshmi Electrical Control Systems Ltd,Stock,BSE
+ZSWASTSA.BO,SWASTIK SAFE DEPOSIT & INVESTM,Stock,BSE
+MANAKSTEEL-BE.NS,Manaksia Steels Ltd,Stock,NSI
+SUPER.BO,SUPER SALES INDIA LTD.,Stock,BSE
+MEGRISOFT.BO,Megri Soft Limited,Stock,BSE
+STOCKNET.BO,STOCKNET INTERNATIONAL LTD.,Stock,BSE
+CLASSIC-BE.NS,CLASSIC DIAMONDS (I) LTD,Stock,NSI
+GRAVITY.BO,Gravity (India) Ltd,Stock,BSE
+RCBFIICG.BO,Reliance Mutual Fund,Stock,BSE
+ZNIVITRD.BO,Nivi Trading Ltd,Stock,BSE
+GMRINFRA.BO,GMR Infrastructure Ltd,Stock,BSE
+TRANSFIN.BO,Trans Financial Resources Ltd,Stock,BSE
+ELEMARB.BO,Elegant Marbles & Grani Industries Ltd,Stock,BSE
+JOLLYRID.BO,JOLLY RIDES LTD.,Stock,BSE
+UNISH.BO,Unisys Softwares & Holding Industries Ltd,Stock,BSE
+SVRNAQU.BO,Suvarna Aqua Farm & Exports Ltd,Stock,BSE
+GLTSY6.BO,GTL LTD,Stock,BSE
+VYSLIPH.BO,VYSALI PHARMACEUTICALS LTD.,Stock,BSE
+VASCONEQ.BO,VASCON ENGINEERS LTD,Stock,BSE
+BSLFEFS5DN.BO,Birla Sun Life Mutual Fund,Stock,BSE
+ALANKIT.NS,Alankit Limited,Stock,NSI
+RAMCOSYS6.BO,RAMCO SYSTEMS LTD,Stock,BSE
+ESTBIOLR.BO,Esteem Bio Organic Food Proces,Stock,BSE
+SURYAJYOTI.BO,SURYAJYOTI SPINNING MILLS LTD.,Stock,BSE
+ZSOMESCE.BO,SOMESHWARA CEMENTS & CHEMICALS,Stock,BSE
+MERCTRD.BO,MERCURY TRADE LINKS LTD.,Stock,BSE
+GUJTHEM.BO,Gujarat Themis Biosyn Ltd.,Stock,BSE
+GLOBALVECT-EQ.NS,GLOBAL VECTRA HELICORP LIMITED,Stock,NSI
+GUJFLUORO.BO,Gujarat Fluorochemicals Ltd,Stock,BSE
+CREATIVEYE.BO,CREATIVE EYE LTD.,Stock,BSE
+GUJPE.BO,Gujarat Perstorp Electronics Ltd,Stock,BSE
+MIHIJAM.BO,Mihijam Vanaspati Ltd,Stock,BSE
+PROLINSO.BO,PROLINE SOFTWARE & FINANCE LTD,Stock,BSE
+MOVINGPI.BO,Moving Picture Co (India) Ltd,Stock,BSE
+S&SPOWER.BO,S&S POWER SWITCHGEAR LTD.,Stock,BSE
+CURATECH.NS,,Stock,NSI
+SIELFNS.BO,SIEL Financial Services Ltd,Stock,BSE
+ACKNIT.BO,Acknit Industries Ltd,Stock,BSE
+SUPERSPIN-EQ.NS,SUPER SPINNING MILLS LIMITED,Stock,NSI
+ASHAPURMIN.BO,ASHAPURA MINECHEM LTD.,Stock,BSE
+HERITGFOOD.BO,Heritage Foods Ltd,Stock,BSE
+ADHUSYN.BO,Adhunik Synthetics Ltd,Stock,BSE
+MSRINDIA.BO,MSR INDIA LTD.,Stock,BSE
+PREMCAPM.BO,Premium Capital Markets & Investments Ltd,Stock,BSE
+PSCABLE.BO,Pashupati Cables Ltd,Stock,BSE
+BNKCAP.BO,BNK Capital Markets Ltd,Stock,BSE
+GISOLUTION.BO,GI ENGINEERING SOLUTIONS LTD.,Stock,BSE
+PHELAPP.BO,Phelix Appliances Ltd,Stock,BSE
+ZKERARUB.BO,KERALA RUBBER & RECLAIMS LTD.,Stock,BSE
+SWRNASE.BO,Swarna Securities Ltd,Stock,BSE
+PARHOSG.BO,PARTH HOUSING AND ESTATE DEVEL,Stock,BSE
+MANDHANA.NS,Mandhana Industries Ltd,Stock,NSI
+ELAND.BO,E-Land Apparel Limited,Stock,BSE
+MARATHON.BO,Marathon Nextgen Realty Ltd,Stock,BSE
+ELECON6.BO,ELECON ENGINEERING COLTD,Stock,BSE
+SHREGRN.BO,SHREEJI INDUSTRIES LTD.,Stock,BSE
+GUJFISC.BO,GUJARAT FISCON LTD.,Stock,BSE
+534809.BO,,Stock,BSE
+IL&FSTRAN.NS,IL&FS Transportation Networks Ltd,Stock,NSI
+KMSUGAR.BO,K M Sugar Mills Ltd,Stock,BSE
+ESSRINV.BO,Essar Investments Ltd,Stock,BSE
+UNIWORTHT.BO,Uniworth Textiles Ltd,Stock,BSE
+ATLANTADEV.BO,ATLANTA DEVCON LIMITED,Stock,BSE
+HERUKAG.BO,ISC Udyog Ltd,Stock,BSE
+BHARATFORG6.BO,BHARAT FORGE LTD,Stock,BSE
+HBLEAS.BO,HB Leasing & Finance Co Ltd,Stock,BSE
+ZPARAPLY.BO,PARASRAMPURIA POLYAMIDES LTD.,Stock,BSE
+MBECL.BO,MCNALLY BHARAT ENGINEERING COM,Stock,BSE
+BAROEXT.BO,BARODA EXTRUSION LTD.,Stock,BSE
+GAJANANSEC.BO,GAJANAN SECURITIES SERVICES LT,Stock,BSE
+FCL.NS,Fineotex Chemical Limited,Stock,NSI
+VIRTIND.BO,VIRTUAL INDUSTRIES LTD.,Stock,BSE
+539122.BO,,Stock,BSE
+BHARATGEAR.BO,BHARAT GEARS LTD.,Stock,BSE
+SACHEMT.BO,Sacheta Metals Ltd,Stock,BSE
+KLKELEC.BO,KLK Electrical Ltd,Stock,BSE
+538858.BO,,Stock,BSE
+NKIND.BO,N K Industries Ltd,Stock,BSE
+STERLINH.BO,Sterling Holiday Resorts India Ltd,Stock,BSE
+CNIRESLTD.BO,Cni Research Ltd,Stock,BSE
+JAGSONFI.BO,Jagsonpal Finance & Leasing Ltd,Stock,BSE
+DECOLIGHT.BO,Decolight Ceramics Ltd,Stock,BSE
+SKUMARN.BO,S Kumars Nationwide Ltd,Stock,BSE
+ANDHRABANK6.BO,ANDHRA BANK,Stock,BSE
+ORCHIDCHEM.BO,Orchid Pharma Ltd,Stock,BSE
+ALEXCON.BO,Alexcon Foamcast Ltd,Stock,BSE
+COIMLAK-B.BO,COIMBATORE LAKSHMI INVESTMENT,Stock,BSE
+GINISILK.BO,Gini Silk Mills Ltd,Stock,BSE
+BZJHS.NS,,Stock,NSI
+RELICTEC.BO,Relic Technologies Ltd,Stock,BSE
+CYIENT.BO,CYIENT LIMITED,Stock,BSE
+STERLINBIO-EQ.NS,STERLING BIOTECH LIMITED,Stock,NSI
+KOTARISUG.NS,Kothari Sugars & Chemicals Ltd,Stock,NSI
+OBEROIRLTY6.BO,OBEROI REALTY LTD,Stock,BSE
+UJAAS-EQ.NS,UJAAS ENERGY LIMITED,Stock,NSI
+PASHUSEO.BO,Pashupati Seohung Ltd,Stock,BSE
+CEENIK.BO,Ceenik Exports (India) Ltd,Stock,BSE
+JMA-EQ.NS,JULLUNDUR MOTOR AGENCY (DELHI),Stock,NSI
+LANYARD.BO,LANYARD FOODS LTD.,Stock,BSE
+ZNILKENG.BO,NILKANTH ENGINEERING LTD.,Stock,BSE
+SPACI.BO,Spartek Ceramics India Ltd,Stock,BSE
+JAGDAMD.BO,Jagdamba Foods Ltd,Stock,BSE
+MALTC.BO,Malabar Trading Co Ltd,Stock,BSE
+SASKEN.NS,Sasken Communication Technologies Ltd,Stock,NSI
+JAYSHREETEA.BO,Jay shree Tea & Industries Ltd,Stock,BSE
+534139.BO,,Stock,BSE
+ALPINEHOU.BO,ALPINE HOUSING DEVELOPMENT COR,Stock,BSE
+ORSIND.BO,Orissa Industries Ltd,Stock,BSE
+YOGISUNG.BO,Yogi Infra Projects Ltd,Stock,BSE
+MANPAIN.BO,MANSAROVER PAPER & INDUSTRIES,Stock,BSE
+ALACRIEL.BO,ALACRITY ELECTRONICS LTD.,Stock,BSE
+DHARNOV.BO,DHARNENDRA OVERSEAS LTD.,Stock,BSE
+MALVICAE.BO,Malvica Engineering Ltd,Stock,BSE
+GRAVITA6.BO,GRAVITA INDIA LTD,Stock,BSE
+PODDARDEV.BO,PODDAR DEVELOPERS LTD,Stock,BSE
+NATIONALUM4.BO,NATIONAL ALUMINIUM CO LTD,Stock,BSE
+533170.BO,,Stock,BSE
+SPARCSYS.BO,SPARC SYSTEMS LTD.,Stock,BSE
+NFL.BO,National Fertilizers Ltd,Stock,BSE
+BISIL.BO,Bisil Plast Ltd,Stock,BSE
+RNRL.BO,Reliance Natural Resources Limited,Stock,BSE
+AEGISLOG.BO,Aegis Logistics Ltd,Stock,BSE
+KICL.BO,KALYANI INVESTMENT COMPANY LTD,Stock,BSE
+SHALPAINT.NS,Shalimar Paints Ltd,Stock,NSI
+SEPSL.BO,SCHNEIDER ELECTRIC PRESIDENT S,Stock,BSE
+APTPACK.BO,APT PACKAGING LTD.,Stock,BSE
+MARIS.BO,Maris Spinners Ltd,Stock,BSE
+KINGCHD.BO,KINGS CHEMICALS & DISTILLERIES,Stock,BSE
+KTIL.NS,Kesar Terminals & Infrastructure Ltd,Stock,NSI
+SHRENTI.BO,SHREENATH INVESTMENTS CO.LTD.,Stock,BSE
+ARHSUED.BO,ARHANT SUEDES LTD.,Stock,BSE
+STEL.BO,STEL HOLDINGS LIMITED,Stock,BSE
+FARMAXIND.NS,Farmax India Ltd,Stock,NSI
+BSLGOLDETF.BO,BIRLA SUN LIFE MUTUAL FUND - B,Stock,BSE
+MWTEXX.BO,MW UNITEXX LTD.,Stock,BSE
+INGERRAND6.BO,INGERSOLL-RAND (INDIA) LTD,Stock,BSE
+GABRIEL.BO,Gabriel India Ltd,Stock,BSE
+DREDGECORP6.BO,DREDGING CORPORATION OF INDIA,Stock,BSE
+HOTELEELA6.BO,HOTEL LEELA VENTURE LTD,Stock,BSE
+BANKBEES.NS,Goldman Sachs Bank BeES ETF,Stock,NSI
+CHOKINT.BO,CHOKHANI INTERNATIONAL LTD.,Stock,BSE
+SETFNN50-EQ.NS,SBI-ETF NIFTY NEXT 50,Stock,NSI
+SHARIABEE.NS,BENCHMARK MUTUAL SHARIAH BENCHM,Stock,NSI
+ZSATYASL.BO,SATYAM SILK MILLS LTD.,Stock,BSE
+PALSOFT.BO,Palsoft Infosystems Ltd,Stock,BSE
+BODALCHEM.NS,Bodal Chemicals Ltd.,Stock,NSI
+DEEPAKFERT6.BO,DEEPAK FERTILIZERS &PETROCHEMI,Stock,BSE
+VANTEL.BO,VANTEL TECHNOLOGIES LTD.,Stock,BSE
+KAPASHI.BO,Kapashi Commercials Ltd,Stock,BSE
+VADILENT.BO,Vadilal Enterprises Ltd,Stock,BSE
+NATIONSTD.BO,NATIONAL STANDARD (INDIA) LTD.,Stock,BSE
+PRAKASHCO.NS,,Stock,NSI
+LORDSCHLO.BO,Lords Chloro Alkali Ltd,Stock,BSE
+ECEIND.BO,ECE INDUSTRIES LTD.,Stock,BSE
+RADIXIND.BO,RADIX INDUSTRIES (INDIA) LIMIT,Stock,BSE
+PINCON.BO,Pincon Spirit Limited,Stock,BSE
+ASHFL.BO,Akme Star Housing Finance Limi,Stock,BSE
+MISHKAFIN.BO,MISHKA FINANCE AND TRADING LTD,Stock,BSE
+ZICOM.BO,Zicom Electronic Security Systems Ltd,Stock,BSE
+AMITSEC.BO,Amit Securities Ltd,Stock,BSE
+INDERGR.BO,Indergiri Finance Ltd,Stock,BSE
+VKSPL.BO,VKS PROJECTS LTD.,Stock,BSE
+INDOTHAI.NS,Indo Thai Securities Ltd,Stock,NSI
+GUJTLRM.BO,Gujarat Toolroom Ltd,Stock,BSE
+DOWELWE.BO,DOWELLS ELEKTRO WERKE LTD.,Stock,BSE
+RAINBOWF.BO,Rainbow Foundations Ltd,Stock,BSE
+TIRIN.BO,Tirupati Industries (India) Ltd,Stock,BSE
+SILSPL.BO,SILSPL,Stock,BSE
+SGL-BE.NS,STL GLOBAL LTD INR10,Stock,NSI
+LYCOS.NS,Lycos Internet Ltd,Stock,NSI
+533080.BO,,Stock,BSE
+NDASEC.BO,NDA Securities Ltd,Stock,BSE
+BHEL4.BO,BHARAT HEAVY ELECTRICALS LTD,Stock,BSE
+VIKALPS.BO,Vikalp Securities Ltd,Stock,BSE
+JORDENG-B.BO,Jord Engineers India Ltd,Stock,BSE
+HNGSNGBEES-EQ.NS,GOLDMAN SACHS HANG HANG SENG BE,Stock,NSI
+VJYKMCT.BO,VIJAYKUMAR MILLS LTD.,Stock,BSE
+KEC.NS,KEC International Ltd.,Stock,NSI
+EUROTEXIND.BO,EUROTEX INDUSTRIES & EXPORTS L,Stock,BSE
+ERAINFRA.BO,Era Infra Engineering Ltd,Stock,BSE
+533055.BO,,Stock,BSE
+GARWALLROP.BO,Garware Wall Ropes Ltd,Stock,BSE
+SHUKUN.BO,Shukun Construction Ltd,Stock,BSE
+DIVINE.BO,DIVINE MULTIMEDIA (INDIA) LTD.,Stock,BSE
+M&MFIN6.BO,M&M FINANSER,Stock,BSE
+SILVOAK.BO,Silver Oak (India) Ltd,Stock,BSE
+SMRUTHI.BO,Smruthi Organics Ltd,Stock,BSE
+KHAITANLTD-BE.NS,KHAITAN (INDIA) LTD. INR10,Stock,NSI
+OSWALEA.BO,Oswal Leasing Ltd,Stock,BSE
+NORBTEAEXP-EQ.NS,NORBEN TEA & EXPORTS LIMITED,Stock,NSI
+HRGESSDD2.BO,HDFC MUTUAL FUND - HDFC RAJIV,Stock,BSE
+CREST.NS,,Stock,NSI
+ZENITHINFO.BO,ZENITH INFOTECH LTD.,Stock,BSE
+SUNILHITEC-EQ.NS,SUNIL HITECH ENGINEERS LIMITED,Stock,NSI
+APSSTAR-B.BO,APS-STAR INDUSTRIES LTD.,Stock,BSE
+BZPRITHVI.NS,,Stock,NSI
+BHANDERI.BO,BHANDERI INFRACON LTD,Stock,BSE
+HINDUJAVEN.BO,HINDUJA VENTURES LTD.,Stock,BSE
+MANAKCOAT-BE.NS,Man Coat Metal & Ind Ltd,Stock,NSI
+CREST-EQ.NS,CREST VENTURES LIMITED,Stock,NSI
+PROFINC.BO,Pro Fin Capital Services Ltd,Stock,BSE
+BHARATRAS.NS,Bharat Rasayan Ltd,Stock,NSI
+AGRIMONY.BO,AGRIMONY COMMODITIES LTD,Stock,BSE
+SURYAMARK.BO,SURYA MARKETING LTD,Stock,BSE
+CAPRO.BO,Caprolactam Chemicals Limited,Stock,BSE
+KAMPECO.BO,KAMPER CONCAST LTD.,Stock,BSE
+AIFL-EQ.NS,Ashapura Inti Fashion Ltd,Stock,NSI
+PIONEEREM.NS,,Stock,NSI
+FLFININ.BO,PL FINANCE & INVESTMENT LTD.,Stock,BSE
+SHYAM.BO,VENTURA GUARANTY LTD.,Stock,BSE
+YASHPPR.BO,Yash Papers Ltd,Stock,BSE
+COROMANDEL4.BO,COROMANDEL INTERNATIONAL LTD,Stock,BSE
+GRANULES.BO,Granules India Ltd,Stock,BSE
+UNRYLMA.BO,Uniroyal Marine Exports Ltd,Stock,BSE
+ORBITCORP.BO,ORBIT CORPORATION LTD.,Stock,BSE
+IPRU8793.BO,ICICI Prudential Mutual Fund,Stock,BSE
+SMCREDT.BO,SMC CREDITS LTD.,Stock,BSE
+HEALTHTECH.BO,HEALTHFORE TECHNOLOGIES LTD.,Stock,BSE
+JUNCTION.BO,Junction Fabrics and Apparels,Stock,BSE
+VENUSREM.NS,Venus Remedies Ltd,Stock,NSI
+538563.BO,,Stock,BSE
+STCORP.BO,S & T Corp Ltd,Stock,BSE
+CHAKVEG.BO,CHAKAN VEGOILS LTD.,Stock,BSE
+HFEFRG.BO,HDFC Mutual Fund,Stock,BSE
+KGL.NS,Karuturi Global Ltd,Stock,NSI
+MDRNSYN-B.BO,Modern Syntex (India) Ltd,Stock,BSE
+BALKRISIN.NS,Balkrishna Industries Ltd.,Stock,NSI
+ASTRAL.BO,Astral Poly Technik Ltd.,Stock,BSE
+RASOYPR.NS,Rasoya Proteins Limited,Stock,NSI
+JAYNECOIN.NS,Jayaswal NECO Industries Ltd,Stock,NSI
+536773.BO,,Stock,BSE
+VISHWAFIN.BO,VISHWAMITRA FINANCIAL SERVICES,Stock,BSE
+KWALITY6.BO,KWALITY LTD,Stock,BSE
+ZENTEC6.BO,ZEN TECH,Stock,BSE
+GLOTY6.BO,GTL LTD,Stock,BSE
+536592.BO,,Stock,BSE
+NUTECGLOB.BO,Nutech Global Ltd,Stock,BSE
+MARTELI.BO,MARUTI TELSTAR INDUSTRIES LTD.,Stock,BSE
+ASIFOOD.BO,ASIAN FOOD PRODUCTS LTD.,Stock,BSE
+SPTRSHI.BO,Saptarishi Agro Industries Limited,Stock,BSE
+GEMINI.BO,GEMINI COMMUNICATION LTD.,Stock,BSE
+TRANSASIA.BO,Trans Asia Corp Ltd,Stock,BSE
+WEIZFOREX.BO,WEIZMANN FOREX LTD.,Stock,BSE
+GALORE.BO,Galore Prints Industries Ltd,Stock,BSE
+SHIKHARLETR.BO,SHIKHAR LEASING & TRADING LTD.,Stock,BSE
+SHYAMHO.BO,Shyamal Holdings & Trading Ltd,Stock,BSE
+INFINITE.BO,Infinite Computer Solutions (India) Ltd,Stock,BSE
+AUSOMENT.NS,Ausom Enterprise Ltd,Stock,NSI
+PRIMIND.BO,Prime Industries Ltd,Stock,BSE
+BHAGWNME.BO,Bhagwandas Metals Ltd,Stock,BSE
+KOPDRUGS.BO,KDL BIOTECH LTD.,Stock,BSE
+SHASUNPHAR.BO,SHASUN PHARMACEUTICALS LTD.,Stock,BSE
+538952.BO,,Stock,BSE
+PRISMER.BO,Prism Mercantile Ltd,Stock,BSE
+LCCINFOTEC-BE.NS,LCC INFOTECH INR2,Stock,NSI
+SUNILAGR.BO,Sunil Agro Foods Ltd,Stock,BSE
+TORNTPOWER6.BO,TORRENT POWER LTD,Stock,BSE
+CHAMBLFERT6.BO,CHAMBAL FERTILISERS & CHEMICAL,Stock,BSE
+RUSHIL.BO,RUSHIL DECOR LTD.,Stock,BSE
+PEIL.BO,Premier Energy and Infrastructure Ltd,Stock,BSE
+SSILM6.BO,PVP VENTURES LTD,Stock,BSE
+NATPLY.BO,National Plywood Industries Ltd,Stock,BSE
+LUPIN4.BO,LUPIN LTD,Stock,BSE
+VJIL.BO,Athena Global Technologies Ltd,Stock,BSE
+533108.BO,,Stock,BSE
+BONANZAB.BO,Bonanza Biotech Ltd,Stock,BSE
+PHCAP.BO,P H Capital Ltd,Stock,BSE
+COMDI.BO,CDI International Ltd,Stock,BSE
+538771.BO,,Stock,BSE
+INOVSYNTH.BO,INNOVASSYNTH INVESTMENTS LTD.,Stock,BSE
+BZJUMBO.NS,,Stock,NSI
+$USIRO52.BO,USHA IRON &F,Stock,BSE
+ORIQUAL.BO,Oriqua Ltd,Stock,BSE
+TYPHOON.BO,Typhoon Holdings Ltd,Stock,BSE
+SETFNIFBK-EQ.NS,SBI-ETF NIFTY BANK,Stock,NSI
+SPRMPETBBPH.BO,SUPREME PET*,Stock,BSE
+INDIACEM4.BO,INDIA CEMENTS LTD,Stock,BSE
+UNIIN.BO,Uniworth International Ltd,Stock,BSE
+PFLINFOTC.BO,PFL Infotech Ltd,Stock,BSE
+DHARFIN.BO,Dharani Finance Ltd,Stock,BSE
+EASTSILK.NS,Eastern Silk Industries Ltd,Stock,NSI
+PADMINIT.BO,Padmini Technologies Ltd,Stock,BSE
+IFLPROMOT.BO,IFL Promoters Limited,Stock,BSE
+PHOTON.BO,Photon Capital Advisors Ltd.,Stock,BSE
+ISHANCH.BO,ISHAN DYES & CHEMICALS LTD.,Stock,BSE
+ANDHRACEMT-EQ.NS,ANDHRA CEMENTS LIMITED,Stock,NSI
+HOCL.BO,HINDUSTAN ORGANIC CHEMICALS LT,Stock,BSE

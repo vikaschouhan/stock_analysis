@@ -48,12 +48,19 @@ if __name__ == '__main__':
         if regex_c.match(line):
             continue
 
-        res = regex_m.search(line)
-        if res:
-            ticker_dict_n[res.groups()[0]] = res.groups()[1]
-        else:
-            # This line is not recognised
-            continue
+        # Old way
+        #
+        #res = regex_m.search(line)
+        #if res:
+        #    ticker_dict_n[res.groups()[0]] = res.groups()[1]
+        #else:
+        #    # This line is not recognised
+        #    continue
+        # New way
+        # Updated on 11'th Jan, 2016
+        res = line.split(',')
+        ticker_dict_n[res[0]] = res[1]
+    # endfor
 
     # check if pickle file was provided & redirect function pointer for
     # geting ticker values

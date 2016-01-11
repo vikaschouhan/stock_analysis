@@ -205,12 +205,20 @@ if __name__ == '__main__':
         if regex_c.match(line):
             continue
 
-        res = regex_m.search(line)
-        if res:
-            ticker_dict_n[res.groups()[0]] = res.groups()[1]
-        else:
-            # This line is not recognised
-            continue
+        # Old way
+        #
+        #res = regex_m.search(line)
+        #if res:
+        #    ticker_dict_n[res.groups()[0]] = res.groups()[1]
+        #else:
+        #    # This line is not recognised
+        #    continue
+        #
+        # New way
+        # Updated on 11th Jan, 2016
+        res = line.split(',')
+        ticker_dict_n[res[0]] = res[1]
+    # endfor
 
     # check trade limit
     if args.vmin:
@@ -282,7 +290,7 @@ if __name__ == '__main__':
             if vol_status:
                 status  = strategy_this(data_this)
                 if status:
-                    print "scrip_id = {}".format(index)
+                    print "scripid = {}, company_name = {}".format(index, ticker_dict_n[index])
                 # endif
             # endif
         except:
