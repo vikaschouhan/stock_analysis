@@ -112,11 +112,45 @@ class ma_strategy0(object):
 
     def __call__(self, stk_data):
         close_data = stk_data.get_adj_close()
-        ewma_s     = pandas.ewma(close_data, self.ma_short)
-        ewma_l     = pandas.ewma(close_data, self.ma_long)
+        ewma_s     = pandas.ewma(close_data, span=self.ma_short)
+        ewma_l     = pandas.ewma(close_data, span=self.ma_long)
         if ewma_s[-1] > ewma_l[-1]:
             return True
         return False
+
+# Moving average crossover strategy
+class ma_strategy0_ema_crossover(object):
+    def __init__(self, speriod, lperiod, days_diff=2, days_delay=0):
+        self.speriod    = speriod                                               # Short ema period
+        self.lperiod    = lperiod                                               # Long ema period
+        self.days_diff  = days_diff
+        self.days_delay = days_delay
+        self.off_start  = -1 - self.days_delay                                  # start offset
+        self.off_end    = -1 - self.days_delay - self.days_diff                 # end offset (< start offset)
+        self.off_curr   = self.off_start                                        # current offset
+        self.dslopepos  = 1                                                     # n_days for taking +ve slope
+        self.dslopeneg  = 4                                                     # n_days for taking -ve slope
+        self.dvol       = 50                                                    # n_days for taking volume moving median
+    # enddef
+
+    def __call__(self, stk_data):
+        close_data = stk_data.get_close()
+        open_data  = stk_data.get_open()
+        volume     = stk_data.get_volume()
+        ewma_s     = pandas.ewma(close_data, span=self.speriod)
+        ewma_l     = pandas.ewma(close_data, span=self.lperiod)
+        # Check for 8ema crossover of open and close prices as well as
+        # a sudden spurt in volume
+        rt_cross   = ewma_s[self.off_curr] > ewma_l[self.off_curr]              # Current short ema > long ema
+        lt_cross   = ewma_s[self.off_end] <= ewma_l[self.off_end]               # short ema < long ema days_dff before
+        tr_rev     = (ewma_s[self.off_curr] > ewma_l[self.off_curr-1]) and \
+                     (ewma_s[self.off_end] <= ewma_l[self.off_end-4])           # Trend reversal
+        # Check status
+        if rt_cross and lt_cross:
+            return True
+        return False
+
+
 
 class ma_strategy_8ema_crossover(object):
     def __init__(self, days_diff=2):
@@ -127,8 +161,8 @@ class ma_strategy_8ema_crossover(object):
         close_data = stk_data.get_close()
         open_data  = stk_data.get_open()
         volume     = stk_data.get_volume()
-        ewma_c     = pandas.ewma(close_data, 8)
-        ewma_o     = pandas.ewma(open_data,  8)
+        ewma_c     = pandas.ewma(close_data, span=8)
+        ewma_o     = pandas.ewma(open_data,  span=8)
         ewma_vol   = pandas.rolling_mean(volume,  50)
         # Check for 8ema crossover of open and close prices as well as
         # a sudden spurt in volume
@@ -149,10 +183,10 @@ class ma_strategy2_8ema_crossover(object):
         close_data = stk_data.get_close()
         open_data  = stk_data.get_open()
         volume     = stk_data.get_volume()
-        ewma_c     = pandas.ewma(close_data, 8)
-        ewma_o     = pandas.ewma(open_data,  8)
+        ewma_c     = pandas.ewma(close_data, span=8)
+        ewma_o     = pandas.ewma(open_data,  span=8)
         ewma_vol   = pandas.rolling_mean(volume,  50)
-        ewma_50    = pandas.ewma(close_data, 50)
+        ewma_50    = pandas.ewma(close_data, span=50)
         # Check for 8ema crossover of open and close prices as well as
         # a sudden spurt in volume
         rt_cross   = ewma_c[-1] > ewma_o[-1]    # Current 8ema[close] > 8ema[open]
@@ -176,10 +210,10 @@ class ma_strategy3_8ema_crossover(object):
         close_data = stk_data.get_close()
         open_data  = stk_data.get_open()
         volume     = stk_data.get_volume()
-        ewma_c     = pandas.ewma(close_data, 8)
-        ewma_o     = pandas.ewma(open_data,  8)
+        ewma_c     = pandas.ewma(close_data, span=8)
+        ewma_o     = pandas.ewma(open_data,  span=8)
         ewma_vol   = pandas.rolling_mean(volume,  50)
-        ewma_50    = pandas.ewma(close_data, 50)
+        ewma_50    = pandas.ewma(close_data, span=50)
         # Check for 8ema crossover of open and close prices as well as
         # a sudden spurt in volume
         rt_cross   = ewma_c[-1] > ewma_o[-1]    # Current 8ema[close] > 8ema[open]
@@ -209,10 +243,10 @@ class ma_strategy4_8ema_crossover(object):
         close_data = stk_data.get_close()
         open_data  = stk_data.get_open()
         volume     = stk_data.get_volume()
-        ewma_c     = pandas.ewma(close_data, 8)
-        ewma_o     = pandas.ewma(open_data,  8)
+        ewma_c     = pandas.ewma(close_data, span=8)
+        ewma_o     = pandas.ewma(open_data,  span=8)
         med_vol    = pandas.rolling_mean(volume,  self.dvol)
-        ewma_50    = pandas.ewma(close_data, 50)
+        ewma_50    = pandas.ewma(close_data, span=50)
         # Check for 8ema crossover of open and close prices as well as
         # a sudden spurt in volume
         rt_cross   = ewma_c[self.off_curr] > ewma_o[self.off_curr]              # Current 8ema[close] > 8ema[open]
@@ -233,11 +267,24 @@ class ma_strategy4_8ema_crossover(object):
 ############################################
 # main and helpers
 ############################################
+
+# Execute strategy pipeline.
+# Multiple strategies can be executed one by one
+# Even multiple strategies can be combined in OR fashion
+#
+# TODO:
+# strategy_pipeline (either tuple of tuples, list of tuples, tuple of lists, list of lists)
+# (
+#        ( strategy00, strategy01, strategy02, ....),
+#        ( strategy10, strategy11, strategy12, ....), 
+#        ( .... )
+# )
 def main_thread(ticker_dict):
     for index in ticker_dict:
         try:
             data_this   = stock_data(scrip_id=index, date_start=params_dict["date_start"])
-            vol_status  = params_dict["vmin"] <= pandas.ewma(data_this.get_volume(), 8)[-1]  # vmin <= average volume for some days
+            #vol_status  = params_dict["vmin"] <= pandas.ewma(data_this.get_volume(), 8)[-1]  # vmin <= average volume for some days
+            vol_status  = True
             # Check if volume requirement is satisfied and then only apply our strategy
             if vol_status:
                 status  = strategy_this(data_this)
@@ -345,7 +392,7 @@ if __name__ == '__main__':
     # endif
 
     # define strategy
-    strategy_this = ma_strategy4_8ema_crossover(days_diff=3)
+    strategy_this = ma_strategy4_8ema_crossover(days_diff=5, days_delay=8)
     chunk_size    = len(ticker_dict_n)/process_count
     chunk_size    = chunk_size + 1 if (len(ticker_dict_n) % process_count) else chunk_size
     chunk_gen     = dict_chunks(ticker_dict_n, chunk_size)            # Get chunk generator
