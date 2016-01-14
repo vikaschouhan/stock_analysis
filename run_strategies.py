@@ -10,6 +10,10 @@
 # Download stock data from yahoo financial website and run
 # custom strategies over all the scrips to screen for the stocks
 # satisfying our criteria.
+# Update : 15th Jan 2016
+#          Added multiprocessing support. Since this script is I/O
+#          heavy, using large number of processes can substantially
+#          bring down total execution time.
 #######################################################################
 
 import argparse
@@ -17,10 +21,22 @@ import datetime
 import re
 import pickle
 import sys
+import multiprocessing
+from   multiprocessing import Process
+from   itertools import islice
 
 import pandas as pd
 import pandas.io.data
 from   pandas import Series, DataFrame
+
+####################################################
+# support functions
+####################################################
+# splice a dictionary into chunks each of size 'size'
+def dict_chunks(dict_data, size):
+    it = iter(dict_data)
+    for i in xrange(0, len(dict_data), size):
+        yield {k:dict_data[k] for k in islice(it, size)}
 
 ####################################################
 # convert to datetime format
@@ -177,9 +193,64 @@ class ma_strategy3_8ema_crossover(object):
             return True
         return False
 
+class ma_strategy4_8ema_crossover(object):
+    def __init__(self, days_diff=2, days_delay=0):
+        self.days_diff  = days_diff
+        self.days_delay = days_delay
+        self.off_start  = -1 - self.days_delay                                  # start offset
+        self.off_end    = -1 - self.days_delay - self.days_diff                 # end offset (< start offset)
+        self.off_curr   = self.off_start                                        # current offset
+        self.dslopepos  = 1                                                     # n_days for taking +ve slope
+        self.dslopeneg  = 4                                                     # n_days for taking -ve slope
+        self.dvol       = 50                                                    # n_days for taking volume moving median
+    # enddef
+
+    def __call__(self, stk_data):
+        close_data = stk_data.get_close()
+        open_data  = stk_data.get_open()
+        volume     = stk_data.get_volume()
+        ewma_c     = pandas.ewma(close_data, 8)
+        ewma_o     = pandas.ewma(open_data,  8)
+        med_vol    = pandas.rolling_mean(volume,  self.dvol)
+        ewma_50    = pandas.ewma(close_data, 50)
+        # Check for 8ema crossover of open and close prices as well as
+        # a sudden spurt in volume
+        rt_cross   = ewma_c[self.off_curr] > ewma_o[self.off_curr]              # Current 8ema[close] > 8ema[open]
+        lt_cross   = ewma_c[self.off_end] <= ewma_o[self.off_end]               # 8ema[close] < 8ema[open] days_dff before
+        vol_thr    = 3 * med_vol[self.off_curr]                                 # Volume threshold
+        vol_status = volume[self.off_curr] > vol_thr or \
+                     volume[self.off_curr-1] > vol_thr or \
+                     volume[self.off_curr-2] > vol_thr                          # if any of last three days vol > volume threshold
+        ema50_tr   = ewma_50[self.off_curr] > 0                                 # Long term trend in bullish
+        tr_rev     = (ewma_c[self.off_curr] > ewma_c[self.off_curr-1]) and \
+                     (ewma_c[self.off_end] <= ewma_c[self.off_end-4])
+
+        # Check status
+        if rt_cross and lt_cross and vol_status and tr_rev:
+            return True
+        return False
+
 ############################################
-# main
+# main and helpers
 ############################################
+def main_thread(ticker_dict):
+    for index in ticker_dict:
+        try:
+            data_this   = stock_data(scrip_id=index, date_start=params_dict["date_start"])
+            vol_status  = params_dict["vmin"] <= pandas.ewma(data_this.get_volume(), 8)[-1]  # vmin <= average volume for some days
+            # Check if volume requirement is satisfied and then only apply our strategy
+            if vol_status:
+                status  = strategy_this(data_this)
+                if status:
+                    print "scripid = {}, company_name = {}".format(index, ticker_dict_n[index])
+                # endif
+            # endif
+        except:
+            #print "Couldn't load data for {}".format(index)
+            pass
+    # endfor
+# enddef
+
 if __name__ == '__main__':
     params_dict      = {}
     ticker_dict_n    = {}
@@ -187,6 +258,8 @@ if __name__ == '__main__':
     regex_m          = re.compile(r'([\w\.\-]+)[ \t\r\f\v]+"([ \w\W\t\r\f\v\-]+)"')       # match for valid line
     regex_h          = re.compile(r'(\w+)-\w+.NS')          # match for date format on command line
     regex_c          = re.compile(r'^#')                    # Match format for comment
+    #cpu_count        = multiprocessing.cpu_count()          # Get cpu count for launching 4 processes simultaneously
+    process_count    = 20                                   # Set process count
 
     parser           = argparse.ArgumentParser()
     parser.add_argument("dfile", help="data description file generated by stock_list_pull script.", type=str)
@@ -269,31 +342,30 @@ if __name__ == '__main__':
                 ticker_dict_n[index] = ticker_dict_t[index]
     else:
         ticker_dict_n = ticker_dict_t
+    # endif
 
+    # define strategy
+    strategy_this = ma_strategy4_8ema_crossover(days_diff=3)
+    chunk_size    = len(ticker_dict_n)/process_count
+    chunk_size    = chunk_size + 1 if (len(ticker_dict_n) % process_count) else chunk_size
+    chunk_gen     = dict_chunks(ticker_dict_n, chunk_size)            # Get chunk generator
 
     print "###################################################################################"
     print "pandas version                                = {}".format(pd.__version__)
     print "vmin                                          = {}".format(params_dict["vmin"])
     print "date_start                                    = {}".format(params_dict["date_start"])
     print "date_end                                      = {}".format(params_dict["date_end"])
+    print "todays_date                                   = {}".format(datetime.datetime.now())
+    print "number of processes                           = {}".format(process_count)
+    print "total entries per process                     = {}".format(chunk_size)
+    print "total entries in database                     = {}".format(len(ticker_dict_n))
+    print "strategy used                                 = {}".format(strategy_this.__class__.__name__)
     print "###################################################################################"
 
-
-    # define strategy
-    strategy_this = ma_strategy2_8ema_crossover(3)
-
-    for index in ticker_dict_n:
-        try:
-            data_this   = stock_data(scrip_id=index, date_start=params_dict["date_start"])
-            vol_status  = params_dict["vmin"] <= pandas.ewma(data_this.get_volume(), 8)[-1]  # vmin <= average volume for some days
-            # Check if volume requirement is satisfied and then only apply our strategy
-            if vol_status:
-                status  = strategy_this(data_this)
-                if status:
-                    print "scripid = {}, company_name = {}".format(index, ticker_dict_n[index])
-                # endif
-            # endif
-        except:
-            #print "Couldn't load data for {}".format(index)
-            pass
+    # Launch separate threads
+    for process_this in range(0, process_count):
+        dict_this       = chunk_gen.next()
+        process_this    = Process(target=main_thread, args=(dict_this,))
+        process_this.start()
     # endfor
+# enddef
